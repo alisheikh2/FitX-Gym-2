@@ -22,15 +22,20 @@ export default function Home() {
       {/* AUTO-ROTATING HERO */}
       <HeroSlider />
 
-      <div className="bg-brand text-white">
-        <div className="shell py-3 flex flex-wrap items-center justify-center gap-x-8 gap-y-1 font-display text-[12px] font-bold uppercase tracking-[0.14em]">
-          <a href={tel} className="hover:underline">{BRAND.phoneDisplay}</a>
-          <span aria-hidden="true" className="hidden sm:block h-3 w-px bg-black/20" />
-          <span>{BRAND.hoursWeek}</span>
-          <span aria-hidden="true" className="hidden sm:block h-3 w-px bg-black/20" />
-          <Link to="/book-consultation" className="hover:underline">Free Consultation</Link>
+      {/* headline lives below the clean hero — reference style */}
+      <section className="py-14 sm:py-20">
+        <div className="shell text-center max-w-3xl mx-auto">
+          <Reveal>
+            <p className="font-display text-[12px] font-bold uppercase tracking-[0.28em] text-brand">Personal Fitness Training Studio · Sahiwal</p>
+            <h1 className="font-display font-extrabold uppercase text-3xl sm:text-5xl text-navy leading-[1.08] tracking-tight mt-3">The most serious &amp; sophisticated personal training in Sahiwal</h1>
+            <p className="mt-5 text-[15px] sm:text-base text-silver leading-relaxed">One-to-one coaching, fat loss, strength & women’s performance — assessed, programmed and tracked by coaches who invest in you.</p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Link to="/book-consultation" className="btn-primary !rounded-full">Book a Consultation</Link>
+              <Link to="/personal-training" className="btn-ghost !rounded-full">Explore Training</Link>
+            </div>
+          </Reveal>
         </div>
-      </div>
+      </section>
 
       {/* WHO WE ARE / WOMEN — two premium cards */}
       <section className="py-16 sm:py-24">

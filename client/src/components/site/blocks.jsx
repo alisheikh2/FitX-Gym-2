@@ -1,29 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Reveal from '../ui/Reveal.jsx';
-import { wa } from '../../lib/brand.js';
+import { wa, BRAND } from '../../lib/brand.js';
 
-/** Revolution-slider style hero (home only): text over slider is the reference’s own pattern. */
+/** Clean full-bleed slider like the reference: bright image, side arrows, square dots,
+ *  studio phone bottom-left, JOIN NOW pill right. Headline lives in the section below. */
 export function HeroSlider() {
   const slides = [
-    {
-      img: '/images/fitx/hero-ropes.jpg',
-      kicker: 'Shadman Town · Sahiwal',
-      title: 'The most serious training studio in Sahiwal',
-      sub: 'Strength, conditioning and fat loss — coached with precision, session after session.'
-    },
-    {
-      img: '/images/fitx/hero-coaching.jpg',
-      kicker: 'Personal training',
-      title: 'One coach. One plan. Your results.',
-      sub: 'Every session coached one-to-one — from your first consultation to your final rep.'
-    },
-    {
-      img: '/images/fitx/hero-women.jpg',
-      kicker: 'Women’s performance',
-      title: 'Dedicated hours. Dedicated coach.',
-      sub: 'Women train 10:30–1 & 3–6 daily with coach Iqra Zahid — strength, fat loss, confidence.'
-    }
+    { img: '/images/fitx/hero-ropes.jpg', alt: 'Client training on a cable machine in the bright FITX studio' },
+    { img: '/images/fitx/hero-coaching.jpg', alt: 'FITX coach guiding a client through a dumbbell session' },
+    { img: '/images/fitx/gen-mixed-group.jpg', alt: 'Members training together at FITX Sahiwal' }
   ];
   const [i, setI] = useState(0);
   useEffect(() => {
@@ -33,43 +19,40 @@ export function HeroSlider() {
   }, [slides.length]);
 
   return (
-    <section className="relative min-h-[92svh] flex items-end overflow-hidden" aria-roledescription="carousel" aria-label="FITX highlights">
-      {slides.map((s, idx) => (
+    <section className="relative min-h-[88svh] overflow-hidden" aria-roledescription="carousel" aria-label="FITX studio">
+      {slides.map((sld, idx) => (
         <img
-          key={s.img}
-          src={s.img}
-          alt=""
-          aria-hidden="true"
+          key={sld.img}
+          src={sld.img}
+          alt={idx === i ? sld.alt : ''}
+          aria-hidden={idx !== i}
           loading={idx === 0 ? 'eager' : 'lazy'}
           decoding="async"
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ${idx === i ? 'opacity-100' : 'opacity-0'}`}
         />
       ))}
-      <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
-      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 via-black/25 to-transparent" aria-hidden="true" />
+      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/45 to-transparent" aria-hidden="true" />
 
-      <div className="shell relative w-full pb-14 sm:pb-16 pt-44 md:pt-52">
-        <div key={i} className="animate-fade-up max-w-3xl">
-          <p className="font-display text-[12px] font-bold uppercase tracking-[0.28em] text-white/80">{slides[i].kicker}</p>
-          <h1 className="font-display font-extrabold uppercase text-white text-4xl sm:text-6xl lg:text-7xl leading-[1.04] tracking-tight mt-3">{slides[i].title}</h1>
-          <p className="mt-5 max-w-xl text-base sm:text-lg text-white/85 leading-relaxed">{slides[i].sub}</p>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <Link to="/book-consultation" className="btn-primary">Book a Consultation</Link>
-            <Link to="/personal-training" className="btn btn-ghost !border-white/50 !text-white hover:!border-brand hover:!text-brand">Explore Training</Link>
-          </div>
+      {/* side arrows */}
+      <button onClick={() => setI((i - 1 + slides.length) % slides.length)} aria-label="Previous slide" className="absolute left-3 top-1/2 -translate-y-1/2 text-white/90 hover:text-brand text-4xl font-light drop-shadow">‹</button>
+      <button onClick={() => setI((i + 1) % slides.length)} aria-label="Next slide" className="absolute right-3 top-1/2 -translate-y-1/2 text-white/90 hover:text-brand text-4xl font-light drop-shadow">›</button>
+
+      {/* bottom bar: studio phone + join now */}
+      <div className="absolute inset-x-0 bottom-0">
+        <div className="shell flex items-center justify-between pb-6">
+          <p className="font-display text-[13px] sm:text-sm font-bold uppercase tracking-[0.14em] text-white drop-shadow">Sahiwal Studio: {BRAND.phoneDisplay}</p>
+          <Link to="/book-consultation" className="btn-primary !rounded-full btn-sm">Join Now</Link>
         </div>
-        <div className="mt-12 flex items-center gap-5">
-          <button onClick={() => setI((i - 1 + slides.length) % slides.length)} aria-label="Previous slide" className="h-11 w-11 border border-white/30 text-white hover:border-brand hover:text-brand transition-colors font-display">←</button>
-          <button onClick={() => setI((i + 1) % slides.length)} aria-label="Next slide" className="h-11 w-11 border border-white/30 text-white hover:border-brand hover:text-brand transition-colors font-display">→</button>
-          <div className="flex gap-2" role="tablist" aria-label="Slides">
-            {slides.map((s, idx) => (
+        <div className="shell flex justify-center pb-5" role="tablist" aria-label="Slides">
+          <div className="flex gap-2 bg-white/90 px-3 py-2">
+            {slides.map((sld, idx) => (
               <button
-                key={s.img}
+                key={sld.img}
                 onClick={() => setI(idx)}
                 role="tab"
                 aria-selected={idx === i}
                 aria-label={`Slide ${idx + 1}`}
-                className={`h-1 transition-all duration-500 ${idx === i ? 'w-10 bg-brand' : 'w-5 bg-white/40 hover:bg-white/70'}`}
+                className={`h-2.5 w-2.5 border ${idx === i ? 'border-brand bg-brand' : 'border-silver/70 bg-transparent hover:border-brand'}`}
               />
             ))}
           </div>
@@ -83,9 +66,7 @@ export function SectionHead({ label, title, copy, center = false }) {
   return (
     <Reveal className={`max-w-2xl ${center ? 'mx-auto text-center' : ''}`}>
       {label && (
-        <p className="font-display text-[12px] font-bold uppercase tracking-[0.28em] text-silver">
-          <span className="text-brand mr-2" aria-hidden="true">#####</span>{label}
-        </p>
+        <p className="font-display text-[12px] font-bold uppercase tracking-[0.28em] text-brand">{label}</p>
       )}
       <h2 className="font-display font-extrabold uppercase text-3xl sm:text-4xl leading-[1.12] tracking-tight text-navy mt-2">{title}</h2>
       {copy && <p className="mt-4 text-[15px] leading-relaxed text-silver">{copy}</p>}
