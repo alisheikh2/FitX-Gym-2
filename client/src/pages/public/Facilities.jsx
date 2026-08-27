@@ -7,7 +7,7 @@ const GALLERY = [
   ['/images/fitx/facility/fitx-facility-floor-01.webp', 'Free-weight zone — dumbbells run light to heavy so progress never waits for equipment.'],
   ['/images/fitx/facility/fitx-strength-squat-rack.webp', 'Rack and barbell area for squat, press and hinge work, coached on form.'],
   ['/images/fitx/fitx-conditioning-medicine-ball.webp', 'Conditioning turf for sleds, medicine balls, intervals and athletic work.'],
-  ['/images/fitx/facility/fitx-facility-floor-02.webp', 'Machine line covering the major movement patterns for all levels.'],
+  ['/images/fitx/facility/fitx-facility-floor-02.webp', 'The main floor — free weights, cable stations, the turf strip and boxing zone.'],
   ['/images/fitx/facility/fitx-facility-floor-03.webp', 'Plate-loaded strength machines for controlled, progressive loading.'],
   ['/images/fitx/fitx-coaching-education-session.webp', 'Education corner — the studio runs nutrition and technique sessions on the big screen.'],
   ['/images/fitx/facility/fitx-facility-floor-04.webp', 'Cable stations for accessory and rehabilitation-friendly work.'],
