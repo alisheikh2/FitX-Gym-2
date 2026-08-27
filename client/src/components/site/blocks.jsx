@@ -45,10 +45,10 @@ export function HeroSlider() {
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ${idx === i ? 'opacity-100' : 'opacity-0'}`}
         />
       ))}
-      <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
+      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 via-black/25 to-transparent" aria-hidden="true" />
 
-      <div className="shell relative w-full pb-20 sm:pb-24 pt-44 md:pt-52">
+      <div className="shell relative w-full pb-14 sm:pb-16 pt-44 md:pt-52">
         <div key={i} className="animate-fade-up max-w-3xl">
           <p className="font-display text-[12px] font-bold uppercase tracking-[0.28em] text-white/80">{slides[i].kicker}</p>
           <h1 className="font-display font-extrabold uppercase text-white text-4xl sm:text-6xl lg:text-7xl leading-[1.04] tracking-tight mt-3">{slides[i].title}</h1>

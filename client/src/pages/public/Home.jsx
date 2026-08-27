@@ -37,16 +37,16 @@ export default function Home() {
         <div className="shell grid md:grid-cols-2 gap-10">
           <ImageCard
             to="/about"
-            image="/images/fitx/interior-premium.jpg"
-            alt="The FITX boutique training studio floor in Sahiwal"
+            image="/images/fitx/facility/fitx-facility-floor-02.webp"
+            alt="The FITX training floor in Sahiwal — free weights, cables and turf"
             kicker="Who we are"
             title="Boutique studio"
             copy="A personal training studio, not a crowded hall. Assessment first, written programs, coached technique and tracked progress — the FITX standard."
           />
           <ImageCard
             to="/womens-fitness"
-            image="/images/fitx/hero-women.jpg"
-            alt="Women's performance training at FITX Sahiwal"
+            image="/images/fitx/gen-women-group.jpg"
+            alt="Women training together in a coached session at FITX Sahiwal"
             kicker="Women’s training"
             title="Dedicated hours"
             copy="Coach Iqra Zahid — seven years of experience — trains women 10:30–1 & 3–6 daily. Strength and fat loss, coached properly, in a safe studio."
@@ -87,10 +87,10 @@ export default function Home() {
           </div>
           <Reveal delay={100} className="grid gap-5">
             <div className="overflow-hidden">
-              <img src="/images/fitx/hero-ropes.jpg" alt="High-intensity conditioning at FITX Sahiwal" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
+              <img src="/images/fitx/gen-dumbbell-rack.jpg" alt="The dumbbell rack at FITX Sahiwal" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
             </div>
             <div className="overflow-hidden">
-              <img src="/images/fitx/programs/fitx-group-session-class.webp" alt="A coached group class at FITX Sahiwal" width={1280} height={960} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
+              <img src="/images/fitx/gen-whiteboard.jpg" alt="FITX coach walking a client through their written program" width={1280} height={960} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
             </div>
           </Reveal>
         </div>
@@ -100,7 +100,7 @@ export default function Home() {
       <section className="py-16 sm:py-24">
         <div className="shell grid lg:grid-cols-2 gap-12 items-center">
           <Reveal className="overflow-hidden order-2 lg:order-1">
-            <img src="/images/fitx/hero-coaching.jpg" alt="One-to-one coaching at FITX Sahiwal" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover" />
+            <img src="/images/fitx/community/fitx-trainer-neon-sign.webp" alt="FITX trainer under the studio neon sign" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover" />
           </Reveal>
           <div className="order-1 lg:order-2">
             <SectionHead

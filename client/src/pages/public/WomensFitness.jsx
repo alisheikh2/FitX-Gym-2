@@ -18,48 +18,64 @@ export default function WomensFitness() {
         image="/images/fitx/trainers/fitx-trainer-iqra-zahid.webp"
       />
       <PageHero
-        label="Women’s fitness"
-        title="Proper coaching. A floor of your own."
-        copy="Dedicated female hours with coach Iqra Zahid — 7 years of experience coaching women in Sahiwal."
-        image="/images/fitx/trainers/fitx-trainer-iqra-zahid.webp"
+        title="Women’s Fitness"
+        copy="Proper coaching, dedicated hours, a floor of your own. Women train with coach Iqra Zahid — seven years of experience coaching women in Sahiwal."
         crumbs={[["Women's Fitness", null]]}
       />
 
       <section className="py-16 sm:py-24">
-        <div className="shell grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <SectionHead label="How women train at FITX" title="Real training. Not a lighter version." />
-            <Reveal delay={80}>
-              <div className="mt-7 border-l-2 border-brand pl-6 py-1">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted">Dedicated female hours</p>
-                <div className="mt-3 grid sm:grid-cols-2 gap-4">
-                  {BRAND.femaleHours.map((h) => <p key={h} className="font-display font-bold text-2xl text-paper">{h}</p>)}
-                </div>
-              </div>
-              <ul className="mt-7 space-y-3 text-sm sm:text-base text-silver">
-                {['Progressive strength & fat-loss programming', 'Beginners started from zero — technique first', 'Safe, secure, respectful — members say so'].map((t) => (
-                  <li key={t} className="flex gap-3"><span className="text-brand font-bold shrink-0">—</span>{t}</li>
-                ))}
-              </ul>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link to="/trainers/iqra-zahid" className="btn-primary btn-sm">Meet Iqra Zahid</Link>
-                <a href={wa('Hello FITX, I would like to ask about women’s training hours with Iqra.')} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">Ask About Women’s Hours</a>
-              </div>
-            </Reveal>
-          </div>
-          <Reveal delay={100} className="overflow-hidden">
-            <img src="/images/fitx/hero-women.jpg" alt="Education session at FITX with women members attending" width={1400} height={1050} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+        <div className="shell">
+          <Reveal>
+            <div className="md:float-right md:ml-8 mb-6 md:mb-4 max-w-md overflow-hidden">
+              <img src="/images/fitx/trainers/fitx-trainer-iqra-zahid.webp" alt="Iqra Zahid coaching at FITX Sahiwal" width={1023} height={1537} loading="lazy" decoding="async" className="w-full aspect-[3/2] object-cover object-top" />
+            </div>
+            <p className="text-[15px] sm:text-base text-silver leading-relaxed max-w-3xl">
+              Iqra Zahid coaches the women who train at FITX during the studio’s dedicated female hours. Over seven years she has coached students, brides-to-be, new mothers and women in their fifties — most of them starting from zero.
+            </p>
+            <p className="mt-4 text-[15px] sm:text-base text-silver leading-relaxed max-w-3xl">
+              Her programming treats women’s training seriously: progressive strength work, structured fat-loss phases and honest nutrition guidance — not a lighter version of training, and never stretched-out aerobics.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4 clear-both">
+              <Link to="/trainers/iqra-zahid" className="btn-primary">Meet Iqra Zahid</Link>
+              <a href={wa('Hello FITX, I would like to ask about women’s training hours with Iqra.')} target="_blank" rel="noopener noreferrer" className="btn-ghost">Ask About Women’s Hours</a>
+            </div>
           </Reveal>
         </div>
       </section>
 
+      <section className="py-16 sm:py-24 bg-deep border-y border-steel">
+        <div className="shell grid lg:grid-cols-2 gap-12 items-center">
+          <Reveal className="overflow-hidden">
+            <img src="/images/fitx/gen-women-cable.jpg" alt="Women's strength training at FITX Sahiwal" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+          </Reveal>
+          <div>
+            <SectionHead label="The studio" title="Dedicated female hours" />
+            <Reveal delay={60}>
+              <div className="mt-6 grid sm:grid-cols-2 gap-4">
+                {BRAND.femaleHours.map((h) => (
+                  <p key={h} className="font-display font-extrabold uppercase text-xl text-navy border-l-4 border-brand pl-4">{h}</p>
+                ))}
+              </div>
+              <ul className="mt-6 space-y-2.5 text-sm sm:text-base text-silver">
+                {['Progressive strength & fat-loss programming', 'Beginners started from zero — technique first', 'Safe, secure, respectful — members say so'].map((t) => (
+                  <li key={t} className="flex gap-3"><span className="text-brand font-bold shrink-0">—</span>{t}</li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {womenReview.length > 0 && (
-        <section className="py-16 bg-deep border-y border-steel/50">
-          <div className="shell grid md:grid-cols-2 gap-10">{womenReview.map((r, i) => <Quote key={r._id} r={r} i={i} />)}</div>
+        <section className="py-16 sm:py-24">
+          <div className="shell">
+            <SectionHead center label="Client testimonials" title="In their words" />
+            <div className="mt-12 grid md:grid-cols-2 gap-10">{womenReview.map((r, i) => <Quote key={r._id} r={r} i={i} />)}</div>
+          </div>
         </section>
       )}
 
-      <CTABand image="/images/fitx/trainers/fitx-trainer-iqra-zahid.webp" title="The right place to start already exists in Sahiwal." copy="Visit during female hours and see the studio yourself." />
+      <CTABand title="The right place to start already exists in Sahiwal" copy="Visit during female hours and see the studio yourself." />
     </>
   );
 }

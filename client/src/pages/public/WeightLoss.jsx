@@ -15,54 +15,63 @@ export default function WeightLoss() {
         title="Weight Loss & Fat Loss Trainer in Sahiwal | FITX"
         description="Structured fat loss in Sahiwal with coach Arslan Ahmad (7 years experience): training plans, practical nutrition guidance and weekly tracking. Book a consultation at FITX."
         path="/weight-loss"
-        image="/images/fitx/trainers/fitx-trainer-arslan-ahmad.webp"
+        image="/images/fitx/gen-progress-review.jpg"
       />
       <PageHero
-        label="Weight loss & fat loss"
-        title="Lose fat. Keep the muscle. Keep it off."
-        copy="Structured training + eating guidance that fits Pakistani homes, measured weekly."
-        image="/images/fitx/trainers/fitx-trainer-arslan-ahmad.webp"
+        title="Weight Loss & Fat Loss"
+        copy="Movement-based fat loss, divided over phases to cater to all levels — beginners to regular gym-goers looking for a shred."
         crumbs={[['Weight Loss', null]]}
       />
 
       <section className="py-16 sm:py-24">
-        <div className="shell grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <SectionHead label="The program" title="Built by a fat-loss specialist." copy="Arslan Ahmad — seven years coaching fat loss in Sahiwal." />
-            <Reveal delay={80}>
-              <ul className="mt-7 space-y-3 text-sm sm:text-base text-silver">
-                {['Training matched to your starting fitness', 'Nutrition around roti, salan, daal — not imported plans', 'Weekly measurements: trend, not daily noise'].map((t) => (
-                  <li key={t} className="flex gap-3"><span className="text-brand font-bold shrink-0">—</span>{t}</li>
-                ))}
-              </ul>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link to="/trainers/arslan-ahmad" className="btn-primary btn-sm">Meet Arslan Ahmad</Link>
-                <a href={wa('Hello FITX, I want to ask about the fat loss program.')} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">Ask About Fat Loss</a>
-              </div>
-            </Reveal>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <Reveal className="col-span-2 overflow-hidden">
-              <img src="/images/fitx/results/fitx-transformation-01.webp" alt="Before and after fat loss transformation of a FITX member, privacy protected" width={900} height={980} loading="lazy" decoding="async" className="w-full object-cover" />
-            </Reveal>
-            <Reveal delay={60} className="overflow-hidden">
-              <img src="/images/fitx/results/fitx-transformation-02.webp" alt="FITX member transformation result" width={800} height={800} loading="lazy" decoding="async" className="w-full aspect-square object-cover" />
-            </Reveal>
-            <Reveal delay={120} className="overflow-hidden">
-              <img src="/images/fitx/results/fitx-transformation-03.webp" alt="FITX member fat loss before and after" width={800} height={800} loading="lazy" decoding="async" className="w-full aspect-square object-cover" />
-            </Reveal>
+        <div className="shell">
+          <Reveal>
+            <div className="md:float-right md:ml-8 mb-6 md:mb-4 max-w-md overflow-hidden">
+              <img src="/images/fitx/gen-progress-review.jpg" alt="FITX coach reviewing a client's progress" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[3/2] object-cover" />
+            </div>
+            <p className="text-[15px] sm:text-base text-silver leading-relaxed max-w-3xl">
+              Fat loss at FITX is coached by Arslan Ahmad — seven years of experience in Sahiwal. Training is structured, nutrition is practical (built around the food your household actually cooks), and progress is measured weekly: weight trend, waist, photos, how clothes fit.
+            </p>
+            <p className="mt-4 text-[15px] sm:text-base text-silver leading-relaxed max-w-3xl">
+              No crash diets. No punishment plans. A realistic rate of loss that protects muscle — and a coach who notices when you drift, before you quit.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4 clear-both">
+              <Link to="/trainers/arslan-ahmad" className="btn-primary">Meet Arslan Ahmad</Link>
+              <a href={wa('Hello FITX, I want to ask about the fat loss program.')} target="_blank" rel="noopener noreferrer" className="btn-ghost">Ask About Fat Loss</a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-24 bg-deep border-y border-steel">
+        <div className="shell max-w-4xl">
+          <SectionHead label="How it works" title="Four phases. One direction." />
+          <div className="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+            {[
+              ['Phase 1 — Assess', 'Starting point, movement quality, habits, schedule.'],
+              ['Phase 2 — Build', 'Training you can repeat + nutrition that fits home food.'],
+              ['Phase 3 — Accelerate', 'Progressive overload, weekly measurement, small corrections.'],
+              ['Phase 4 — Keep', 'The habits that keep the weight off for good.']
+            ].map(([h, p], i) => (
+              <Reveal key={h} delay={i * 50} className="border-l-4 border-brand pl-5">
+                <h3 className="font-display font-extrabold uppercase text-[15px] text-navy">{h}</h3>
+                <p className="mt-1.5 text-sm text-silver leading-relaxed">{p}</p>
+              </Reveal>
+            ))}
           </div>
         </div>
-        <Reveal className="shell mt-6"><p className="text-xs text-muted">Shared with clients’ privacy protected. Results vary with consistency.</p></Reveal>
       </section>
 
       {quotes.length > 0 && (
-        <section className="py-16 bg-deep border-y border-steel/50">
-          <div className="shell grid md:grid-cols-2 gap-10">{quotes.map((r, i) => <Quote key={r._id} r={r} i={i} />)}</div>
+        <section className="py-16 sm:py-24">
+          <div className="shell">
+            <SectionHead center label="Client testimonials" title="In their words" />
+            <div className="mt-12 grid md:grid-cols-2 gap-10">{quotes.map((r, i) => <Quote key={r._id} r={r} i={i} />)}</div>
+          </div>
         </section>
       )}
 
-      <CTABand image="/images/fitx/hero-ropes.jpg" title="The consultation costs nothing. Guessing costs months." copy="Get measured, get a realistic timeline, then decide." />
+      <CTABand title="The consultation costs nothing. Guessing costs months." copy="Get measured, get a realistic timeline, then decide." />
     </>
   );
 }
