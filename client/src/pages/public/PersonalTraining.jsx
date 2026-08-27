@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
 import { useFetch } from '../../lib/hooks.js';
-import { PageHero, CTABand, SectionHead, FAQAccordion } from '../../components/site/blocks.jsx';
+import { PageHero, SectionHead, FAQAccordion, CallNow } from '../../components/site/blocks.jsx';
 
 const PROGRAMS = [
   ['One-to-One Personal Training', 'A coach, a written plan, and a record of your progress. Every session coached one-to-one — technique corrected, loads progressed, results tracked.', '/images/fitx/programs/fitx-coaching-one-to-one.webp'],
@@ -84,7 +84,7 @@ export default function PersonalTraining() {
         </div>
       </section>
 
-      <CTABand title="Your first session starts with a conversation" copy="Free consultation — assessed, then recommended." />
+      <CallNow />
     </>
   );
 }

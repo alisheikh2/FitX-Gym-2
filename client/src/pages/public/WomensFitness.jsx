@@ -3,7 +3,7 @@ import Seo from '../../lib/Seo.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
 import { useFetch } from '../../lib/hooks.js';
 import { BRAND, wa } from '../../lib/brand.js';
-import { PageHero, CTABand, SectionHead, Quote } from '../../components/site/blocks.jsx';
+import { PageHero, SectionHead, Quote, CallNow } from '../../components/site/blocks.jsx';
 
 export default function WomensFitness() {
   const { data: testimonials } = useFetch('/testimonials');
@@ -75,7 +75,7 @@ export default function WomensFitness() {
         </section>
       )}
 
-      <CTABand title="The right place to start already exists in Sahiwal" copy="Visit during female hours and see the studio yourself." />
+      <CallNow />
     </>
   );
 }

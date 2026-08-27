@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import Logo from './Logo.jsx';
 import MobileMenu from './MobileMenu.jsx';
-import { BRAND } from '../../lib/brand.js';
 
 const NAV = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'Who We Are' },
-  { to: '/personal-training', label: 'What We Do' },
-  { to: '/results', label: 'Success Stories' },
+  { to: '/training', label: 'What We Do' },
   { to: '/facilities', label: 'Gallery' },
+  { to: '/results', label: 'Success Stories' },
   { to: '/contact', label: 'Contact Us' }
 ];
 
@@ -43,11 +42,17 @@ export default function Header() {
               <NavLink
                 key={n.to}
                 to={n.to}
+                end={n.to === '/'}
                 className={({ isActive }) =>
-                  `font-display text-[12px] font-bold uppercase tracking-[0.16em] transition-colors ${isActive ? 'text-brand' : scrolled ? 'text-navy hover:text-brand' : 'text-white hover:text-brand'} drop-shadow-sm`
+                  `font-display text-[12px] font-bold uppercase tracking-[0.16em] transition-colors drop-shadow-sm ${isActive ? 'text-brand' : scrolled ? 'text-navy hover:text-brand' : 'text-white hover:text-brand'}`
                 }
               >
-                {n.label}
+                {({ isActive }) => (
+                  <>
+                    {n.label}
+                    {isActive && <span className="text-brand ml-1" aria-hidden="true">/</span>}
+                  </>
+                )}
               </NavLink>
             ))}
           </nav>

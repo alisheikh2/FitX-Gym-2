@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import { useFetch } from '../../lib/hooks.js';
 import Reveal from '../../components/ui/Reveal.jsx';
-import { PageHero, SectionHead, CTABand } from '../../components/site/blocks.jsx';
+import { PageHero, SectionHead, CallNow } from '../../components/site/blocks.jsx';
 
 export default function Blog() {
   const { data: posts, loading } = useFetch('/blog');
@@ -42,7 +42,7 @@ export default function Blog() {
           ))}
         </div>
       </section>
-      <CTABand image="/images/fitx/fitx-coaching-education-session.webp" title="Prefer learning in person?" copy="Education sessions run inside the studio — ask about the next one." />
+      <CallNow />
     </>
   );
 }

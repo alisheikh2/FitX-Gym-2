@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
-import { PageHero, CTABand, SectionHead } from '../../components/site/blocks.jsx';
+import { PageHero, SectionHead, CallNow } from '../../components/site/blocks.jsx';
 
 export default function Nutrition() {
   return (
@@ -58,7 +58,7 @@ export default function Nutrition() {
         </div>
       </section>
 
-      <CTABand image="/images/fitx/fitx-coaching-education-session.webp" title="Guidance works when it’s personal." copy="Nutrition direction is included with fat-loss and personal training." />
+      <CallNow />
     </>
   );
 }

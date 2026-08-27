@@ -1,6 +1,6 @@
 import Seo from '../../lib/Seo.jsx';
 import { useFetch } from '../../lib/hooks.js';
-import { PageHero, TrainerCard, CTABand } from '../../components/site/blocks.jsx';
+import { PageHero, TrainerCard, CallNow } from '../../components/site/blocks.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
 
 export default function Trainers() {
@@ -30,7 +30,7 @@ export default function Trainers() {
           <Reveal className="shell mt-10 card p-10 text-center text-silver">Trainer profiles are being updated. Please check back shortly.</Reveal>
         )}
       </section>
-      <CTABand image="/images/fitx/interior-premium.jpg" title="Train with a coach who knows your name." copy="Book a free consultation and get matched." />
+      <CallNow />
     </>
   );
 }

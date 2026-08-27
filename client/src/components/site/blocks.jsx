@@ -184,6 +184,14 @@ export function TrainerCard({ t, i = 0 }) {
           <p className="font-display text-[11px] font-bold uppercase tracking-[0.22em] text-brand">Coach</p>
           <h3 className="font-display font-extrabold uppercase text-lg text-navy group-hover:text-brand transition-colors mt-1">{t.name}</h3>
           <p className="text-[13px] text-silver mt-2 leading-relaxed">{t.role}{t.experienceYears ? ` · ${t.experienceYears} yrs` : ''}. {t.shortBio}</p>
+          <div className="mt-3 flex gap-2">
+            <a href={BRAND.facebook} target="_blank" rel="noopener noreferrer" aria-label={`${t.name} on Facebook`} onClick={(e) => e.stopPropagation()} className="h-8 w-8 border border-steel flex items-center justify-center text-navy/70 hover:bg-brand hover:border-brand hover:text-white transition-colors">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 22v-8h3l.5-4H13V7.5c0-1.1.3-1.5 1.7-1.5H16.6V2.2C15.9 2.1 14.7 2 13.6 2 10.6 2 9 3.7 9 7v3H6v4h3v8h4z"/></svg>
+            </a>
+            <a href={BRAND.instagram} target="_blank" rel="noopener noreferrer" aria-label={`${t.name} on Instagram`} onClick={(e) => e.stopPropagation()} className="h-8 w-8 border border-steel flex items-center justify-center text-navy/70 hover:bg-brand hover:border-brand hover:text-white transition-colors">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.7 0 3 .01 4.1.06 1.1.05 1.8.22 2.5.49.7.26 1.3.62 1.9 1.2.6.6.95 1.2 1.2 1.9.27.7.44 1.4.49 2.5.05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1.1-.22 1.8-.49 2.5-.26.7-.62 1.3-1.2 1.9-.6.6-1.2.95-1.9 1.2-.7.27-1.4.44-2.5.49-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1.1-.05-1.8-.22-2.5-.49-.7-.26-1.3-.62-1.9-1.2-.6-.6-.95-1.2-1.2-1.9-.27-.7-.44-1.4-.49-2.5C2.01 15 2 14.7 2 12s.01-3 .06-4.1c.05-1.1.22-1.8.49-2.5.26-.7.62-1.3 1.2-1.9.6-.6 1.2-.95 1.9-1.2.7-.27 1.4-.44 2.5-.49C9 2.01 9.3 2 12 2zm0 4.9a5.1 5.1 0 1 0 0 10.2 5.1 5.1 0 0 0 0-10.2zm0 2a3.1 3.1 0 1 1 0 6.2 3.1 3.1 0 0 1 0-6.2z"/></svg>
+            </a>
+          </div>
         </div>
       </Link>
     </Reveal>
@@ -203,5 +211,16 @@ export function FAQAccordion({ items }) {
         </details>
       ))}
     </div>
+  );
+}
+
+/** Reference signature: centered orange Call Now pill at the end of every inner page. */
+export function CallNow() {
+  return (
+    <section className="py-12 sm:py-16">
+      <div className="shell text-center">
+        <a href={`tel:${BRAND.phoneIntl}`} className="btn-primary">Call Now</a>
+      </div>
+    </section>
   );
 }

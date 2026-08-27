@@ -3,7 +3,7 @@ import Seo from '../../lib/Seo.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
 import { useFetch } from '../../lib/hooks.js';
 import { wa } from '../../lib/brand.js';
-import { PageHero, CTABand, SectionHead, Quote } from '../../components/site/blocks.jsx';
+import { PageHero, SectionHead, Quote, CallNow } from '../../components/site/blocks.jsx';
 
 export default function WeightLoss() {
   const { data: testimonials } = useFetch('/testimonials');
@@ -71,7 +71,7 @@ export default function WeightLoss() {
         </section>
       )}
 
-      <CTABand title="The consultation costs nothing. Guessing costs months." copy="Get measured, get a realistic timeline, then decide." />
+      <CallNow />
     </>
   );
 }

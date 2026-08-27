@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
-import { PageHero, CTABand, SectionHead } from '../../components/site/blocks.jsx';
+import { PageHero, SectionHead, CallNow } from '../../components/site/blocks.jsx';
 
 export default function About() {
   return (
@@ -104,12 +104,7 @@ export default function About() {
         </div>
       </section>
 
-      <CTABand
-        title="Serious training. Human community."
-        copy="Meet the coaches, see the floor, then decide."
-        cta="Meet the Coaches"
-        to="/trainers"
-      />
+      <CallNow />
     </>
   );
 }

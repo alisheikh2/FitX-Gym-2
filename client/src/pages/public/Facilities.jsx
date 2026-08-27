@@ -22,22 +22,19 @@ export default function Facilities() {
       />
       <PageHero
         label="Facilities"
-        title="A working studio, kept working."
+        title="Gallery"
         copy="Real photos from our floor — cleaned daily, maintained always."
         image="/images/fitx/facility/fitx-facility-floor-02.webp"
-        crumbs={[['Facilities', null]]}
+        crumbs={[['Gallery', null]]}
       />
 
       <section className="py-16 sm:py-24">
-        <div className="shell columns-1 sm:columns-2 lg:columns-3 gap-5 [column-fill:_balance]">
+        <div className="shell grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {GALLERY.map(([src, cap], i) => (
-            <Reveal key={src} delay={(i % 3) * 60} className="mb-5 break-inside-avoid">
-              <figure>
-                <div className="overflow-hidden">
-                  <img src={src} alt={cap} width={1000} height={750} loading="lazy" decoding="async" className="w-full object-cover" />
-                </div>
-                <figcaption className="mt-2.5 text-xs text-silver leading-relaxed">{cap}</figcaption>
-              </figure>
+            <Reveal key={src} delay={(i % 3) * 60} className="overflow-hidden">
+              <a href={src} target="_blank" rel="noopener noreferrer" className="block group">
+                <img src={src} alt={cap} width={1200} height={800} loading="lazy" decoding="async" className="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+              </a>
             </Reveal>
           ))}
         </div>

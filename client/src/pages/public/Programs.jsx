@@ -3,7 +3,7 @@ import Seo from '../../lib/Seo.jsx';
 import { useFetch } from '../../lib/hooks.js';
 import { wa } from '../../lib/brand.js';
 import Reveal from '../../components/ui/Reveal.jsx';
-import { PageHero, CTABand, SectionHead } from '../../components/site/blocks.jsx';
+import { PageHero, SectionHead, CallNow } from '../../components/site/blocks.jsx';
 
 export default function Programs() {
   const { data: plans } = useFetch('/plans');
@@ -98,7 +98,7 @@ export default function Programs() {
         </div>
       </section>
 
-      <CTABand image="/images/fitx/programs/fitx-group-session-class.webp" title="Not sure which one?" copy="The consultation decides it — free." />
+      <CallNow />
     </>
   );
 }

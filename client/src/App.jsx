@@ -7,6 +7,7 @@ import AdminLayout from './layouts/AdminLayout.jsx';
 import Home from './pages/public/Home.jsx';
 import About from './pages/public/About.jsx';
 import PersonalTraining from './pages/public/PersonalTraining.jsx';
+import Training from './pages/public/Training.jsx';
 import WeightLoss from './pages/public/WeightLoss.jsx';
 import StrengthConditioning from './pages/public/StrengthConditioning.jsx';
 import WomensFitness from './pages/public/WomensFitness.jsx';
@@ -77,6 +78,7 @@ export default function App() {
         <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/training" element={<Training />} />
           <Route path="/personal-training" element={<PersonalTraining />} />
           <Route path="/weight-loss" element={<WeightLoss />} />
           <Route path="/strength-conditioning" element={<StrengthConditioning />} />

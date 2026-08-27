@@ -3,7 +3,7 @@ import Seo from '../../lib/Seo.jsx';
 import { useFetch } from '../../lib/hooks.js';
 import { wa } from '../../lib/brand.js';
 import Reveal from '../../components/ui/Reveal.jsx';
-import { Breadcrumbs, CTABand } from '../../components/site/blocks.jsx';
+import { Breadcrumbs, CallNow } from '../../components/site/blocks.jsx';
 
 export default function TrainerDetail() {
   const { slug } = useParams();
@@ -91,7 +91,7 @@ export default function TrainerDetail() {
           )}
         </div>
       </section>
-      <CTABand image={t.photo} title={`Train with ${t.name.split(' ')[0]} at FITX.`} copy="Book a consultation — we’ll match you with the right coach and program." />
+      <CallNow />
     </>
   );
 }
