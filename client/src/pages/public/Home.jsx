@@ -128,6 +128,27 @@ export default function Home() {
         </div>
       </section>
 
+      {/* EVERY STAGE */}
+      <section className="py-16 sm:py-24">
+        <div className="shell grid lg:grid-cols-2 gap-10 items-center">
+          <Reveal className="overflow-hidden">
+            <img src="/images/fitx/community/fitx-senior-member-training.webp" alt="A senior member training on a machine at FITX Sahiwal" width={1200} height={1600} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover object-top" />
+          </Reveal>
+          <div>
+            <SectionHead
+              label="Every stage"
+              title="It’s never too late to start."
+              copy="First-timers, athletes, returning members, older adults — everyone trains coached, progressed sensibly and safely."
+            />
+            <Reveal delay={100}>
+              <div className="mt-7">
+                <Link to="/book-consultation" className="btn-primary btn-sm">Start With a Consultation</Link>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* RESULTS BAND */}
       <CTABand
         image="/images/fitx/results/fitx-transformation-02.webp"

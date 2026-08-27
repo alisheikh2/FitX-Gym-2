@@ -71,7 +71,10 @@ export default function About() {
           <Reveal className="mt-10 overflow-hidden">
             <img src="/images/fitx/community/fitx-gym-gathering-banner.webp" alt="FITX Sahiwal members together at a community gathering" width={1600} height={372} loading="lazy" decoding="async" className="w-full object-cover" />
           </Reveal>
-          <div className="mt-5 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-5 grid grid-cols-2 md:grid-cols-5 gap-4">
+            <Reveal className="overflow-hidden">
+              <img src="/images/fitx/community/fitx-senior-member-training.webp" alt="A senior member training on a machine at FITX Sahiwal" width={1200} height={1600} loading="lazy" decoding="async" className="w-full aspect-square object-cover object-top" />
+            </Reveal>
             {[1, 2, 4, 5].map((n, i) => (
               <Reveal key={n} delay={i * 60} className="overflow-hidden">
                 <img src={`/images/fitx/community/fitx-gym-gathering-${n}.webp`} alt={`FITX Sahiwal gym gathering moment ${n}`} width={1000} height={1333} loading="lazy" decoding="async" className="w-full aspect-square object-cover" />
