@@ -10,6 +10,12 @@ export default function Reveal({ children, delay = 0, as: Tag = 'div', className
       el.classList.add('is-in');
       return;
     }
+    // Elements already above the viewport (e.g. swapped-in content after a scroll)
+    // would never intersect — reveal them immediately.
+    if (el.getBoundingClientRect().bottom <= 0) {
+      el.classList.add('is-in');
+      return;
+    }
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && (e.target.classList.add('is-in'), io.unobserve(e.target))),
       { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }

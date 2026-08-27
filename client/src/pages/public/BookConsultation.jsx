@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import { api, ApiError } from '../../lib/api.js';
@@ -14,6 +14,13 @@ export default function BookConsultation() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', goal: GOALS[0], type: TYPES[0], time: TIMES[2], date: '', message: '' });
   const [errors, setErrors] = useState({});
   const [state, setState] = useState('idle'); // idle | sending | done | error
+  const doneRef = useRef(null);
+
+  useEffect(() => {
+    if (state === 'done' && doneRef.current) {
+      doneRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [state]);
 
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
@@ -58,7 +65,7 @@ export default function BookConsultation() {
       <section className="py-14 sm:py-20">
         <div className="shell grid lg:grid-cols-[1.2fr_1fr] gap-10 max-w-6xl mx-auto items-start">
           {state === 'done' ? (
-            <Reveal className="card p-10 text-center lg:text-left">
+            <div ref={doneRef} className="card p-10 text-center lg:text-left animate-fade-up">
               <div className="mx-auto lg:mx-0 h-14 w-14 bg-brand text-obsidian flex items-center justify-center text-2xl font-bold">✓</div>
               <h2 className="h-display text-3xl mt-6 text-paper">Request received.</h2>
               <p className="mt-4 text-silver leading-relaxed">Thank you, {form.name.split(' ')[0]}. Your details have gone directly to the FITX team’s private lead list — they are never published anywhere. Our team will contact you on <strong className="text-paper">{form.phone}</strong> to schedule your consultation. Prefer not to wait? <a className="link-underline text-brand" href={wa(`Hello FITX, I just submitted a consultation request (${form.name}).`)} target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>.</p>
@@ -66,7 +73,7 @@ export default function BookConsultation() {
                 <button className="btn-ghost btn-sm" onClick={() => setState('idle')}>Send Another Request</button>
                 <Link to="/" className="btn-dark btn-sm">Back to Home</Link>
               </div>
-            </Reveal>
+            </div>
           ) : (
             <Reveal>
               <form onSubmit={submit} noValidate className="card p-7 sm:p-10 grid sm:grid-cols-2 gap-5">
