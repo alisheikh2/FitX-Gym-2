@@ -62,10 +62,14 @@ export default function Footer() {
           <p className="mt-3 text-sm text-silver">{BRAND.hoursWeek}<br />{BRAND.hoursFriday}</p>
           <p className="mt-3 text-sm">
             <a href={tel} className="text-paper font-semibold hover:text-brand">{BRAND.phoneDisplay}</a>
-            <span className="text-muted"> · </span>
-            <a href={wa('Hello FITX, I would like to book a consultation.')} target="_blank" rel="noopener noreferrer" className="text-brand hover:text-brand-soft">WhatsApp</a>
           </p>
-          <Link to="/book-consultation" className="btn-primary btn-sm mt-5">Book Consultation</Link>
+          <div className="mt-5 flex justify-center">
+            <a href={wa('Hello FITX, I would like to book a consultation.')} target="_blank" rel="noopener noreferrer" className="btn-primary btn-sm w-full" aria-label="Chat with FITX on WhatsApp">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.5-.3-3 .8.8-2.9-.3-.5A8 8 0 0 1 12 4zm-3.1 4.2c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.2-.2-.5-.3l-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.6-.7c.2-.2.2-.4.1-.6l-.8-1.9c-.2-.4-.4-.5-.6-.5h-.2z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+          <Link to="/book-consultation" className="btn-ghost btn-sm mt-4 w-full">Book Consultation</Link>
         </div>
       </div>
       <div className="border-t border-steel/60">

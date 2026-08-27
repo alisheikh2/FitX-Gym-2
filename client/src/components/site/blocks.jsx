@@ -19,7 +19,7 @@ export function SectionHead({ label, title, copy, align = 'left', dark = false }
 export function CTASection({
   title = 'Start with a conversation, not a contract.',
   copy = 'Book a free consultation at the studio. We will look at your goal, your schedule and your starting point — then recommend the right way to train. No pressure, no hard sell.',
-  image = '/images/fitx/trainers/fitx-founder-training-session.webp'
+  image = '/images/fitx/facility/fitx-strength-squat-rack.webp'
 }) {
   return (
     <section className="relative overflow-hidden">

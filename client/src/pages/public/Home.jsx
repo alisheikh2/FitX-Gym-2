@@ -22,7 +22,7 @@ export default function Home() {
         title="FITX Personal Fitness Training Studio — Personal Trainer in Sahiwal"
         description="FITX is Sahiwal's dedicated personal training studio in Shadman Town, Faisalabad Road. One-to-one coaching, fat loss, strength & conditioning and dedicated women's hours. Book a consultation."
         path="/"
-        image="/images/fitx/trainers/fitx-founder-training-session.webp"
+        image="/images/fitx/fitx-conditioning-medicine-ball.webp"
       />
 
       {/* HERO */}
@@ -83,7 +83,7 @@ export default function Home() {
         <div className="shell grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <Reveal className="img-zoom relative">
             <div className="aspect-[4/5] max-h-[560px] overflow-hidden">
-              <img src="/images/fitx/trainers/fitx-founder-training-session.webp" alt="Coach training with dumbbells on the FITX Sahiwal floor" width={800} height={1600} loading="lazy" decoding="async" className="h-full w-full object-cover" />
+              <img src="/images/fitx/fitx-conditioning-medicine-ball.webp" alt="Conditioning work with a medicine ball on the FITX Sahiwal turf" width={1400} height={1400} loading="lazy" decoding="async" className="h-full w-full object-cover" />
             </div>
             <div className="absolute -bottom-4 -right-4 h-24 w-24 border-b-2 border-r-2 border-brand" aria-hidden="true" />
           </Reveal>

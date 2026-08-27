@@ -13,6 +13,8 @@ import Setting from '../models/Setting.js';
 
 export async function syncTestimonials() {
   const { default: Testimonial } = await import('../models/Testimonial.js');
+  // Remove legacy duplicate transformation entries (old filenames) so journeys never repeat
+  await Testimonial.deleteMany({ image: { $regex: 'fitx-transformation-' } });
   // ---- Testimonials: real reviews & client results only (idempotent upserts) ----
   const quotes = [
     { kind: 'quote', name: 'Muhammad F.', source: 'Google Review', text: 'No doubt, FITX is one of the best personal training studios in the city. The staff is not only expert in their field but they also guide you how to be your own expert when it comes to health and fitness. They are always there to motivate you and answer any question regarding fitness.', sortOrder: 0 },

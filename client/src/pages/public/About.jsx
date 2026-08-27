@@ -65,7 +65,7 @@ export default function About() {
             </p></Reveal>
           </div>
           <div className="space-y-6">
-            <Reveal className="img-zoom overflow-hidden"><img src="/images/fitx/trainers/fitx-founder-training-session.webp" alt="Founder coaching on the FITX floor" width={800} height={1600} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover" /></Reveal>
+            <Reveal className="img-zoom overflow-hidden"><img src="/images/fitx/trainers/fitx-trainer-zohaib-ali.webp" alt="Zohaib Ali, FITX founder, training on the studio floor" width={900} height={1200} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover object-top" /></Reveal>
             <Reveal delay={100} className="card p-6">
               <p className="label">Recognition</p>
               <p className="mt-3 text-sm text-silver leading-relaxed">Zohaib Ali, FITX founder, received a token of appreciation as a guest speaker at the University of Sahiwal during the HEC-funded NRPU project “Promoting Youth-led Entrepreneurship in Underserved Areas of Pakistan” (December 2025).</p>
