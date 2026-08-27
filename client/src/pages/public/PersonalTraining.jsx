@@ -74,7 +74,7 @@ export default function PersonalTraining() {
         </div>
       </section>
 
-      <CTABand image="/images/fitx/trainers/fitx-founder-training-session.webp" title="Your first session starts with a conversation." copy="Free consultation — assessed, then recommended." />
+      <CTABand image="/images/fitx/facility/fitx-floor-turf-wide.webp" title="Your first session starts with a conversation." copy="Free consultation — assessed, then recommended." />
     </>
   );
 }

@@ -42,8 +42,8 @@ export default function Home() {
         <div className="shell grid md:grid-cols-2 gap-5">
           <Tile
             to="/about"
-            image="/images/fitx/trainers/fitx-founder-training-session.webp"
-            alt="Coach training with dumbbells on the FITX Sahiwal floor"
+            image="/images/fitx/programs/fitx-coaching-one-to-one.webp"
+            alt="FITX coach assisting a member through a dumbbell press"
             kicker="Who we are"
             title="A studio, not a crowd."
             copy="Every member trains on a written program with a coach watching."
@@ -150,7 +150,7 @@ export default function Home() {
 
       {/* RESULTS BAND */}
       <CTABand
-        image="/images/fitx/results/fitx-transformation-02.webp"
+        image="/images/fitx/fitx-conditioning-medicine-ball.webp"
         title={`Rated ${BRAND.rating.value} on Google. Proof over promises.`}
         copy="Real reviews, real transformations — shared with clients’ privacy protected."
         cta="See Results"

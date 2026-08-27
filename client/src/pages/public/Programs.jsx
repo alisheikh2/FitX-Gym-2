@@ -108,7 +108,7 @@ export default function Programs() {
         </div>
       </section>
 
-      <CTABand image="/images/fitx/trainers/fitx-founder-training-session.webp" title="Not sure which one?" copy="The consultation decides it — free." />
+      <CTABand image="/images/fitx/programs/fitx-group-session-class.webp" title="Not sure which one?" copy="The consultation decides it — free." />
     </>
   );
 }
