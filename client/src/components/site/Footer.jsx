@@ -1,0 +1,83 @@
+import { Link } from 'react-router-dom';
+import Logo from './Logo.jsx';
+import { BRAND, wa, tel } from '../../lib/brand.js';
+
+const cols = [
+  {
+    head: 'Explore',
+    links: [
+      ['About FITX', '/about'],
+      ['Trainers', '/trainers'],
+      ['Results', '/results'],
+      ['Facilities', '/facilities'],
+      ['Body Assessment', '/body-assessment'],
+      ['FAQ', '/faq'],
+      ['Blog & Guides', '/blog']
+    ]
+  },
+  {
+    head: 'Training',
+    links: [
+      ['Personal Training', '/personal-training'],
+      ['Weight Loss & Fat Loss', '/weight-loss'],
+      ['Strength & Conditioning', '/strength-conditioning'],
+      ["Women's Fitness", '/womens-fitness'],
+      ['Membership & Pricing', '/programs'],
+      ['Book a Consultation', '/book-consultation']
+    ]
+  }
+];
+
+export default function Footer() {
+  return (
+    <footer className="bg-deep border-t border-steel/60">
+      <div className="shell py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+        <div>
+          <Logo />
+          <p className="mt-4 text-sm text-silver leading-relaxed max-w-xs">{BRAND.tagline}</p>
+          <div className="mt-5 flex gap-3">
+            <a href={BRAND.facebook} target="_blank" rel="noopener noreferrer" aria-label="FITX on Facebook" className="h-10 w-10 border border-steel flex items-center justify-center text-silver hover:text-brand hover:border-brand transition-colors">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 22v-8h3l.5-4H13V7.5c0-1.1.3-1.5 1.7-1.5H16.6V2.2C15.9 2.1 14.7 2 13.6 2 10.6 2 9 3.7 9 7v3H6v4h3v8h4z"/></svg>
+            </a>
+            <a href={BRAND.instagram} target="_blank" rel="noopener noreferrer" aria-label="FITX on Instagram" className="h-10 w-10 border border-steel flex items-center justify-center text-silver hover:text-brand hover:border-brand transition-colors">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.7 0 3 .01 4.1.06 1.1.05 1.8.22 2.5.49.7.26 1.3.62 1.9 1.2.6.6.95 1.2 1.2 1.9.27.7.44 1.4.49 2.5.05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1.1-.22 1.8-.49 2.5-.26.7-.62 1.3-1.2 1.9-.6.6-1.2.95-1.9 1.2-.7.27-1.4.44-2.5.49-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1.1-.05-1.8-.22-2.5-.49-.7-.26-1.3-.62-1.9-1.2-.6-.6-.95-1.2-1.2-1.9-.27-.7-.44-1.4-.49-2.5C2.01 15 2 14.7 2 12s.01-3 .06-4.1c.05-1.1.22-1.8.49-2.5.26-.7.62-1.3 1.2-1.9.6-.6 1.2-.95 1.9-1.2.7-.27 1.4-.44 2.5-.49C9 2.01 9.3 2 12 2zm0 4.9a5.1 5.1 0 1 0 0 10.2 5.1 5.1 0 0 0 0-10.2zm0 2a3.1 3.1 0 1 1 0 6.2 3.1 3.1 0 0 1 0-6.2zm5.3-3.1a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg>
+            </a>
+          </div>
+        </div>
+        {cols.map((c) => (
+          <nav key={c.head} aria-label={c.head}>
+            <h3 className="label mb-4">{c.head}</h3>
+            <ul className="space-y-2.5">
+              {c.links.map(([label, to]) => (
+                <li key={to}><Link to={to} className="text-sm text-silver hover:text-brand transition-colors">{label}</Link></li>
+              ))}
+            </ul>
+          </nav>
+        ))}
+        <div>
+          <h3 className="label mb-4">Visit the Studio</h3>
+          <address className="not-italic text-sm text-silver leading-relaxed">
+            {BRAND.address}
+          </address>
+          <p className="mt-3 text-sm text-silver">{BRAND.hoursWeek}<br />{BRAND.hoursFriday}</p>
+          <p className="mt-3 text-sm">
+            <a href={tel} className="text-paper font-semibold hover:text-brand">{BRAND.phoneDisplay}</a>
+            <span className="text-muted"> · </span>
+            <a href={wa('Hello FITX, I would like to book a consultation.')} target="_blank" rel="noopener noreferrer" className="text-brand hover:text-brand-soft">WhatsApp</a>
+          </p>
+          <Link to="/book-consultation" className="btn-primary btn-sm mt-5">Book Consultation</Link>
+        </div>
+      </div>
+      <div className="border-t border-steel/60">
+        <div className="shell py-5 flex flex-col sm:flex-row gap-3 items-center justify-between text-xs text-muted">
+          <p>© {new Date().getFullYear()} {BRAND.fullName}, Sahiwal. All rights reserved.</p>
+          <p className="flex gap-5">
+            <Link to="/privacy-policy" className="hover:text-silver">Privacy Policy</Link>
+            <Link to="/terms-and-conditions" className="hover:text-silver">Terms & Conditions</Link>
+            <Link to="/admin" className="hover:text-silver">Staff Login</Link>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
