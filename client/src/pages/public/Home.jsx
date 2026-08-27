@@ -108,9 +108,8 @@ export default function Home() {
               </div>
             </Reveal>
           </div>
-          <Reveal delay={120} className="grid grid-cols-2 gap-4">
-            <img src="/images/fitx/trainers/fitx-trainer-zohaib-ali.webp" alt="Zohaib Ali training at FITX Sahiwal" width={900} height={1200} loading="lazy" decoding="async" className="w-full aspect-[3/4] object-cover object-top" />
-            <img src="/images/fitx/facility/fitx-strength-squat-rack.webp" alt="Squat rack at FITX Sahiwal" width={1200} height={1066} loading="lazy" decoding="async" className="w-full aspect-[3/4] object-cover mt-8" />
+          <Reveal delay={120} className="overflow-hidden">
+            <img src="/images/fitx/trainers/fitx-trainer-zohaib-ali.webp" alt="Zohaib Ali training at FITX Sahiwal" width={900} height={1200} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover object-top" />
           </Reveal>
         </div>
       </section>
