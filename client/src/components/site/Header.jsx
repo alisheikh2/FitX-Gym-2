@@ -36,31 +36,42 @@ export default function Header() {
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-brand focus:text-white focus:px-4 focus:py-2 focus:font-bold">
         Skip to content
       </a>
-      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur shadow-card' : 'bg-gradient-to-b from-black/50 to-transparent'}`}>
-        <div className={`shell flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-14' : 'h-[4.5rem]'}`}>
-          <Logo compact={scrolled} onDark={!scrolled} />
-          <nav aria-label="Primary" className="hidden lg:flex items-center gap-6">
+      {/* top bar — reference style */}
+      <div className="fixed inset-x-0 top-0 z-40 bg-navy text-white/80 hidden md:block">
+        <div className="shell flex items-center justify-between h-9 text-[11px] font-semibold tracking-wide">
+          <p className="uppercase">Shadman Town, Faisalabad Road, Sahiwal · Sat–Thu 11am–10pm</p>
+          <div className="flex items-center gap-4">
+            <a href={BRAND.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-brand">FB</a>
+            <a href={BRAND.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-brand">IG</a>
+            <a href={tel} className="hover:text-brand">SAHIWAL STUDIO: {BRAND.phoneDisplay}</a>
+          </div>
+        </div>
+      </div>
+
+      <header className={`fixed inset-x-0 z-50 transition-all duration-300 md:top-9 top-0 ${scrolled ? 'bg-white shadow-card' : 'bg-white'}`}>
+        <div className={`shell flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-14' : 'h-16 md:h-20'}`}>
+          <Logo compact={scrolled} />
+          <nav aria-label="Primary" className="hidden lg:flex items-center gap-7">
             {NAV.map((n) => (
               <NavLink
                 key={n.to}
                 to={n.to}
                 className={({ isActive }) =>
-                  `font-display text-[12px] font-bold uppercase tracking-wider transition-colors ${isActive ? 'text-brand' : scrolled ? 'text-navy hover:text-brand' : 'text-white hover:text-brand'}`
+                  `font-display text-[12px] font-bold uppercase tracking-[0.14em] transition-colors ${isActive ? 'text-brand' : 'text-navy hover:text-brand'}`
                 }
               >
                 {n.label}
               </NavLink>
             ))}
-            <a href={tel} className={`font-display text-[12px] font-bold uppercase tracking-wider ${scrolled ? 'text-navy hover:text-brand' : 'text-white hover:text-brand'}`}>{BRAND.phoneDisplay}</a>
             <Link to="/book-consultation" className="btn-primary btn-sm">Join Now</Link>
           </nav>
           <button
-            className={`lg:hidden flex flex-col justify-center items-end gap-1.5 h-11 w-11 ${scrolled ? '' : ''}`}
+            className="lg:hidden flex flex-col justify-center items-end gap-1.5 h-11 w-11"
             onClick={() => setOpen(true)}
             aria-label="Open menu"
             aria-expanded={open}
           >
-            <span className={`block h-0.5 w-7 ${scrolled ? 'bg-navy' : 'bg-white'}`} />
+            <span className="block h-0.5 w-7 bg-navy" />
             <span className="block h-0.5 w-5 bg-brand" />
           </button>
         </div>

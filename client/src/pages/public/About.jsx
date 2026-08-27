@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
-import { PageHero, Tile, CTABand, SectionHead } from '../../components/site/blocks.jsx';
+import { PageHero, ImageCard, CTABand, SectionHead } from '../../components/site/blocks.jsx';
 
 export default function About() {
   return (
@@ -69,7 +69,7 @@ export default function About() {
       {/* Story tiles */}
       <section className="pb-16 sm:pb-24">
         <div className="shell grid md:grid-cols-2 gap-5">
-          <Tile
+          <ImageCard
             to="/trainers/zohaib-ali"
             image="/images/fitx/trainers/fitx-trainer-zohaib-ali.webp"
             alt="Zohaib Ali, founder of FITX Sahiwal, training in the studio"
@@ -77,7 +77,7 @@ export default function About() {
             title="Zohaib Ali"
             copy="Built FITX so no member trains alone. Guest speaker, University of Sahiwal."
           />
-          <Tile
+          <ImageCard
             to="/facilities"
             image="/images/fitx/facility/fitx-facility-floor-02.webp"
             alt="The FITX Sahiwal training floor"
