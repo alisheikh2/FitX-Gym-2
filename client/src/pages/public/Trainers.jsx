@@ -30,7 +30,7 @@ export default function Trainers() {
           <Reveal className="shell mt-10 card p-10 text-center text-silver">Trainer profiles are being updated. Please check back shortly.</Reveal>
         )}
       </section>
-      <CTABand image="/images/fitx/facility/fitx-facility-floor-02.webp" title="Train with a coach who knows your name." copy="Book a free consultation and get matched." />
+      <CTABand image="/images/fitx/interior-premium.jpg" title="Train with a coach who knows your name." copy="Book a free consultation and get matched." />
     </>
   );
 }

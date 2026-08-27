@@ -58,7 +58,7 @@ export default function BookConsultation() {
         label="Book a Consultation"
         title="Start with a conversation."
         copy="Tell us your goal and when you can train. Our team will contact you to schedule your consultation at the studio — free, and without obligation."
-        image="/images/fitx/community/fitx-gym-gathering-2.webp"
+        image="/images/fitx/hero-coaching.jpg"
         crumbs={[['Book a Consultation', null]]}
       />
 

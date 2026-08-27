@@ -1,6 +1,85 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import Reveal from '../ui/Reveal.jsx';
 import { wa } from '../../lib/brand.js';
+
+/** Revolution-slider style hero: 3 high-quality slides, auto-rotating dynamic content. */
+export function HeroSlider() {
+  const slides = [
+    {
+      img: '/images/fitx/hero-ropes.jpg',
+      kicker: 'Shadman Town · Sahiwal',
+      title: 'The most serious training studio in Sahiwal',
+      sub: 'Strength, conditioning and fat loss — coached with precision, session after session.'
+    },
+    {
+      img: '/images/fitx/hero-coaching.jpg',
+      kicker: 'Personal training',
+      title: 'One coach. One plan. Your results.',
+      sub: 'Every session coached one-to-one — from your first consultation to your final rep.'
+    },
+    {
+      img: '/images/fitx/hero-women.jpg',
+      kicker: 'Women’s performance',
+      title: 'Dedicated hours. Dedicated coach.',
+      sub: 'Women train 10:30–1 & 3–6 daily with coach Iqra Zahid — strength, fat loss, confidence.'
+    }
+  ];
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const t = setInterval(() => setI((v) => (v + 1) % slides.length), 6000);
+    return () => clearInterval(t);
+  }, [slides.length]);
+
+  return (
+    <section className="relative min-h-[92svh] flex items-end overflow-hidden" aria-roledescription="carousel" aria-label="FITX highlights">
+      {slides.map((s, idx) => (
+        <img
+          key={s.img}
+          src={s.img}
+          alt=""
+          aria-hidden="true"
+          loading={idx === 0 ? 'eager' : 'lazy'}
+          decoding="async"
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ${idx === i ? 'opacity-100' : 'opacity-0'}`}
+        />
+      ))}
+      <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30" aria-hidden="true" />
+
+      <div className="shell relative w-full pb-20 sm:pb-24 pt-44 md:pt-52">
+        <div key={i} className="animate-fade-up max-w-3xl">
+          <p className="font-display text-[12px] font-bold uppercase tracking-[0.28em] text-white/80">{slides[i].kicker}</p>
+          <h1 className="font-display font-extrabold uppercase text-white text-4xl sm:text-6xl lg:text-7xl leading-[1.04] tracking-tight mt-3">{slides[i].title}</h1>
+          <p className="mt-5 max-w-xl text-base sm:text-lg text-white/85 leading-relaxed">{slides[i].sub}</p>
+          <div className="mt-9 flex flex-wrap gap-4">
+            <Link to="/book-consultation" className="btn-primary">Book a Consultation</Link>
+            <Link to="/personal-training" className="btn btn-ghost !border-white/50 !text-white hover:!border-brand hover:!text-brand">Explore Training</Link>
+          </div>
+        </div>
+
+        {/* controls */}
+        <div className="mt-12 flex items-center gap-5">
+          <button onClick={() => setI((i - 1 + slides.length) % slides.length)} aria-label="Previous slide" className="h-11 w-11 border border-white/30 text-white hover:border-brand hover:text-brand transition-colors font-display">←</button>
+          <button onClick={() => setI((i + 1) % slides.length)} aria-label="Next slide" className="h-11 w-11 border border-white/30 text-white hover:border-brand hover:text-brand transition-colors font-display">→</button>
+          <div className="flex gap-2" role="tablist" aria-label="Slides">
+            {slides.map((s, idx) => (
+              <button
+                key={s.img}
+                onClick={() => setI(idx)}
+                role="tab"
+                aria-selected={idx === i}
+                aria-label={`Slide ${idx + 1}`}
+                className={`h-1 transition-all duration-500 ${idx === i ? 'w-10 bg-brand' : 'w-5 bg-white/40 hover:bg-white/70'}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 /** Reference-style kicker + uppercase heading */
 export function SectionHead({ label, title, copy, center = false }) {

@@ -4,18 +4,13 @@ import { BRAND } from '../../lib/brand.js';
 import { PageHero, CTABand, SectionHead } from '../../components/site/blocks.jsx';
 
 const GALLERY = [
-  ['/images/fitx/facility/fitx-facility-floor-02.webp', 'The main floor — free weights, cables, turf strip and boxing zone.'],
+  ['/images/fitx/interior-premium.jpg', 'The boutique studio — racks, turf strip and machine line.'],
+  ['/images/fitx/facility/fitx-facility-floor-02.webp', 'The main floor — free weights, cables and boxing zone.'],
   ['/images/fitx/facility/fitx-strength-squat-rack.webp', 'Racks and barbells for squat, press and hinge work.'],
-  ['/images/fitx/fitx-conditioning-medicine-ball.webp', 'Conditioning turf — sleds, medicine balls, intervals.'],
+  ['/images/fitx/fitx-conditioning-medicine-ball.webp', 'Conditioning turf — medicine balls, sleds, intervals.'],
   ['/images/fitx/facility/fitx-floor-turf-wide.webp', 'The turf strip running the length of the studio.'],
-  ['/images/fitx/facility/fitx-machine-line.webp', 'Machine line covering every movement pattern.'],
-  ['/images/fitx/facility/fitx-member-machine.webp', 'Members on the machine line — coached, never crowded.'],
-  ['/images/fitx/facility/fitx-turf-dumbbell-row.webp', 'Dumbbell work out on the turf.'],
-  ['/images/fitx/facility/fitx-dumbbell-rdl.webp', 'Hinge patterns, coached on form.'],
   ['/images/fitx/facility/fitx-battle-ropes.webp', 'Battle-rope finishers.'],
-  ['/images/fitx/facility/fitx-ropes-red.webp', 'High-intensity conditioning sessions.'],
-  ['/images/fitx/facility/fitx-facility-floor-01.webp', 'Functional corner — medicine balls and accessories.'],
-  ['/images/fitx/facility/fitx-facility-floor-06.webp', 'Cable crossover station.']
+  ['/images/fitx/facility/fitx-dumbbell-rdl.webp', 'Hinge patterns, coached on form.']
 ];
 
 export default function Facilities() {

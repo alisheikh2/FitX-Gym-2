@@ -3,7 +3,7 @@ import Seo from '../../lib/Seo.jsx';
 import { useFetch } from '../../lib/hooks.js';
 import { BRAND, wa, tel } from '../../lib/brand.js';
 import Reveal from '../../components/ui/Reveal.jsx';
-import { PageHero, ImageCard, CTABand, Quote, SectionHead, TrainerCard } from '../../components/site/blocks.jsx';
+import { HeroSlider, ImageCard, CTABand, Quote, SectionHead, TrainerCard } from '../../components/site/blocks.jsx';
 
 export default function Home() {
   const { data: trainers } = useFetch('/trainers');
@@ -16,17 +16,12 @@ export default function Home() {
         title="FITX Personal Fitness Training Studio — Personal Trainer in Sahiwal"
         description="FITX is Sahiwal's dedicated personal training studio in Shadman Town, Faisalabad Road. One-to-one coaching, fat loss, strength & conditioning and dedicated women's hours. Book a consultation."
         path="/"
-        image="/images/fitx/facility/fitx-facility-floor-02.webp"
+        image="/images/fitx/hero-ropes.jpg"
       />
 
-      {/* HERO */}
-      <PageHero
-        tall
-        label="Shadman Town · Sahiwal"
-        title="Sahiwal’s most serious training studio"
-        copy="Personal training, fat loss, strength & women’s performance — coached session after session."
-        image="/images/fitx/facility/fitx-facility-floor-02.webp"
-      />
+      {/* AUTO-ROTATING HERO */}
+      <HeroSlider />
+
       <div className="bg-brand text-white">
         <div className="shell py-3 flex flex-wrap items-center justify-center gap-x-8 gap-y-1 font-display text-[12px] font-bold uppercase tracking-[0.14em]">
           <a href={tel} className="hover:underline">{BRAND.phoneDisplay}</a>
@@ -37,36 +32,36 @@ export default function Home() {
         </div>
       </div>
 
-      {/* TWO-UP CARDS — reference style */}
+      {/* WHO WE ARE / WOMEN — two premium cards */}
       <section className="py-16 sm:py-24">
         <div className="shell grid md:grid-cols-2 gap-10">
           <ImageCard
             to="/about"
-            image="/images/fitx/programs/fitx-coaching-one-to-one.webp"
-            alt="FITX coach assisting a member through a dumbbell press"
+            image="/images/fitx/interior-premium.jpg"
+            alt="The FITX boutique training studio floor in Sahiwal"
             kicker="Who we are"
-            title="Boutique coaching"
-            copy="FITX is a personal training studio, not a crowded hall. Every member starts with a consultation, trains on a written program, and is coached session after session — technique watched, progress recorded."
+            title="Boutique studio"
+            copy="A personal training studio, not a crowded hall. Assessment first, written programs, coached technique and tracked progress — the FITX standard."
           />
           <ImageCard
             to="/womens-fitness"
-            image="/images/fitx/trainers/fitx-trainer-iqra-zahid.webp"
-            alt="Iqra Zahid coaching at FITX Sahiwal"
+            image="/images/fitx/hero-women.jpg"
+            alt="Women's performance training at FITX Sahiwal"
             kicker="Women’s training"
             title="Dedicated hours"
-            copy="Women train with coach Iqra Zahid — seven years of experience — during dedicated female hours, 10:30–1 and 3–6 daily. Strength and fat-loss programming in a safe, respectful studio."
+            copy="Coach Iqra Zahid — seven years of experience — trains women 10:30–1 & 3–6 daily. Strength and fat loss, coached properly, in a safe studio."
           />
         </div>
       </section>
 
-      {/* OUR PROGRAMS — split like reference */}
+      {/* OUR PROGRAMS */}
       <section className="py-16 sm:py-24 bg-deep border-y border-steel">
         <div className="shell grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <SectionHead
               label="What we do"
               title="Our programs"
-              copy="One-to-one and group programs built on assessment: your starting point measured, your program written, your progress tracked through controlled cycles of stress, disruption and adaptation."
+              copy="Built on a full assessment: your starting point measured, your program written, your progress pushed through controlled cycles of stress and adaptation — to your unique potential."
             />
             <Reveal delay={80}>
               <ul className="mt-8 divide-y divide-steel border-y border-steel">
@@ -92,26 +87,26 @@ export default function Home() {
           </div>
           <Reveal delay={100} className="grid gap-5">
             <div className="overflow-hidden">
-              <img src="/images/fitx/fitx-conditioning-medicine-ball.webp" alt="Conditioning work with a medicine ball on the FITX turf" width={1600} height={940} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
+              <img src="/images/fitx/hero-ropes.jpg" alt="High-intensity conditioning at FITX Sahiwal" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
             </div>
             <div className="overflow-hidden">
-              <img src="/images/fitx/programs/fitx-group-session-class.webp" alt="A coached group class on mats at FITX Sahiwal" width={1280} height={960} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
+              <img src="/images/fitx/programs/fitx-group-session-class.webp" alt="A coached group class at FITX Sahiwal" width={1280} height={960} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* OUR COACHES — split + grid like reference */}
+      {/* OUR COACHES */}
       <section className="py-16 sm:py-24">
         <div className="shell grid lg:grid-cols-2 gap-12 items-center">
           <Reveal className="overflow-hidden order-2 lg:order-1">
-            <img src="/images/fitx/trainers/fitx-trainer-zohaib-ali.webp" alt="Zohaib Ali training at FITX Sahiwal" width={900} height={1200} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover object-top" />
+            <img src="/images/fitx/hero-coaching.jpg" alt="One-to-one coaching at FITX Sahiwal" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover" />
           </Reveal>
           <div className="order-1 lg:order-2">
             <SectionHead
               label="Personal training"
               title="Our coaches"
-              copy="FITX programs combined with excellent coaching guarantee results. Our coaches don’t just challenge you — they invest in you, session after session."
+              copy="FITX programs combined with excellent coaching guarantee results. Our coaches don’t just challenge you — they invest in you."
             />
             <Reveal delay={80}>
               <div className="mt-8">
@@ -125,7 +120,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIALS — reference style */}
+      {/* TESTIMONIALS */}
       <section className="py-16 sm:py-24 bg-deep border-y border-steel">
         <div className="shell">
           <SectionHead center label="Client testimonials" title="In their words" />
@@ -138,7 +133,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MEMBERSHIP STRIP */}
+      {/* MEMBERSHIP */}
       <section className="py-16 sm:py-24">
         <div className="shell">
           <SectionHead center label="Membership" title="Clear programs. Published rates." copy="Group Session Rs 8,500/month · One-to-One Rs 16,000/month · 3 months with 10% off." />
@@ -163,7 +158,7 @@ export default function Home() {
       </section>
 
       <CTABand
-        image="/images/fitx/community/fitx-gym-gathering-5.webp"
+        image="/images/fitx/hero-coaching.jpg"
         title="Start with a conversation"
         copy="Free consultation at the studio. We assess, you decide."
         waText="Hello FITX, I would like to book a consultation."

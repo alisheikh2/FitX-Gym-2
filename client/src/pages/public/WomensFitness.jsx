@@ -48,7 +48,7 @@ export default function WomensFitness() {
             </Reveal>
           </div>
           <Reveal delay={100} className="overflow-hidden">
-            <img src="/images/fitx/fitx-education-session-2.webp" alt="Education session at FITX with women members attending" width={1400} height={1050} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+            <img src="/images/fitx/hero-women.jpg" alt="Education session at FITX with women members attending" width={1400} height={1050} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
           </Reveal>
         </div>
       </section>

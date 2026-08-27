@@ -48,7 +48,7 @@ export default function PersonalTraining() {
       <section className="py-16 sm:py-24 bg-deep border-y border-steel/50">
         <div className="shell grid lg:grid-cols-2 gap-12 items-center">
           <Reveal className="overflow-hidden order-2 lg:order-1">
-            <img src="/images/fitx/fitx-coaching-education-session.webp" alt="FITX coach running an education session in the studio" width={1400} height={1050} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+            <img src="/images/fitx/hero-coaching.jpg" alt="FITX coach running an education session in the studio" width={1400} height={1050} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
           </Reveal>
           <div className="order-1 lg:order-2">
             <SectionHead
@@ -74,7 +74,7 @@ export default function PersonalTraining() {
         </div>
       </section>
 
-      <CTABand image="/images/fitx/facility/fitx-floor-turf-wide.webp" title="Your first session starts with a conversation." copy="Free consultation — assessed, then recommended." />
+      <CTABand image="/images/fitx/hero-ropes.jpg" title="Your first session starts with a conversation." copy="Free consultation — assessed, then recommended." />
     </>
   );
 }

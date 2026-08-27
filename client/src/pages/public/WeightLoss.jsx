@@ -62,7 +62,7 @@ export default function WeightLoss() {
         </section>
       )}
 
-      <CTABand image="/images/fitx/facility/fitx-ropes-red.webp" title="The consultation costs nothing. Guessing costs months." copy="Get measured, get a realistic timeline, then decide." />
+      <CTABand image="/images/fitx/hero-ropes.jpg" title="The consultation costs nothing. Guessing costs months." copy="Get measured, get a realistic timeline, then decide." />
     </>
   );
 }

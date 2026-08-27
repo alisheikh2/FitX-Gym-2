@@ -10,7 +10,7 @@ export default function About() {
         title="About FITX — Personal Fitness Training Studio in Sahiwal"
         description="The story of FITX Personal Fitness Training Studio: Sahiwal's boutique personal training studio built around coaching, accountability and respect. Shadman Town, Faisalabad Road."
         path="/about"
-        image="/images/fitx/community/fitx-gym-gathering-5.webp"
+        image="/images/fitx/interior-premium.jpg"
       />
       <PageHero
         label="About FITX"
@@ -95,13 +95,13 @@ export default function About() {
           <Reveal className="mt-10 overflow-hidden">
             <img src="/images/fitx/community/fitx-gym-gathering-banner.webp" alt="FITX Sahiwal members together at a community gathering" width={1600} height={372} loading="lazy" decoding="async" className="w-full object-cover" />
           </Reveal>
-          <div className="mt-5 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4">
             <Reveal className="overflow-hidden">
               <img src="/images/fitx/community/fitx-senior-member-training.webp" alt="A senior member training on a machine at FITX Sahiwal" width={1200} height={1600} loading="lazy" decoding="async" className="w-full aspect-square object-cover object-top" />
             </Reveal>
-            {[1, 2, 4, 5, 26, 24].map((n, i) => (
-              <Reveal key={n} delay={i * 60} className="overflow-hidden">
-                <img src={n >= 20 ? `/images/fitx/community/${n === 26 ? 'fitx-hoodies' : 'fitx-motivation-quote'}.webp` : `/images/fitx/community/fitx-gym-gathering-${n}.webp`} alt={`FITX Sahiwal community moment`} width={1000} height={1333} loading="lazy" decoding="async" className="w-full aspect-square object-cover" />
+            {[['fitx-gym-gathering-banner', 'FITX members together at a community gathering'], ['fitx-senior-member-training', 'A senior member training at FITX Sahiwal'], ['fitx-gym-gathering-5', 'FITX Sahiwal members at a community gathering']].map(([f, a], i) => (
+              <Reveal key={f} delay={i * 60} className="overflow-hidden">
+                <img src={`/images/fitx/community/${f}.webp`} alt={a} width={1200} height={900} loading="lazy" decoding="async" className="w-full aspect-square object-cover" />
               </Reveal>
             ))}
           </div>

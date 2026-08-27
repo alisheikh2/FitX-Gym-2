@@ -10,13 +10,13 @@ export default function Nutrition() {
         title="Nutrition & Fitness Guidance for Sahiwal | FITX"
         description="Practical nutrition guidance from FITX Sahiwal's coaches: portions for Pakistani homes, protein on a budget, and the habits that move the scale."
         path="/nutrition"
-        image="/images/fitx/fitx-coaching-education-session.webp"
+        image="/images/fitx/hero-coaching.jpg"
       />
       <PageHero
         label="Nutrition"
         title="Guidance you can eat at home."
         copy="No superfoods. No detox teas. Just structure."
-        image="/images/fitx/fitx-coaching-education-session.webp"
+        image="/images/fitx/hero-coaching.jpg"
         crumbs={[['Nutrition', null]]}
       />
 

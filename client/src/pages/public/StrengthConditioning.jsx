@@ -50,13 +50,13 @@ export default function StrengthConditioning() {
               <img src="/images/fitx/fitx-conditioning-medicine-ball.webp" alt="Conditioning work with a medicine ball on the FITX turf" width={1400} height={820} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
             </Reveal>
             <Reveal delay={80} className="overflow-hidden">
-              <img src="/images/fitx/facility/fitx-battle-ropes.webp" alt="Battle-rope conditioning at FITX Sahiwal" width={900} height={1600} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
+              <img src="/images/fitx/hero-ropes.jpg" alt="Battle-rope conditioning at FITX Sahiwal" width={900} height={1600} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
             </Reveal>
           </div>
         </div>
       </section>
 
-      <CTABand image="/images/fitx/facility/fitx-strength-squat-rack.webp" title="Stronger is a plan, not a mood." copy="Coached form from day one." />
+      <CTABand image="/images/fitx/hero-coaching.jpg" title="Stronger is a plan, not a mood." copy="Coached form from day one." />
     </>
   );
 }

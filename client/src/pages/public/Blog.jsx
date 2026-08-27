@@ -13,13 +13,13 @@ export default function Blog() {
         title="Fitness Guides & Blog — FITX Sahiwal"
         description="Practical fitness reading from Sahiwal's coaches: choosing a personal trainer, fat loss vs weight loss, beginner strength training, Pakistani nutrition basics and more."
         path="/blog"
-        image="/images/fitx/fitx-coaching-education-session.webp"
+        image="/images/fitx/hero-coaching.jpg"
       />
       <PageHero
         label="Resources"
         title="Reading that respects your time."
         copy="Guides written by FITX coaches for real questions asked in Sahiwal — no filler, no fake science, no motivation porn."
-        image="/images/fitx/fitx-coaching-education-session.webp"
+        image="/images/fitx/hero-coaching.jpg"
         crumbs={[['Resources', null]]}
       />
       <section className="py-16 sm:py-24">

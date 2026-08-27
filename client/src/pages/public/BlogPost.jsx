@@ -65,7 +65,7 @@ export default function BlogPost() {
           </Reveal>
         </div>
       </article>
-      <CTABand image="/images/fitx/facility/fitx-facility-floor-02.webp" title="Questions about your own situation?" copy="Ask a coach — it’s free." />
+      <CTABand image="/images/fitx/interior-premium.jpg" title="Questions about your own situation?" copy="Ask a coach — it’s free." />
     </>
   );
 }

@@ -48,23 +48,7 @@ export default function Results() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-deep border-y border-steel/50">
-        <div className="shell">
-          <SectionHead label="The wall of proof" title="Every testimonial FITX shares." />
-          <div className="mt-10 columns-2 sm:columns-3 lg:columns-4 gap-4 [column-fill:_balance]">
-            {transforms.filter((t) => t.result === 'Client testimonial shared by FITX').map((t, i) => (
-              <Reveal key={t._id} delay={(i % 4) * 50} className="mb-4 break-inside-avoid">
-                <figure>
-                  <div className="overflow-hidden">
-                    <img src={t.image} alt={t.imageAlt || `${t.name} — FITX client testimonial`} width={800} height={800} loading="lazy" decoding="async" className="w-full object-cover" />
-                  </div>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal className="mt-6"><p className="text-xs text-muted">Identities protected. Results vary with consistency, training and nutrition.</p></Reveal>
-        </div>
-      </section>
+      
 
       <section className="py-16 sm:py-24">
         <div className="shell">
