@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Reveal from '../ui/Reveal.jsx';
 import { wa } from '../../lib/brand.js';
 
-/** Revolution-slider style hero: 3 high-quality slides, auto-rotating dynamic content. */
+/** Revolution-slider style hero (home only): text over slider is the reference’s own pattern. */
 export function HeroSlider() {
   const slides = [
     {
@@ -58,8 +58,6 @@ export function HeroSlider() {
             <Link to="/personal-training" className="btn btn-ghost !border-white/50 !text-white hover:!border-brand hover:!text-brand">Explore Training</Link>
           </div>
         </div>
-
-        {/* controls */}
         <div className="mt-12 flex items-center gap-5">
           <button onClick={() => setI((i - 1 + slides.length) % slides.length)} aria-label="Previous slide" className="h-11 w-11 border border-white/30 text-white hover:border-brand hover:text-brand transition-colors font-display">←</button>
           <button onClick={() => setI((i + 1) % slides.length)} aria-label="Next slide" className="h-11 w-11 border border-white/30 text-white hover:border-brand hover:text-brand transition-colors font-display">→</button>
@@ -81,12 +79,11 @@ export function HeroSlider() {
   );
 }
 
-/** Reference-style kicker + uppercase heading */
 export function SectionHead({ label, title, copy, center = false }) {
   return (
     <Reveal className={`max-w-2xl ${center ? 'mx-auto text-center' : ''}`}>
       {label && (
-        <p className={`font-display text-[12px] font-bold uppercase tracking-[0.28em] text-silver ${center ? '' : ''}`}>
+        <p className="font-display text-[12px] font-bold uppercase tracking-[0.28em] text-silver">
           <span className="text-brand mr-2" aria-hidden="true">#####</span>{label}
         </p>
       )}
@@ -96,70 +93,62 @@ export function SectionHead({ label, title, copy, center = false }) {
   );
 }
 
-export function PageHero({ label, title, copy, image, cta, ctaTo, crumbs, tall = false }) {
+/** Inner-page banner — reference style: plain dark banner, numbered breadcrumb, NO photo. */
+export function PageHero({ title, copy, crumbs, cta, ctaTo }) {
   return (
-    <section className={`relative flex items-end overflow-hidden ${tall ? 'min-h-[92svh]' : 'min-h-[46svh] sm:min-h-[52svh]'}`}>
-      <img src={image} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" loading="eager" decoding="async" />
-      <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
-      <div className={`shell relative w-full ${tall ? 'pb-16 sm:pb-24 pt-44 md:pt-52' : 'pb-10 sm:pb-14 pt-36 md:pt-44'}`}>
+    <section className="bg-navy">
+      <div className="shell pt-32 md:pt-36 pb-12 sm:pb-16">
         <Reveal>
-          {label && <p className="font-display text-[12px] font-bold uppercase tracking-[0.28em] text-white/80">{label}</p>}
-          <h1 className={`font-display font-extrabold uppercase text-white mt-2 max-w-4xl ${tall ? 'text-4xl sm:text-6xl lg:text-7xl leading-[1.04]' : 'text-3xl sm:text-5xl leading-[1.08]'} tracking-tight`}>{title}</h1>
-          {copy && <p className={`mt-4 max-w-xl text-white/85 leading-relaxed ${tall ? 'text-base sm:text-lg' : 'text-[15px]'}`}>{copy}</p>}
-          {tall && (
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Link to="/book-consultation" className="btn-primary">Book a Consultation</Link>
-              <Link to="/personal-training" className="btn btn-ghost !border-white/50 !text-white hover:!border-brand hover:!text-brand">Explore Training</Link>
-            </div>
+          <h1 className="font-display font-extrabold uppercase text-white text-3xl sm:text-5xl tracking-tight">{title}</h1>
+          {crumbs && (
+            <nav aria-label="Breadcrumb" className="mt-4">
+              <ol className="flex flex-wrap items-center gap-3 font-display text-[11px] font-bold uppercase tracking-[0.18em] text-white/50">
+                <li><span className="text-brand">1.</span> <Link to="/" className="hover:text-brand">Home</Link></li>
+                {crumbs.map(([label], idx) => (
+                  <li key={label}><span className="text-brand">{idx + 2}.</span> <span className="text-white/80" aria-current="page">{label}</span></li>
+                ))}
+              </ol>
+            </nav>
           )}
-          {cta && ctaTo && !tall && (
-            <div className="mt-6 flex flex-wrap gap-4">
+          {copy && <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-white/70">{copy}</p>}
+          {cta && ctaTo && (
+            <div className="mt-7 flex flex-wrap gap-4">
               <Link to={ctaTo} className="btn-primary">{cta}</Link>
             </div>
           )}
         </Reveal>
       </div>
-      {crumbs && (
-        <div className="absolute top-0 inset-x-0 pt-32 md:pt-40">
-          <div className="shell"><Breadcrumbs items={crumbs} dark /></div>
-        </div>
-      )}
     </section>
   );
 }
 
-/** Reference’s two-up image card: title bar over image + paragraph + read more */
+/** Reference two-up card: clean image, title row + paragraph BELOW — never on top. */
 export function ImageCard({ to, image, alt, kicker, title, copy }) {
   return (
     <Reveal className="h-full">
       <Link to={to} className="group block h-full">
-        <div className="relative overflow-hidden">
+        <div className="overflow-hidden">
           <img src={image} alt={alt} width={1200} height={600} loading="lazy" decoding="async" className="w-full aspect-[2/1] object-cover transition-transform duration-[1.4s] group-hover:scale-[1.05]" />
-          <div className="absolute inset-x-0 bottom-0 bg-navy/85 px-5 sm:px-6 py-3.5 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-            {kicker && <span className="font-display text-[11px] font-bold uppercase tracking-[0.2em] text-brand">{kicker}</span>}
-            <span className="font-display font-extrabold uppercase text-white text-lg sm:text-xl">{title}</span>
-          </div>
         </div>
         <div className="pt-5">
-          <p className="text-[15px] text-silver leading-relaxed">{copy}</p>
-          <span className="mt-3 inline-flex items-center gap-2 font-display text-[12px] font-bold uppercase tracking-[0.14em] text-navy group-hover:text-brand transition-colors">
-            Read more <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
-          </span>
+          <h3 className="font-display font-extrabold uppercase text-lg sm:text-xl text-navy group-hover:text-brand transition-colors leading-snug">
+            <span className="text-brand">{kicker}</span> <span className="mx-1 text-steel" aria-hidden="true">/</span> {title}
+          </h3>
+          <p className="mt-3 text-[15px] text-silver leading-relaxed">{copy}</p>
         </div>
       </Link>
     </Reveal>
   );
 }
 
-export function CTABand({ image, title, copy, cta = 'Book a Consultation', to = '/book-consultation', waText }) {
+/** Clean CTA band — navy section, no image, centered (reference has no text-over-image bands). */
+export function CTABand({ title, copy, cta = 'Book a Consultation', to = '/book-consultation', waText }) {
   return (
-    <section className="relative overflow-hidden">
-      <img src={image} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />
-      <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
-      <div className="shell relative py-20 sm:py-24 text-center">
+    <section className="bg-navy">
+      <div className="shell py-16 sm:py-20 text-center">
         <Reveal>
           <h2 className="font-display font-extrabold uppercase text-3xl sm:text-4xl text-white leading-tight max-w-3xl mx-auto">{title}</h2>
-          {copy && <p className="mt-4 text-white/80 max-w-xl mx-auto leading-relaxed">{copy}</p>}
+          {copy && <p className="mt-4 text-white/70 max-w-xl mx-auto leading-relaxed">{copy}</p>}
           <div className="mt-9 flex flex-wrap justify-center gap-4">
             <Link to={to} className="btn-primary">{cta}</Link>
             {waText && <a href={wa(waText)} target="_blank" rel="noopener noreferrer" className="btn btn-ghost !border-white/40 !text-white hover:!border-brand hover:!text-brand">Talk to a Coach</a>}
@@ -186,15 +175,15 @@ export function Quote({ r, i = 0 }) {
   );
 }
 
-export function Breadcrumbs({ items, dark = false }) {
+export function Breadcrumbs({ items }) {
   return (
     <nav aria-label="Breadcrumb">
-      <ol className={`flex flex-wrap items-center gap-2 font-display text-[11px] font-bold uppercase tracking-[0.18em] ${dark ? 'text-white/70' : 'text-muted'}`}>
+      <ol className="flex flex-wrap items-center gap-2 font-display text-[11px] font-bold uppercase tracking-[0.18em] text-muted">
         <li><Link to="/" className="hover:text-brand">Home</Link></li>
         {items.map(([label, to]) => (
           <li key={to || label} className="flex items-center gap-2">
             <span aria-hidden="true" className="text-brand">/</span>
-            {to ? <Link to={to} className="hover:text-brand">{label}</Link> : <span className={dark ? 'text-white' : 'text-navy'} aria-current="page">{label}</span>}
+            {to ? <Link to={to} className="hover:text-brand">{label}</Link> : <span className="text-navy" aria-current="page">{label}</span>}
           </li>
         ))}
       </ol>
@@ -202,20 +191,18 @@ export function Breadcrumbs({ items, dark = false }) {
   );
 }
 
+/** Reference coach card: photo, then COACH label + name + bio below. */
 export function TrainerCard({ t, i = 0 }) {
   return (
     <Reveal delay={i * 70} className="h-full">
       <Link to={`/trainers/${t.slug}`} className="group block h-full">
-        <div className="overflow-hidden">
+        <div className="overflow-hidden bg-deep">
           <img src={t.photo} alt={t.photoAlt || `${t.name}, ${t.role} at FITX Sahiwal`} width={800} height={1066} loading="lazy" decoding="async" className="w-full aspect-[3/4] object-cover object-top transition-transform duration-[1.4s] group-hover:scale-[1.05]" />
         </div>
-        <div className="pt-4 text-center">
-          <h3 className="font-display font-extrabold uppercase text-lg text-navy group-hover:text-brand transition-colors">{t.name}</h3>
-          <p className="font-display text-[11px] font-bold uppercase tracking-[0.18em] text-brand mt-1">{t.role}</p>
-          <p className="text-[13px] text-silver mt-2 leading-relaxed line-clamp-2">{t.shortBio}</p>
-          <span className="mt-3 inline-flex items-center gap-2 font-display text-[11px] font-bold uppercase tracking-[0.14em] text-navy group-hover:text-brand">
-            Meet coach <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
-          </span>
+        <div className="pt-4">
+          <p className="font-display text-[11px] font-bold uppercase tracking-[0.22em] text-brand">Coach</p>
+          <h3 className="font-display font-extrabold uppercase text-lg text-navy group-hover:text-brand transition-colors mt-1">{t.name}</h3>
+          <p className="text-[13px] text-silver mt-2 leading-relaxed">{t.role}{t.experienceYears ? ` · ${t.experienceYears} yrs` : ''}. {t.shortBio}</p>
         </div>
       </Link>
     </Reveal>
