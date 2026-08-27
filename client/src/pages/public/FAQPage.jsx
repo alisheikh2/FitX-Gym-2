@@ -1,7 +1,7 @@
 import Seo from '../../lib/Seo.jsx';
 import { useFetch } from '../../lib/hooks.js';
 import { BRAND } from '../../lib/brand.js';
-import { PageHero, FAQAccordion, CTASection, SectionHead } from '../../components/site/blocks.jsx';
+import { PageHero, FAQAccordion, CTABand, SectionHead } from '../../components/site/blocks.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
 
 export default function FAQPage() {
@@ -27,7 +27,8 @@ export default function FAQPage() {
       <PageHero
         label="FAQ"
         title="Asked often, answered honestly."
-        copy={`Hours, pricing, women’s training, beginners — the questions every new member asks, answered straight. Still unsure? Call ${BRAND.phoneDisplay}.`}
+        copy={`Hours, pricing, women’s training, beginners — answered straight. Still unsure? Call ${BRAND.phoneDisplay}.`}
+        image="/images/fitx/facility/fitx-facility-floor-02.webp"
         crumbs={[['FAQ', null]]}
       />
       <section className="py-16 sm:py-24">
@@ -42,7 +43,7 @@ export default function FAQPage() {
           ))}
         </div>
       </section>
-      <CTASection />
+      <CTABand image="/images/fitx/facility/fitx-facility-floor-02.webp" title="Still unsure about something?" copy="Call, WhatsApp or walk in — a human answers." />
     </>
   );
 }

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import { useFetch } from '../../lib/hooks.js';
 import Reveal from '../../components/ui/Reveal.jsx';
-import { PageHero, SectionHead, CTASection } from '../../components/site/blocks.jsx';
+import { PageHero, SectionHead, CTABand } from '../../components/site/blocks.jsx';
 
 export default function Blog() {
   const { data: posts, loading } = useFetch('/blog');
@@ -19,6 +19,7 @@ export default function Blog() {
         label="Resources"
         title="Reading that respects your time."
         copy="Guides written by FITX coaches for real questions asked in Sahiwal — no filler, no fake science, no motivation porn."
+        image="/images/fitx/fitx-coaching-education-session.webp"
         crumbs={[['Resources', null]]}
       />
       <section className="py-16 sm:py-24">
@@ -41,7 +42,7 @@ export default function Blog() {
           ))}
         </div>
       </section>
-      <CTASection />
+      <CTABand image="/images/fitx/fitx-coaching-education-session.webp" title="Prefer learning in person?" copy="Education sessions run inside the studio — ask about the next one." />
     </>
   );
 }

@@ -17,6 +17,7 @@ export default function Contact() {
         label="Contact"
         title="Talk to a human at FITX."
         copy="Call, WhatsApp or walk in. If you prefer to start online, the consultation form reaches our team directly."
+        image="/images/fitx/facility/fitx-facility-floor-02.webp"
         crumbs={[['Contact', null]]}
       />
 

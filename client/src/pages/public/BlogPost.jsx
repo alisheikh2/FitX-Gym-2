@@ -3,7 +3,7 @@ import Seo from '../../lib/Seo.jsx';
 import { useFetch } from '../../lib/hooks.js';
 import { BRAND } from '../../lib/brand.js';
 import Reveal from '../../components/ui/Reveal.jsx';
-import { Breadcrumbs, CTASection } from '../../components/site/blocks.jsx';
+import { Breadcrumbs, CTABand } from '../../components/site/blocks.jsx';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -65,7 +65,7 @@ export default function BlogPost() {
           </Reveal>
         </div>
       </article>
-      <CTASection />
+      <CTABand image="/images/fitx/facility/fitx-facility-floor-02.webp" title="Questions about your own situation?" copy="Ask a coach — it’s free." />
     </>
   );
 }

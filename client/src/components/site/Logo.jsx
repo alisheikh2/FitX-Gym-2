@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export function LogoMark({ size = 40, className = '' }) {
+export function LogoMark({ size = 38, className = '' }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64" fill="none" aria-hidden="true" className={className}>
       <defs>
@@ -23,18 +23,13 @@ export function LogoMark({ size = 40, className = '' }) {
   );
 }
 
-export default function Logo({ to = '/', dark = false, compact = false }) {
+export default function Logo({ to = '/', compact = false }) {
   return (
-    <Link to={to} className="flex items-center gap-2.5 group" aria-label="FITX — home">
-      <LogoMark size={compact ? 34 : 40} />
-      <span className={`font-display font-bold tracking-tight leading-none ${compact ? 'text-xl' : 'text-2xl'} ${dark ? 'text-obsidian' : 'text-white'}`}>
+    <Link to={to} className="flex items-center gap-2.5" aria-label="FITX — home">
+      <LogoMark size={compact ? 32 : 38} />
+      <span className={`font-display font-bold tracking-tight leading-none text-white ${compact ? 'text-xl' : 'text-2xl'}`}>
         FIT<span className="text-brand">X</span>
       </span>
-      {!compact && (
-        <span className={`hidden md:block text-[10px] uppercase tracking-label leading-tight border-l pl-2.5 ${dark ? 'border-obsidian/20 text-obsidian/60' : 'border-silver/30 text-silver'}`}>
-          Personal Fitness<br />Training Studio
-        </span>
-      )}
     </Link>
   );
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import { api, ApiError } from '../../lib/api.js';
 import { BRAND, wa, tel } from '../../lib/brand.js';
@@ -50,6 +51,7 @@ export default function BookConsultation() {
         label="Book a Consultation"
         title="Start with a conversation."
         copy="Tell us your goal and when you can train. Our team will contact you to schedule your consultation at the studio — free, and without obligation."
+        image="/images/fitx/community/fitx-gym-gathering-2.webp"
         crumbs={[['Book a Consultation', null]]}
       />
 
@@ -59,7 +61,11 @@ export default function BookConsultation() {
             <Reveal className="card p-10 text-center lg:text-left">
               <div className="mx-auto lg:mx-0 h-14 w-14 bg-brand text-obsidian flex items-center justify-center text-2xl font-bold">✓</div>
               <h2 className="h-display text-3xl mt-6 text-paper">Request received.</h2>
-              <p className="mt-4 text-silver leading-relaxed">Thank you, {form.name.split(' ')[0]}. Our team has your details and will contact you on <strong className="text-paper">{form.phone}</strong> to schedule your consultation. Prefer not to wait? <a className="link-underline text-brand" href={wa(`Hello FITX, I just submitted a consultation request (${form.name}).`)} target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>.</p>
+              <p className="mt-4 text-silver leading-relaxed">Thank you, {form.name.split(' ')[0]}. Your details have gone directly to the FITX team’s private lead list — they are never published anywhere. Our team will contact you on <strong className="text-paper">{form.phone}</strong> to schedule your consultation. Prefer not to wait? <a className="link-underline text-brand" href={wa(`Hello FITX, I just submitted a consultation request (${form.name}).`)} target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>.</p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <button className="btn-ghost btn-sm" onClick={() => setState('idle')}>Send Another Request</button>
+                <Link to="/" className="btn-dark btn-sm">Back to Home</Link>
+              </div>
             </Reveal>
           ) : (
             <Reveal>
