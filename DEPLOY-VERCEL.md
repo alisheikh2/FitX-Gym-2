@@ -45,6 +45,16 @@ If the first request times out on a slow plan, open the site once more or run a 
 
 `/admin` → `admin@fitx.pk` / `Admin@123` (change after first login).
 
+## Static fallback (important)
+
+The public website ships with the verified FITX content bundled as a static fallback
+(`client/src/data/fallback.json`). Even if the deployment has **no `MONGODB_URI`** (e.g. a
+drag-&-drop static deploy), visitors still see the complete site — trainers, programs,
+pricing, FAQs, all client testimonials and blog articles. The API/database is only required
+for: admin/POS, leads from the booking form, appointments, attendance and content editing.
+Set the env vars whenever you want those live; the function then also re-syncs testimonials
+automatically on the first request.
+
 ## Notes
 
 - Static images, sitemap.xml and robots.txt are served from the build output (CDN-cached).

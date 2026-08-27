@@ -122,8 +122,8 @@ export default function About() {
           <Reveal className="mt-10 img-zoom overflow-hidden">
             <img src="/images/fitx/community/fitx-gym-gathering-banner.webp" alt="FITX Sahiwal members together at a community gathering" width={1600} height={372} loading="lazy" decoding="async" className="w-full object-cover" />
           </Reveal>
-          <div className="mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {[1, 2, 4, 5, 6].map((n, i) => (
+          <div className="mt-5 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[2, 4, 5, 6].map((n, i) => (
               <Reveal key={n} delay={i * 60} className="img-zoom overflow-hidden border border-steel">
                 <img src={`/images/fitx/community/fitx-gym-gathering-${n}.webp`} alt={`FITX Sahiwal gym gathering moment ${n}`} width={1000} height={n % 2 ? 1333 : 750} loading="lazy" decoding="async" className="w-full aspect-square object-cover" />
               </Reveal>

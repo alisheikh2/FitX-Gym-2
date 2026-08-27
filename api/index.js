@@ -11,9 +11,11 @@ function init() {
   if (!ready) {
     ready = (async () => {
       await connectDB();
+      // Idempotent sync: keeps testimonials/reviews up to date on every deployment
+      const { syncTestimonials, runSeed } = await import('../server/src/seeds/seedData.js');
+      await syncTestimonials();
       const { default: Trainer } = await import('../server/src/models/Trainer.js');
       if ((await Trainer.countDocuments()) === 0) {
-        const { runSeed } = await import('../server/src/seeds/seedData.js');
         await runSeed();
         console.log('[vercel] database seeded with verified FITX content');
       }

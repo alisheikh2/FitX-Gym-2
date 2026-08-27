@@ -11,23 +11,8 @@ import Testimonial from '../models/Testimonial.js';
 import BlogPost from '../models/BlogPost.js';
 import Setting from '../models/Setting.js';
 
-export async function runSeed() {
-
-
-  // ---- Users (staff accounts) ----
-  const users = [
-    { name: 'Zohaib Ali', email: 'admin@fitx.pk', role: 'admin', password: 'Admin@123' },
-    { name: 'FITX Front Desk', email: 'staff@fitx.pk', role: 'staff', password: 'Staff@123' },
-    { name: 'Trainer Muazam', email: 'trainer@fitx.pk', role: 'trainer', password: 'Trainer@123' }
-  ];
-  for (const u of users) {
-    const exists = await User.findOne({ email: u.email });
-    if (!exists) {
-      await User.create({ name: u.name, email: u.email, role: u.role, passwordHash: await bcrypt.hash(u.password, 10) });
-      console.log('[seed] user', u.email);
-    }
-  }
-
+export async function syncTestimonials() {
+  const { default: Testimonial } = await import('../models/Testimonial.js');
   // ---- Testimonials: real reviews & client results only (idempotent upserts) ----
   const quotes = [
     { kind: 'quote', name: 'Muhammad F.', source: 'Google Review', text: 'No doubt, FITX is one of the best personal training studios in the city. The staff is not only expert in their field but they also guide you how to be your own expert when it comes to health and fitness. They are always there to motivate you and answer any question regarding fitness.', sortOrder: 0 },
@@ -52,16 +37,35 @@ export async function runSeed() {
     });
   }
   gallery.push({ kind: 'transformation', name: 'Syed Zeeshan Hassan Bukhari', source: 'FITX Client of the Month', text: '“Fitness is not a destination, it’s a journey.”', image: '/images/fitx/results/fitx-client-of-the-month.webp', imageAlt: 'FITX client of the month Syed Zeeshan Hassan Bukhari', result: 'FITX Client of the Month', sortOrder: 40 });
+  gallery.push({ kind: 'transformation', name: 'FITX client', source: 'Shared by FITX', image: '/images/fitx/results/fitx-testimonial-26.webp', imageAlt: 'Client testimonial shared by FITX Personal Fitness Training Studio Sahiwal', result: 'Client testimonial shared by FITX', sortOrder: 60 });
   for (const t of [...quotes, ...gallery]) {
     const key = t.image ? { image: t.image } : { name: t.name, source: t.source };
     await Testimonial.updateOne(key, { $set: t }, { upsert: true });
   }
-  console.log('[seed] testimonials upserted:', quotes.length + gallery.length);
+}
+
+export async function runSeed() {
+  // ---- Users (staff accounts) ----
+  const users = [
+    { name: 'Zohaib Ali', email: 'admin@fitx.pk', role: 'admin', password: 'Admin@123' },
+    { name: 'FITX Front Desk', email: 'staff@fitx.pk', role: 'staff', password: 'Staff@123' },
+    { name: 'Trainer Muazam', email: 'trainer@fitx.pk', role: 'trainer', password: 'Trainer@123' }
+  ];
+  for (const u of users) {
+    const exists = await User.findOne({ email: u.email });
+    if (!exists) {
+      await User.create({ name: u.name, email: u.email, role: u.role, passwordHash: await bcrypt.hash(u.password, 10) });
+      console.log('[seed] user', u.email);
+    }
+  }
+
+  await syncTestimonials();
+  console.log('[seed] testimonials synced');
 
   if ((await Trainer.countDocuments()) > 0) {
     console.log('[seed] content already present — skipping content seed');
     await Setting.getSite();
-    
+
     return;
   }
 
