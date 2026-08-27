@@ -28,7 +28,7 @@ export default function FAQPage() {
         label="FAQ"
         title="Asked often, answered honestly."
         copy={`Hours, pricing, women’s training, beginners — answered straight. Still unsure? Call ${BRAND.phoneDisplay}.`}
-        image="/images/fitx/interior-premium.jpg"
+        image="/images/fitx/facility/fitx-facility-floor-02.webp"
         crumbs={[['FAQ', null]]}
       />
       <section className="py-16 sm:py-24">

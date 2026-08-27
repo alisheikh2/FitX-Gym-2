@@ -9,7 +9,7 @@ const PROGRAMS = [
   ['Movement-Based Fat Loss', 'Multiple movements and muscle-group activation for accelerated fat loss, divided over four phases — beginners to regular gym-goers looking for a shred.', null],
   ['Strength & Hypertrophy', 'A sculpting and strength track for members who boast stamina but want to build their body the way they envision — squat, hinge, press, pull, carry.', null],
   ['Dispersion-Based Programming', 'Devised specifically to break the plateaus members face in meeting their goals — used precisely when progress stalls.', null],
-  ['Group Sessions', 'Coach-led training on the floor with structure and supervision — the energy of training together, the discipline of a plan.', '/images/fitx/programs/fitx-group-session-class.webp']
+  ['Group Sessions', 'Coach-led training on the floor with structure and supervision — the energy of training together, the discipline of a plan.', null]
 ];
 
 export default function PersonalTraining() {

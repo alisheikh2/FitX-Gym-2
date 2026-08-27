@@ -10,7 +10,7 @@ export default function About() {
         title="About FITX — Personal Fitness Training Studio in Sahiwal"
         description="The story of FITX Personal Fitness Training Studio: Sahiwal's boutique personal training studio built around coaching, accountability and respect. Shadman Town, Faisalabad Road."
         path="/about"
-        image="/images/fitx/interior-premium.jpg"
+        image="/images/fitx/trainers/fitx-founder-training-session.webp"
       />
       <PageHero
         title="About Us"
@@ -23,7 +23,7 @@ export default function About() {
         <div className="shell">
           <Reveal>
             <div className="md:float-left md:mr-8 mb-6 md:mb-4 max-w-md overflow-hidden">
-              <img src="/images/fitx/interior-premium.jpg" alt="The FITX boutique training studio floor in Sahiwal" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[3/2] object-cover" />
+              <img src="/images/fitx/trainers/fitx-founder-training-session.webp" alt="Founder coaching on the FITX Sahiwal floor" width={739} height={1600} loading="lazy" decoding="async" className="w-full aspect-[3/2] object-cover" />
             </div>
             <p className="text-[15px] sm:text-base text-silver leading-relaxed max-w-3xl">
               Most gyms sell you access and leave you alone. FITX was built the other way around: a personal training studio where every member starts with a consultation, trains on a written program, and is coached session after session. Technique is watched. Progress is recorded. Nothing is left to guesswork.

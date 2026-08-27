@@ -4,7 +4,6 @@ import { BRAND } from '../../lib/brand.js';
 import { PageHero, CTABand, SectionHead } from '../../components/site/blocks.jsx';
 
 const GALLERY = [
-  ['/images/fitx/interior-premium.jpg', 'The boutique studio — racks, turf strip and machine line.'],
   ['/images/fitx/facility/fitx-strength-squat-rack.webp', 'Racks and barbells for squat, press and hinge work.'],
   ['/images/fitx/fitx-conditioning-medicine-ball.webp', 'Conditioning turf — medicine balls, sleds, intervals.'],
   ['/images/fitx/facility/fitx-floor-turf-wide.webp', 'The turf strip running the length of the studio.'],

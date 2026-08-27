@@ -42,8 +42,8 @@ export default function Home() {
         <div className="shell grid md:grid-cols-2 gap-10">
           <ImageCard
             to="/about"
-            image="/images/fitx/facility/fitx-facility-floor-02.webp"
-            alt="The FITX training floor in Sahiwal — free weights, cables and turf"
+            image="/images/fitx/gen-dumbbell-rack.jpg"
+            alt="The dumbbell rack at FITX Sahiwal"
             kicker="Who we are"
             title="Boutique studio"
             copy="A personal training studio, not a crowded hall. Assessment first, written programs, coached technique and tracked progress — the FITX standard."
@@ -92,7 +92,7 @@ export default function Home() {
           </div>
           <Reveal delay={100} className="grid gap-5">
             <div className="overflow-hidden">
-              <img src="/images/fitx/gen-dumbbell-rack.jpg" alt="The dumbbell rack at FITX Sahiwal" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
+              <img src="/images/fitx/community/fitx-trainer-neon-sign.webp" alt="FITX trainer under the studio neon sign" width={960} height={1280} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
             </div>
             <div className="overflow-hidden">
               <img src="/images/fitx/gen-whiteboard.jpg" alt="FITX coach walking a client through their written program" width={1280} height={960} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
