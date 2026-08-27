@@ -66,7 +66,7 @@ export default function Results() {
             copy="Real messages, real before/afters and real client recognitions shared by the studio — published with clients’ privacy protected."
           />
           <div className="mt-10 columns-2 sm:columns-3 lg:columns-4 gap-4 [column-fill:_balance]">
-            {transforms.map((t, i) => (
+            {transforms.filter((t) => t.result === 'Client testimonial shared by FITX').map((t, i) => (
               <Reveal key={t._id} delay={(i % 4) * 50} className="mb-4 break-inside-avoid">
                 <figure className="card">
                   <div className="img-zoom overflow-hidden">
