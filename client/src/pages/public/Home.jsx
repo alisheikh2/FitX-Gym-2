@@ -30,9 +30,9 @@ export default function Home() {
       <div className="bg-brand text-obsidian">
         <div className="shell py-3 flex flex-wrap items-center justify-center gap-x-8 gap-y-1 text-[13px] font-bold tracking-wide">
           <a href={tel} className="hover:underline">{BRAND.phoneDisplay}</a>
-          <span aria-hidden="true" className="hidden sm:block h-3 w-px bg-obsidian/30" />
+          <span aria-hidden="true" className="hidden sm:block h-3 w-px bg-black/20" />
           <span>{BRAND.hoursWeek}</span>
-          <span aria-hidden="true" className="hidden sm:block h-3 w-px bg-obsidian/30" />
+          <span aria-hidden="true" className="hidden sm:block h-3 w-px bg-black/20" />
           <Link to="/book-consultation" className="hover:underline uppercase">Free Consultation</Link>
         </div>
       </div>

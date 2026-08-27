@@ -9,7 +9,7 @@ const LINKS = [
   { to: '/weight-loss', label: 'Weight Loss' },
   { to: '/strength-conditioning', label: 'Strength & Conditioning' },
   { to: '/womens-fitness', label: "Women's Fitness" },
-  { to: '/trainers', label: 'Trainers' },
+  { to: '/trainers', label: 'Coaches' },
   { to: '/results', label: 'Results' },
   { to: '/facilities', label: 'Facilities' },
   { to: '/programs', label: 'Membership' },
@@ -22,10 +22,10 @@ const LINKS = [
 export default function MobileMenu({ open, onClose }) {
   if (!open) return null;
   return (
-    <div className="fixed inset-0 z-[60] bg-obsidian/[0.985] overflow-y-auto slim-scroll" role="dialog" aria-modal="true" aria-label="Menu">
+    <div className="fixed inset-0 z-[60] bg-white overflow-y-auto slim-scroll" role="dialog" aria-modal="true" aria-label="Menu">
       <div className="shell flex items-center justify-between h-20">
         <Logo compact />
-        <button onClick={onClose} aria-label="Close menu" className="h-11 w-11 flex items-center justify-center text-3xl text-silver hover:text-brand">
+        <button onClick={onClose} aria-label="Close menu" className="h-11 w-11 flex items-center justify-center text-3xl text-navy hover:text-brand">
           ×
         </button>
       </div>
@@ -33,7 +33,7 @@ export default function MobileMenu({ open, onClose }) {
         <ul className="space-y-1">
           {LINKS.map((l, i) => (
             <li key={l.to} className="animate-fade-up" style={{ animationDelay: `${i * 40}ms` }}>
-              <Link to={l.to} onClick={onClose} className="block py-2 font-display font-bold text-2xl text-paper hover:text-brand transition-colors">
+              <Link to={l.to} onClick={onClose} className="block py-2 font-display font-extrabold uppercase text-xl text-navy hover:text-brand transition-colors">
                 {l.label}
               </Link>
             </li>
@@ -43,7 +43,7 @@ export default function MobileMenu({ open, onClose }) {
           <Link to="/book-consultation" onClick={onClose} className="btn-primary w-full">Book a Consultation</Link>
           <div className="flex gap-3">
             <a href={tel} className="btn-ghost btn-sm flex-1">Call</a>
-            <a href={wa('Hello FITX, I would like to ask about training.') } target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm flex-1">WhatsApp</a>
+            <a href={wa('Hello FITX, I would like to ask about training.')} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm flex-1">WhatsApp</a>
           </div>
           <p className="text-sm text-muted">{BRAND.address}</p>
           <p className="text-sm text-muted">{BRAND.hoursWeek}<br />{BRAND.hoursFriday}</p>

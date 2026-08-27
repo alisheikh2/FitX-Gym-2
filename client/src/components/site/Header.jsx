@@ -33,34 +33,34 @@ export default function Header() {
 
   return (
     <>
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-brand focus:text-obsidian focus:px-4 focus:py-2 focus:font-bold">
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-brand focus:text-white focus:px-4 focus:py-2 focus:font-bold">
         Skip to content
       </a>
-      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-obsidian/95 backdrop-blur border-b border-steel/50' : 'bg-gradient-to-b from-obsidian/80 to-transparent'}`}>
+      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur shadow-card' : 'bg-gradient-to-b from-black/50 to-transparent'}`}>
         <div className={`shell flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-14' : 'h-[4.5rem]'}`}>
-          <Logo compact={scrolled} />
+          <Logo compact={scrolled} onDark={!scrolled} />
           <nav aria-label="Primary" className="hidden lg:flex items-center gap-6">
             {NAV.map((n) => (
               <NavLink
                 key={n.to}
                 to={n.to}
                 className={({ isActive }) =>
-                  `text-[13px] font-medium tracking-wide transition-colors ${isActive ? 'text-brand' : 'text-silver hover:text-white'}`
+                  `font-display text-[12px] font-bold uppercase tracking-wider transition-colors ${isActive ? 'text-brand' : scrolled ? 'text-navy hover:text-brand' : 'text-white hover:text-brand'}`
                 }
               >
                 {n.label}
               </NavLink>
             ))}
-            <a href={tel} className="text-[13px] font-semibold text-paper hover:text-brand transition-colors">{BRAND.phoneDisplay}</a>
+            <a href={tel} className={`font-display text-[12px] font-bold uppercase tracking-wider ${scrolled ? 'text-navy hover:text-brand' : 'text-white hover:text-brand'}`}>{BRAND.phoneDisplay}</a>
             <Link to="/book-consultation" className="btn-primary btn-sm">Join Now</Link>
           </nav>
           <button
-            className="lg:hidden flex flex-col justify-center items-end gap-1.5 h-11 w-11"
+            className={`lg:hidden flex flex-col justify-center items-end gap-1.5 h-11 w-11 ${scrolled ? '' : ''}`}
             onClick={() => setOpen(true)}
             aria-label="Open menu"
             aria-expanded={open}
           >
-            <span className="block h-0.5 w-7 bg-white" />
+            <span className={`block h-0.5 w-7 ${scrolled ? 'bg-navy' : 'bg-white'}`} />
             <span className="block h-0.5 w-5 bg-brand" />
           </button>
         </div>

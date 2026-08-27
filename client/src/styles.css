@@ -10,13 +10,13 @@
     @apply bg-obsidian text-paper font-body antialiased;
   }
   ::selection {
-    @apply bg-brand text-obsidian;
+    @apply bg-brand text-white;
   }
   h1, h2, h3, h4 {
     @apply font-display;
   }
   :focus-visible {
-    outline: 2px solid #f59a00;
+    outline: 2px solid #ff4200;
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -27,37 +27,37 @@
     @apply mx-auto w-full max-w-shell px-5 sm:px-8;
   }
   .label {
-    @apply font-display text-[11px] sm:text-xs font-medium uppercase tracking-label text-brand;
+    @apply font-display text-[11px] sm:text-xs font-bold uppercase tracking-label text-brand;
   }
   .h-display {
-    @apply font-display font-bold leading-[1.04] tracking-tight;
+    @apply font-display font-extrabold uppercase leading-[1.08] tracking-tight;
   }
   .btn {
-    @apply inline-flex items-center justify-center gap-2 font-display font-bold text-sm sm:text-base px-6 py-3.5 transition-all duration-200 select-none;
+    @apply inline-flex items-center justify-center gap-2 font-display font-bold uppercase tracking-wider text-sm sm:text-[15px] px-7 py-3.5 transition-all duration-200 select-none;
   }
   .btn-primary {
-    @apply btn bg-brand text-obsidian hover:bg-brand-soft hover:-translate-y-0.5 active:translate-y-0;
+    @apply btn bg-brand text-white hover:bg-brand-soft hover:-translate-y-0.5 active:translate-y-0;
   }
   .btn-ghost {
-    @apply btn border border-silver/30 text-paper hover:border-brand hover:text-brand;
+    @apply btn border-2 border-navy/20 text-navy hover:border-brand hover:text-brand bg-transparent;
   }
   .btn-dark {
-    @apply btn bg-charcoal text-paper border border-steel hover:border-brand;
+    @apply btn bg-navy text-white hover:bg-black;
   }
   .btn-sm {
-    @apply px-4 py-2 text-sm;
+    @apply px-4 py-2 text-xs;
   }
   .card {
-    @apply bg-graphite border border-steel/60;
+    @apply bg-graphite border border-steel shadow-card;
   }
   .input {
-    @apply w-full bg-deep border border-steel px-4 py-3 text-sm text-paper placeholder:text-muted/70 focus:border-brand focus:outline-none transition-colors;
+    @apply w-full bg-white border border-steel px-4 py-3 text-sm text-paper placeholder:text-muted/70 focus:border-brand focus:outline-none transition-colors;
   }
   .input-err {
     @apply border-red-500/70;
   }
   .field-label {
-    @apply block text-xs font-semibold uppercase tracking-wider text-silver mb-1.5;
+    @apply block text-xs font-bold uppercase tracking-wider text-silver mb-1.5;
   }
   .divider-x {
     @apply h-px w-10 bg-brand;
@@ -66,10 +66,10 @@
     @apply w-full text-sm;
   }
   .table-fitx th {
-    @apply text-left text-[11px] uppercase tracking-wider text-muted font-semibold pb-2 pr-4 border-b border-steel;
+    @apply text-left text-[11px] uppercase tracking-wider text-muted font-bold pb-2 pr-4 border-b border-steel;
   }
   .table-fitx td {
-    @apply py-3 pr-4 border-b border-steel/50 align-top;
+    @apply py-3 pr-4 border-b border-steel/60 align-top;
   }
   .link-underline {
     @apply underline decoration-brand/60 underline-offset-4 hover:decoration-brand;
@@ -118,4 +118,4 @@
 
 /* Admin scrollbar */
 .slim-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
-.slim-scroll::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 4px; }
+.slim-scroll::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 4px; }
