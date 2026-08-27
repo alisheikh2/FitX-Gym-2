@@ -21,12 +21,12 @@ export default function PersonalTraining() {
         title="Personal Training in Sahiwal — One-to-One Coaching | FITX"
         description="One-to-one personal training at FITX Sahiwal: consultation, individual program, coached sessions and progress tracking. The most structured personal training in Sahiwal."
         path="/personal-training"
-        image="/images/fitx/fitx-coaching-education-session.webp"
+        image="/images/fitx/programs/fitx-coaching-one-to-one.webp"
       />
       <PageHero
         label="Personal training"
         title="A coach who knows your plan. Every session."
-        image="/images/fitx/fitx-coaching-education-session.webp"
+        image="/images/fitx/programs/fitx-coaching-one-to-one.webp"
         crumbs={[['Personal Training', null]]}
       />
 

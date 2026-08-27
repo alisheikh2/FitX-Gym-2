@@ -61,6 +61,35 @@ export default function Programs() {
       </section>
 
       <section className="py-16 bg-deep border-y border-steel/50">
+        <div className="shell grid md:grid-cols-2 gap-5">
+          <Reveal className="overflow-hidden">
+            <figure>
+              <img src="/images/fitx/programs/fitx-group-session-class.webp" alt="A coached group class on mats at FITX Sahiwal" width={1400} height={933} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+              <figcaption className="mt-2.5 text-xs text-silver">Group sessions — coach-led, on the floor.</figcaption>
+            </figure>
+          </Reveal>
+          <Reveal delay={70} className="overflow-hidden">
+            <figure>
+              <img src="/images/fitx/programs/fitx-coaching-one-to-one.webp" alt="FITX coach assisting a member through a dumbbell press" width={1000} height={1333} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover object-top" />
+              <figcaption className="mt-2.5 text-xs text-silver">One-to-one — a coach’s eyes on every rep.</figcaption>
+            </figure>
+          </Reveal>
+          <Reveal delay={100} className="overflow-hidden md:col-span-2">
+            <figure className="grid sm:grid-cols-2 gap-5">
+              <div>
+                <img src="/images/fitx/programs/fitx-fee-pattern-female.webp" alt="Official FITX fee pattern with female timings" width={900} height={1273} loading="lazy" decoding="async" className="w-full object-cover" />
+                <figcaption className="mt-2.5 text-xs text-silver">Official fee pattern — female timings.</figcaption>
+              </div>
+              <div>
+                <img src="/images/fitx/programs/fitx-fee-pattern-male.webp" alt="Official FITX fee pattern with male slots" width={900} height={1273} loading="lazy" decoding="async" className="w-full object-cover" />
+                <figcaption className="mt-2.5 text-xs text-silver">Official fee pattern — male slots.</figcaption>
+              </div>
+            </figure>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="py-16 bg-deep">
         <div className="shell">
           <SectionHead label="All programs" title="Five ways to train." />
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">

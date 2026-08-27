@@ -42,6 +42,30 @@ export default function About() {
         </div>
       </section>
 
+      {/* Recognition */}
+      <section className="pb-16 sm:pb-24">
+        <div className="shell grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <SectionHead
+              label="Recognition"
+              title="Respected beyond the floor."
+              copy="FITX founder Zohaib Ali was invited as guest speaker at the University of Sahiwal during the HEC-funded NRPU project on youth-led entrepreneurship (December 2025), receiving a token of appreciation."
+            />
+          </div>
+          <div className="grid grid-cols-3 gap-3">
+            <Reveal className="overflow-hidden">
+              <img src="/images/fitx/community/fitx-award-plaque.webp" alt="Token of appreciation plaque for Zohaib Ali, guest speaker at University of Sahiwal" width={900} height={1600} loading="lazy" decoding="async" className="w-full aspect-[3/4] object-cover" />
+            </Reveal>
+            <Reveal delay={60} className="overflow-hidden">
+              <img src="/images/fitx/community/fitx-award-ceremony.webp" alt="Zohaib Ali receiving the token of appreciation at the University of Sahiwal" width={1200} height={900} loading="lazy" decoding="async" className="w-full aspect-[3/4] object-cover" />
+            </Reveal>
+            <Reveal delay={120} className="overflow-hidden">
+              <img src="/images/fitx/community/fitx-founder-university-talk.webp" alt="Zohaib Ali speaking at the University of Sahiwal seminar" width={1200} height={960} loading="lazy" decoding="async" className="w-full aspect-[3/4] object-cover" />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* Story tiles */}
       <section className="pb-16 sm:pb-24">
         <div className="shell grid md:grid-cols-2 gap-5">
@@ -71,13 +95,13 @@ export default function About() {
           <Reveal className="mt-10 overflow-hidden">
             <img src="/images/fitx/community/fitx-gym-gathering-banner.webp" alt="FITX Sahiwal members together at a community gathering" width={1600} height={372} loading="lazy" decoding="async" className="w-full object-cover" />
           </Reveal>
-          <div className="mt-5 grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="mt-5 grid grid-cols-2 md:grid-cols-4 gap-4">
             <Reveal className="overflow-hidden">
               <img src="/images/fitx/community/fitx-senior-member-training.webp" alt="A senior member training on a machine at FITX Sahiwal" width={1200} height={1600} loading="lazy" decoding="async" className="w-full aspect-square object-cover object-top" />
             </Reveal>
-            {[1, 2, 4, 5].map((n, i) => (
+            {[1, 2, 4, 5, 26, 24].map((n, i) => (
               <Reveal key={n} delay={i * 60} className="overflow-hidden">
-                <img src={`/images/fitx/community/fitx-gym-gathering-${n}.webp`} alt={`FITX Sahiwal gym gathering moment ${n}`} width={1000} height={1333} loading="lazy" decoding="async" className="w-full aspect-square object-cover" />
+                <img src={n >= 20 ? `/images/fitx/community/${n === 26 ? 'fitx-hoodies' : 'fitx-motivation-quote'}.webp` : `/images/fitx/community/fitx-gym-gathering-${n}.webp`} alt={`FITX Sahiwal community moment`} width={1000} height={1333} loading="lazy" decoding="async" className="w-full aspect-square object-cover" />
               </Reveal>
             ))}
           </div>

@@ -12,13 +12,13 @@ export default function Trainers() {
         title="Personal Trainers in Sahiwal — Meet the FITX Coaches"
         description="Meet the coaches of FITX Sahiwal: founder & head coach Zohaib Ali, fat-loss expert Arslan Ahmad, strength & conditioning coach Muazam, and women's performance coach Iqra Zahid."
         path="/trainers"
-        image="/images/fitx/trainers/fitx-trainer-muazam.webp"
+        image="/images/fitx/community/fitx-trainer-neon-sign.webp"
       />
       <PageHero
         label="The coaches"
         title="Four specialists. One standard."
         copy="Every coach is on the floor daily, coaching real members."
-        image="/images/fitx/trainers/fitx-trainer-muazam.webp"
+        image="/images/fitx/community/fitx-trainer-neon-sign.webp"
         crumbs={[['Trainers', null]]}
       />
       <section className="py-16 sm:py-24">
