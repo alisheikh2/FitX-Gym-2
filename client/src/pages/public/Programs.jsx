@@ -23,7 +23,7 @@ export default function Programs() {
         title="Clear programs. Published rates."
         copy="Coached group training or one-to-one personal training."
         image="/images/fitx/facility/fitx-facility-floor-02.webp"
-        crumbs={[['Membership', null]]}
+        crumbs={[['Group Sessions', null]]}
       />
 
       <section className="py-16 sm:py-24">

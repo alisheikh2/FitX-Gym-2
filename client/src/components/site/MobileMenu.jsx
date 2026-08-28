@@ -12,7 +12,7 @@ const LINKS = [
   { to: '/weight-loss', label: 'Weight Loss & Fat Loss' },
   { to: '/strength-conditioning', label: 'Strength & Conditioning' },
   { to: '/womens-fitness', label: 'Women’s Performance' },
-  { to: '/programs', label: 'Group Sessions & Membership' },
+  { to: '/programs', label: 'Group Sessions' },
   { to: '/nutrition', label: 'Nutrition Guidance' },
   { to: '/facilities', label: 'Gallery' },
   { to: '/results', label: 'Success Stories' },

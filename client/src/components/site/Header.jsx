@@ -42,7 +42,7 @@ export default function Header() {
   }, [open]);
 
   const linkCls = (active) =>
-    `font-display text-[12px] font-bold uppercase tracking-[0.16em] transition-colors drop-shadow-sm ${active ? 'text-brand' : scrolled ? 'text-navy hover:text-brand' : 'text-white hover:text-brand'}`;
+    `font-display text-[14px] font-bold uppercase tracking-[0.06em] transition-colors drop-shadow-sm ${active ? 'text-brand' : scrolled ? 'text-navy hover:text-brand' : 'text-white hover:text-brand'}`;
 
   return (
     <>
@@ -67,7 +67,7 @@ export default function Header() {
                 <ul className="bg-black border border-white/10 py-2 min-w-[180px] shadow-lift">
                   {WHO.map((w) => (
                     <li key={w.to}>
-                      <Link to={w.to} className="block px-5 py-2.5 font-display text-[12px] font-bold uppercase tracking-[0.14em] text-white/80 hover:text-brand hover:bg-white/5">
+                      <Link to={w.to} className="block px-5 py-2.5 font-display text-[13px] font-bold uppercase tracking-[0.06em] text-white/80 hover:text-brand hover:bg-white/5">
                         {w.label}
                       </Link>
                     </li>
@@ -86,7 +86,7 @@ export default function Header() {
                 <ul className="bg-black border border-white/10 py-2 min-w-[220px] shadow-lift">
                   {WWD.map((w) => (
                     <li key={w.to}>
-                      <Link to={w.to} className="block px-5 py-2.5 font-display text-[12px] font-bold uppercase tracking-[0.14em] text-white/80 hover:text-brand hover:bg-white/5">
+                      <Link to={w.to} className="block px-5 py-2.5 font-display text-[13px] font-bold uppercase tracking-[0.06em] text-white/80 hover:text-brand hover:bg-white/5">
                         {w.label}
                       </Link>
                     </li>
