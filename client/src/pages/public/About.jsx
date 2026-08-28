@@ -87,12 +87,12 @@ export default function About() {
           <SectionHead label="Beyond the floor" title="A studio that gathers" copy="Members train, eat and play together — real moments from the FITX community." />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              ['/images/fitx/community/fitx-gym-gathering-banner.webp', 'FITX members together at a community gathering'],
-              ['/images/fitx/community/fitx-senior-member-training.webp', 'A senior member training at FITX Sahiwal'],
-              ['/images/fitx/community/fitx-cricket-team.webp', 'FITX members with their cricket team after a match in Lahore']
-            ].map(([src, alt], i) => (
+              ['/images/fitx/community/fitx-gym-gathering-5.webp', 'FITX members together at a community gathering', 'object-center'],
+              ['/images/fitx/community/fitx-senior-member-training.webp', 'A senior member training at FITX Sahiwal', 'object-[50%_18%]'],
+              ['/images/fitx/community/fitx-cricket-team.webp', 'FITX members with their cricket team after a match in Lahore', 'object-center']
+            ].map(([src, alt, pos], i) => (
               <Reveal key={src} delay={i * 60} className="overflow-hidden">
-                <img src={src} alt={alt} width={1600} height={1000} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+                <img src={src} alt={alt} width={1600} height={1200} loading="lazy" decoding="async" className={`w-full aspect-[4/3] object-cover ${pos}`} />
               </Reveal>
             ))}
           </div>
