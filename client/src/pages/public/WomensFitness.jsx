@@ -7,7 +7,8 @@ import { PageHero, SectionHead, Quote, CallNow } from '../../components/site/blo
 
 export default function WomensFitness() {
   const { data: testimonials } = useFetch('/testimonials');
-  const womenReview = (testimonials || []).filter((t) => /ladies|women|safe/i.test(t.text)).slice(0, 2);
+  const all = (testimonials || []).filter((t) => t.kind === 'quote');
+  const womenReview = [...all.filter((t) => /ladies|women|safe/i.test(t.text)), ...all.filter((t) => !/ladies|women|safe/i.test(t.text))].slice(0, 2);
 
   return (
     <>
@@ -27,7 +28,7 @@ export default function WomensFitness() {
         <div className="shell">
           <Reveal>
             <div className="md:float-right md:ml-8 mb-6 md:mb-4 max-w-md overflow-hidden">
-              <img src="/images/fitx/trainers/fitx-trainer-iqra-zahid.webp" alt="Iqra Zahid coaching at FITX Sahiwal" width={1023} height={1537} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[3/2] object-cover object-top" />
+              <img src="/images/fitx/trainers/fitx-trainer-iqra-zahid.webp" alt="Iqra Zahid coaching at FITX Sahiwal" width={1023} height={1537} loading="lazy" decoding="async" className="w-full aspect-[3/4] sm:max-w-[380px] object-cover object-top mx-auto md:mx-0" />
             </div>
             <p className="text-[15px] sm:text-base text-silver leading-relaxed max-w-3xl">
               Iqra Zahid coaches the women who train at FITX during the studio’s dedicated female hours. Over seven years she has coached students, brides-to-be, new mothers and women in their fifties — most of them starting from zero.

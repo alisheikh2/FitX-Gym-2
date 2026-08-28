@@ -211,8 +211,12 @@ export function PageHero({ title, copy, crumbs, cta, ctaTo }) {
           <nav aria-label="Breadcrumb" className="hidden sm:block">
             <ol className="flex items-center gap-2 font-display text-[12px] font-bold uppercase tracking-[0.14em]">
               <li><Link to="/" className="text-brand hover:text-white">Home</Link></li>
-              <li aria-hidden="true" className="text-brand">/</li>
-              {crumbs.map(([label]) => <li key={label} className="text-white/90" aria-current="page">{label}</li>)}
+              {crumbs.map(([label, to]) => (
+                <li key={label} className="flex items-center gap-2">
+                  <span aria-hidden="true" className="text-brand">/</span>
+                  {to ? <Link to={to} className="text-brand hover:text-white">{label}</Link> : <span className="text-white/90" aria-current="page">{label}</span>}
+                </li>
+              ))}
             </ol>
           </nav>
         )}
@@ -233,9 +237,13 @@ export function BigBanner({ title, crumbs }) {
           {crumbs && (
             <nav aria-label="Breadcrumb" className="mt-6">
               <ol className="flex items-center gap-2 font-display text-[12px] font-bold uppercase tracking-[0.14em]">
-                <li><Link to="/" className="text-brand hover:text-white">Home</Link></li>
-                <li aria-hidden="true" className="text-brand">/</li>
-                {crumbs.map(([label]) => <li key={label} className="text-white/90" aria-current="page">{label}</li>)}
+              <li><Link to="/" className="text-brand hover:text-white">Home</Link></li>
+              {crumbs.map(([label, to]) => (
+                <li key={label} className="flex items-center gap-2">
+                  <span aria-hidden="true" className="text-brand">/</span>
+                  {to ? <Link to={to} className="text-brand hover:text-white">{label}</Link> : <span className="text-white/90" aria-current="page">{label}</span>}
+                </li>
+              ))}
               </ol>
             </nav>
           )}

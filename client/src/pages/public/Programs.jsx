@@ -64,15 +64,15 @@ export default function Programs() {
         <div className="shell grid md:grid-cols-2 gap-5">
           
           
-          <Reveal delay={100} className="overflow-hidden md:col-span-2">
-            <figure className="grid sm:grid-cols-2 gap-5">
+          <Reveal delay={100} className="md:col-span-2">
+            <figure className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
               <div>
-                <img src="/images/fitx/programs/fitx-fee-pattern-female.webp" alt="Official FITX fee pattern with female timings" width={900} height={1273} loading="lazy" decoding="async" className="w-full object-cover" />
-                <figcaption className="mt-2.5 text-xs text-silver">Official fee pattern — female timings.</figcaption>
+                <img src="/images/fitx/programs/fitx-fee-pattern-female.webp" alt="Official FITX fee pattern with female timings" width={900} height={1273} loading="lazy" decoding="async" className="w-full border border-steel shadow-card" />
+                <figcaption className="mt-2.5 text-xs text-silver text-center">Official fee pattern — female timings.</figcaption>
               </div>
               <div>
-                <img src="/images/fitx/programs/fitx-fee-pattern-male.webp" alt="Official FITX fee pattern with male slots" width={900} height={1273} loading="lazy" decoding="async" className="w-full object-cover" />
-                <figcaption className="mt-2.5 text-xs text-silver">Official fee pattern — male slots.</figcaption>
+                <img src="/images/fitx/programs/fitx-fee-pattern-male.webp" alt="Official FITX fee pattern with male slots" width={900} height={1273} loading="lazy" decoding="async" className="w-full border border-steel shadow-card" />
+                <figcaption className="mt-2.5 text-xs text-silver text-center">Official fee pattern — male slots.</figcaption>
               </div>
             </figure>
           </Reveal>
