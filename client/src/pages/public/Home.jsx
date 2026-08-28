@@ -72,7 +72,7 @@ export default function Home() {
           {/* right column */}
           <div>
             <Reveal className="overflow-hidden">
-              <img src="/images/fitx/gen-mixed-group.jpg" alt="Members training together at FITX Sahiwal" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[3/4] object-cover" />
+              <img src="/images/fitx/gen-medball-coach.jpg" alt="Coach guiding a member through medicine ball training at FITX" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[3/4] object-cover" />
             </Reveal>
             <div className="border-t border-steel mt-10 pt-10">
               <Reveal>

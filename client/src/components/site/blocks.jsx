@@ -1,31 +1,36 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Reveal from '../ui/Reveal.jsx';
 import { wa, BRAND, tel } from '../../lib/brand.js';
 
-/* ============ HERO SLIDER — reference exact: animated text out/in, arrows, JOIN NOW, studio phone ============ */
+/* ============ HERO SLIDER — synced text out/in, single timer state machine (no glitches) ============ */
 export function HeroSlider() {
   const slides = [
-    { img: '/images/fitx/hero-coaching.jpg', alt: 'FITX coach guiding a client through a barbell session' },
-    { img: '/images/fitx/hero-ropes.jpg', alt: 'Conditioning with battle ropes at FITX Sahiwal' },
-    { img: '/images/fitx/gen-mixed-group.jpg', alt: 'Members training together at FITX Sahiwal' }
+    { img: '/images/fitx/hero-coaching.jpg', alt: 'FITX coach spotting a client’s barbell squat' },
+    { img: '/images/fitx/hero-ropes.jpg', alt: 'Client training on the row machine beside sunlit windows at FITX' },
+    { img: '/images/fitx/gen-plate-woman.jpg', alt: 'Member holding a weight plate at FITX Sahiwal' }
   ];
   const [i, setI] = useState(0);
-  const [leaving, setLeaving] = useState(false);
+  const [phase, setPhase] = useState('in'); // 'in' | 'out'
+  const timers = useRef([]);
+  const clearTimers = () => { timers.current.forEach(clearTimeout); timers.current = []; };
 
-  const go = (next) => {
-    setLeaving(true);
-    setTimeout(() => { setI((next + slides.length) % slides.length); setLeaving(false); }, 450);
+  const advance = (to) => {
+    clearTimers();
+    setPhase('out');                      // text leaves first…
+    timers.current.push(setTimeout(() => {
+      setI(((to % slides.length) + slides.length) % slides.length); // …then image + new text arrive together
+      setPhase('in');
+    }, 500));
   };
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const t = setInterval(() => {
-      setLeaving(true);
-      setTimeout(() => { setI((v) => (v + 1) % slides.length); setLeaving(false); }, 450);
-    }, 6000);
-    return () => clearInterval(t);
-  }, [slides.length]);
+    const t = setTimeout(() => advance(i + 1), 6500); // one clean timer per slide
+    timers.current.push(t);
+    return clearTimers;
+  }, [i]);
+  useEffect(() => clearTimers, []);
 
   return (
     <section className="relative h-[100svh] min-h-[620px] overflow-hidden" aria-roledescription="carousel" aria-label="FITX studio">
@@ -37,24 +42,21 @@ export function HeroSlider() {
           aria-hidden={idx !== i}
           loading={idx === 0 ? 'eager' : 'lazy'}
           decoding="async"
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1000ms] ${idx === i ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${idx === i ? 'opacity-100' : 'opacity-0'}`}
         />
       ))}
       <div className="absolute inset-0 bg-black/25" aria-hidden="true" />
 
-      {/* side arrows */}
-      <button onClick={() => go(i - 1)} aria-label="Previous slide" className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 text-white/90 hover:text-brand text-4xl sm:text-5xl font-light drop-shadow z-10">‹</button>
-      <button onClick={() => go(i + 1)} aria-label="Next slide" className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 text-white/90 hover:text-brand text-4xl sm:text-5xl font-light drop-shadow z-10">›</button>
+      <button onClick={() => advance(i - 1)} aria-label="Previous slide" className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 text-white/90 hover:text-brand text-4xl sm:text-5xl font-light drop-shadow z-10">‹</button>
+      <button onClick={() => advance(i + 1)} aria-label="Next slide" className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 text-white/90 hover:text-brand text-4xl sm:text-5xl font-light drop-shadow z-10">›</button>
 
-      {/* JOIN NOW pill — right side like reference */}
       <div className="absolute right-[6%] bottom-[26%] hidden md:block z-10">
         <Link to="/book-consultation" className="btn-primary">Join Now</Link>
       </div>
 
-      {/* dynamic text block */}
       <div className="absolute inset-x-0 bottom-0 z-10">
         <div className="shell pb-16 sm:pb-20">
-          <div key={i} className={leaving ? 'hero-out' : 'hero-in'}>
+          <div key={i} className={phase === 'out' ? 'hero-out' : 'hero-in'}>
             <h1 className="font-display font-extrabold uppercase text-white text-6xl sm:text-8xl lg:text-[7.5rem] leading-none tracking-tight drop-shadow-md">FITX</h1>
             <p className="font-display font-bold uppercase text-white text-lg sm:text-2xl lg:text-3xl mt-2 tracking-wide drop-shadow">Sahiwal’s premier personal training studio</p>
             <p className="text-white/95 text-sm sm:text-lg mt-4 drop-shadow">Sahiwal Studio: {BRAND.phoneDisplay}</p>
@@ -102,14 +104,20 @@ export function BigTitle({ children, className = '' }) {
 export function TestimonialCarousel({ items }) {
   const [i, setI] = useState(0);
   const [leaving, setLeaving] = useState(false);
+  const timers = useRef([]);
+  const clearTimers = () => { timers.current.forEach(clearTimeout); timers.current = []; };
+  const advance = (to) => {
+    clearTimers();
+    setLeaving(true);
+    timers.current.push(setTimeout(() => { setI(((to % items.length) + items.length) % items.length); setLeaving(false); }, 500));
+  };
   useEffect(() => {
     if (!items.length) return;
-    const t = setInterval(() => {
-      setLeaving(true);
-      setTimeout(() => { setI((v) => (v + 1) % items.length); setLeaving(false); }, 450);
-    }, 7000);
-    return () => clearInterval(t);
-  }, [items.length]);
+    const t = setTimeout(() => advance(i + 1), 7000);
+    timers.current.push(t);
+    return clearTimers;
+  }, [i, items.length]);
+  useEffect(() => clearTimers, []);
   if (!items.length) return null;
   const r = items[i];
   const initials = (r.name || '?').split(' ').map((p) => p[0]).slice(0, 2).join('');
@@ -129,7 +137,7 @@ export function TestimonialCarousel({ items }) {
         {items.map((t, idx) => (
           <button
             key={t._id || idx}
-            onClick={() => { setLeaving(true); setTimeout(() => { setI(idx); setLeaving(false); }, 300); }}
+            onClick={() => advance(idx)}
             role="tab"
             aria-selected={idx === i}
             aria-label={`Testimonial ${idx + 1}`}
