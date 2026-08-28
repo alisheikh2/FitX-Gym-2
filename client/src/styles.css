@@ -119,3 +119,9 @@
 /* Admin scrollbar */
 .slim-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
 .slim-scroll::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 4px; }
+
+/* Hero text in/out synced with slide change */
+@keyframes heroIn { from { opacity: 0; transform: translateY(46px); } to { opacity: 1; transform: none; } }
+@keyframes heroOut { to { opacity: 0; transform: translateY(34px); } }
+.hero-in { animation: heroIn 0.8s cubic-bezier(0.22,1,0.36,1) both; }
+.hero-out { animation: heroOut 0.45s ease both; }

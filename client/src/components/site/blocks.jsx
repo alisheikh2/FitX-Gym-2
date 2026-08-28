@@ -1,25 +1,34 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Reveal from '../ui/Reveal.jsx';
-import { wa, BRAND } from '../../lib/brand.js';
+import { wa, BRAND, tel } from '../../lib/brand.js';
 
-/** Clean full-bleed slider like the reference: bright image, side arrows, square dots,
- *  studio phone bottom-left, JOIN NOW pill right. Headline lives in the section below. */
+/* ============ HERO SLIDER — reference exact: animated text out/in, arrows, JOIN NOW, studio phone ============ */
 export function HeroSlider() {
   const slides = [
-    { img: '/images/fitx/hero-ropes.jpg', alt: 'Client training on a cable machine in the bright FITX studio' },
-    { img: '/images/fitx/hero-coaching.jpg', alt: 'FITX coach guiding a client through a dumbbell session' },
+    { img: '/images/fitx/hero-coaching.jpg', alt: 'FITX coach guiding a client through a barbell session' },
+    { img: '/images/fitx/hero-ropes.jpg', alt: 'Conditioning with battle ropes at FITX Sahiwal' },
     { img: '/images/fitx/gen-mixed-group.jpg', alt: 'Members training together at FITX Sahiwal' }
   ];
   const [i, setI] = useState(0);
+  const [leaving, setLeaving] = useState(false);
+
+  const go = (next) => {
+    setLeaving(true);
+    setTimeout(() => { setI((next + slides.length) % slides.length); setLeaving(false); }, 450);
+  };
+
   useEffect(() => {
     if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const t = setInterval(() => setI((v) => (v + 1) % slides.length), 6000);
+    const t = setInterval(() => {
+      setLeaving(true);
+      setTimeout(() => { setI((v) => (v + 1) % slides.length); setLeaving(false); }, 450);
+    }, 6000);
     return () => clearInterval(t);
   }, [slides.length]);
 
   return (
-    <section className="relative min-h-[88svh] overflow-hidden" aria-roledescription="carousel" aria-label="FITX studio">
+    <section className="relative h-[100svh] min-h-[620px] overflow-hidden" aria-roledescription="carousel" aria-label="FITX studio">
       {slides.map((sld, idx) => (
         <img
           key={sld.img}
@@ -28,33 +37,30 @@ export function HeroSlider() {
           aria-hidden={idx !== i}
           loading={idx === 0 ? 'eager' : 'lazy'}
           decoding="async"
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ${idx === i ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1000ms] ${idx === i ? 'opacity-100' : 'opacity-0'}`}
         />
       ))}
-      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/45 to-transparent" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/25" aria-hidden="true" />
 
       {/* side arrows */}
-      <button onClick={() => setI((i - 1 + slides.length) % slides.length)} aria-label="Previous slide" className="absolute left-3 top-1/2 -translate-y-1/2 text-white/90 hover:text-brand text-4xl font-light drop-shadow">‹</button>
-      <button onClick={() => setI((i + 1) % slides.length)} aria-label="Next slide" className="absolute right-3 top-1/2 -translate-y-1/2 text-white/90 hover:text-brand text-4xl font-light drop-shadow">›</button>
+      <button onClick={() => go(i - 1)} aria-label="Previous slide" className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 text-white/90 hover:text-brand text-4xl sm:text-5xl font-light drop-shadow z-10">‹</button>
+      <button onClick={() => go(i + 1)} aria-label="Next slide" className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 text-white/90 hover:text-brand text-4xl sm:text-5xl font-light drop-shadow z-10">›</button>
 
-      {/* bottom bar: studio phone + join now */}
-      <div className="absolute inset-x-0 bottom-0">
-        <div className="shell flex items-center justify-between pb-6">
-          <p className="font-display text-[13px] sm:text-sm font-bold uppercase tracking-[0.14em] text-white drop-shadow">Sahiwal Studio: {BRAND.phoneDisplay}</p>
-          <Link to="/book-consultation" className="btn-primary !rounded-full btn-sm">Join Now</Link>
-        </div>
-        <div className="shell flex justify-center pb-5" role="tablist" aria-label="Slides">
-          <div className="flex gap-2 bg-white/90 px-3 py-2">
-            {slides.map((sld, idx) => (
-              <button
-                key={sld.img}
-                onClick={() => setI(idx)}
-                role="tab"
-                aria-selected={idx === i}
-                aria-label={`Slide ${idx + 1}`}
-                className={`h-2.5 w-2.5 border ${idx === i ? 'border-brand bg-brand' : 'border-silver/70 bg-transparent hover:border-brand'}`}
-              />
-            ))}
+      {/* JOIN NOW pill — right side like reference */}
+      <div className="absolute right-[6%] bottom-[26%] hidden md:block z-10">
+        <Link to="/book-consultation" className="btn-primary">Join Now</Link>
+      </div>
+
+      {/* dynamic text block */}
+      <div className="absolute inset-x-0 bottom-0 z-10">
+        <div className="shell pb-16 sm:pb-20">
+          <div key={i} className={leaving ? 'hero-out' : 'hero-in'}>
+            <h1 className="font-display font-extrabold uppercase text-white text-6xl sm:text-8xl lg:text-[7.5rem] leading-none tracking-tight drop-shadow-md">FITX</h1>
+            <p className="font-display font-bold uppercase text-white text-lg sm:text-2xl lg:text-3xl mt-2 tracking-wide drop-shadow">Sahiwal’s premier personal training studio</p>
+            <p className="text-white/95 text-sm sm:text-lg mt-4 drop-shadow">Sahiwal Studio: {BRAND.phoneDisplay}</p>
+          </div>
+          <div className="md:hidden mt-6">
+            <Link to="/book-consultation" className="btn-primary">Join Now</Link>
           </div>
         </div>
       </div>
@@ -62,19 +68,110 @@ export function HeroSlider() {
   );
 }
 
+/* ============ Card with navy title band (reference two-up cards) ============ */
+export function BandCard({ to, image, alt, kicker, title, copy }) {
+  return (
+    <Reveal className="h-full">
+      <Link to={to} className="group block h-full">
+        <div className="overflow-hidden">
+          <img src={image} alt={alt} width={1000} height={620} loading="lazy" decoding="async" className="w-full aspect-[13/8] object-cover" />
+        </div>
+        <div className="bg-navy px-7 py-6 flex items-center justify-between gap-4">
+          <div>
+            <p className="font-display font-bold text-brand text-[13px] uppercase tracking-[0.08em]">{kicker}</p>
+            <h3 className="font-display text-white text-xl sm:text-2xl uppercase mt-1.5 tracking-wide">{title}</h3>
+          </div>
+          <span aria-hidden="true" className="text-brand text-2xl transition-transform group-hover:translate-x-2">→</span>
+        </div>
+        <p className="pt-8 text-[15px] text-silver leading-[1.8]">{copy}</p>
+      </Link>
+    </Reveal>
+  );
+}
+
+/* ============ Big uppercase title with orange slash ============ */
+export function BigTitle({ children, className = '' }) {
+  return (
+    <h2 className={`font-display font-extrabold uppercase text-4xl sm:text-5xl text-navy tracking-tight ${className}`}>
+      {children} <span className="text-brand" aria-hidden="true">/</span>
+    </h2>
+  );
+}
+
+/* ============ Testimonial carousel — avatar, big quote, square dots ============ */
+export function TestimonialCarousel({ items }) {
+  const [i, setI] = useState(0);
+  const [leaving, setLeaving] = useState(false);
+  useEffect(() => {
+    if (!items.length) return;
+    const t = setInterval(() => {
+      setLeaving(true);
+      setTimeout(() => { setI((v) => (v + 1) % items.length); setLeaving(false); }, 450);
+    }, 7000);
+    return () => clearInterval(t);
+  }, [items.length]);
+  if (!items.length) return null;
+  const r = items[i];
+  const initials = (r.name || '?').split(' ').map((p) => p[0]).slice(0, 2).join('');
+
+  return (
+    <div className="text-center">
+      <div key={i} className={leaving ? 'hero-out' : 'hero-in'}>
+        <span className="mx-auto h-40 w-40 rounded-full bg-navy text-white font-display font-extrabold text-4xl flex items-center justify-center uppercase" aria-hidden="true">{initials}</span>
+        <blockquote className="mt-12 max-w-4xl mx-auto text-lg sm:text-2xl leading-relaxed text-navy/90">
+          <span className="text-brand font-display font-extrabold text-2xl align-top" aria-hidden="true">“</span>
+          {r.text}
+          <span className="text-brand font-display font-extrabold text-2xl align-top" aria-hidden="true">”</span>
+        </blockquote>
+        <p className="mt-10 text-brand text-sm">{r.name}</p>
+      </div>
+      <div className="mt-12 flex justify-center gap-2" role="tablist" aria-label="Testimonials">
+        {items.map((t, idx) => (
+          <button
+            key={t._id || idx}
+            onClick={() => { setLeaving(true); setTimeout(() => { setI(idx); setLeaving(false); }, 300); }}
+            role="tab"
+            aria-selected={idx === i}
+            aria-label={`Testimonial ${idx + 1}`}
+            className={`h-2.5 w-2.5 border ${idx === i ? 'border-brand bg-transparent' : 'border-silver/60 hover:border-brand'}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ============ Floating scroll-top (reference) ============ */
+export function ScrollTop() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShow(window.scrollY > 400);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  if (!show) return null;
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      aria-label="Back to top"
+      className="fixed bottom-6 right-6 z-50 h-12 w-12 rounded-full bg-brand text-white flex items-center justify-center shadow-lift hover:bg-brand-deep transition-colors"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="M6 14l6-6 6 6" /></svg>
+    </button>
+  );
+}
+
+/* ============ kept components ============ */
 export function SectionHead({ label, title, copy, center = false }) {
   return (
     <Reveal className={`max-w-2xl ${center ? 'mx-auto text-center' : ''}`}>
-      {label && (
-        <p className="font-display text-[12px] font-bold uppercase tracking-[0.28em] text-brand">{label}</p>
-      )}
+      {label && <p className="font-display text-[12px] font-bold uppercase tracking-[0.28em] text-brand">{label}</p>}
       <h2 className="font-display font-extrabold uppercase text-3xl sm:text-4xl leading-[1.12] tracking-tight text-navy mt-2">{title}</h2>
       {copy && <p className="mt-4 text-[15px] leading-relaxed text-silver">{copy}</p>}
     </Reveal>
   );
 }
 
-/** Inner-page banner — reference style: plain dark banner, numbered breadcrumb, NO photo. */
 export function PageHero({ title, copy, crumbs, cta, ctaTo }) {
   return (
     <section className="bg-navy">
@@ -103,7 +200,6 @@ export function PageHero({ title, copy, crumbs, cta, ctaTo }) {
   );
 }
 
-/** Reference two-up card: clean image, title row + paragraph BELOW — never on top. */
 export function ImageCard({ to, image, alt, kicker, title, copy }) {
   return (
     <Reveal className="h-full">
@@ -122,7 +218,6 @@ export function ImageCard({ to, image, alt, kicker, title, copy }) {
   );
 }
 
-/** Clean CTA band — navy section, no image, centered (reference has no text-over-image bands). */
 export function CTABand({ title, copy, cta = 'Book a Consultation', to = '/book-consultation', waText }) {
   return (
     <section className="bg-navy">
@@ -132,7 +227,7 @@ export function CTABand({ title, copy, cta = 'Book a Consultation', to = '/book-
           {copy && <p className="mt-4 text-white/70 max-w-xl mx-auto leading-relaxed">{copy}</p>}
           <div className="mt-9 flex flex-wrap justify-center gap-4">
             <Link to={to} className="btn-primary">{cta}</Link>
-            {waText && <a href={wa(waText)} target="_blank" rel="noopener noreferrer" className="btn btn-ghost !border-white/40 !text-white hover:!border-brand hover:!text-brand">Talk to a Coach</a>}
+            {waText && <a href={wa(waText)} target="_blank" rel="noopener noreferrer" className="btn btn-ghost !border-white/40 !text-white hover:!border-brand hover:!text-brand !rounded-full">Talk to a Coach</a>}
           </div>
         </Reveal>
       </div>
@@ -172,7 +267,6 @@ export function Breadcrumbs({ items }) {
   );
 }
 
-/** Reference coach card: photo, then COACH label + name + bio below. */
 export function TrainerCard({ t, i = 0 }) {
   return (
     <Reveal delay={i * 70} className="h-full">
@@ -214,12 +308,11 @@ export function FAQAccordion({ items }) {
   );
 }
 
-/** Reference signature: centered orange Call Now pill at the end of every inner page. */
 export function CallNow() {
   return (
     <section className="py-12 sm:py-16">
       <div className="shell text-center">
-        <a href={`tel:${BRAND.phoneIntl}`} className="btn-primary">Call Now</a>
+        <a href={tel} className="btn-primary">Call Now</a>
       </div>
     </section>
   );

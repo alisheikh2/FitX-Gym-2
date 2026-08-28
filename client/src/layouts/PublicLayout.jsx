@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../components/site/Header.jsx';
 import Footer from '../components/site/Footer.jsx';
+import { ScrollTop } from '../components/site/blocks.jsx';
 
 export default function PublicLayout() {
   return (
@@ -10,6 +11,7 @@ export default function PublicLayout() {
         <Outlet />
       </main>
       <Footer />
+      <ScrollTop />
     </div>
   );
 }

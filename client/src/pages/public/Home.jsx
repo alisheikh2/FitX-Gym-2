@@ -1,14 +1,12 @@
 import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import { useFetch } from '../../lib/hooks.js';
-import { BRAND, wa, tel } from '../../lib/brand.js';
 import Reveal from '../../components/ui/Reveal.jsx';
-import { HeroSlider, ImageCard, CTABand, Quote, SectionHead, TrainerCard } from '../../components/site/blocks.jsx';
+import { HeroSlider, BandCard, BigTitle, TestimonialCarousel } from '../../components/site/blocks.jsx';
 
 export default function Home() {
-  const { data: trainers } = useFetch('/trainers');
   const { data: testimonials } = useFetch('/testimonials');
-  const quotes = (testimonials || []).filter((t) => t.kind === 'quote').slice(0, 3);
+  const quotes = (testimonials || []).filter((t) => t.kind === 'quote');
 
   return (
     <>
@@ -16,158 +14,95 @@ export default function Home() {
         title="FITX Personal Fitness Training Studio — Personal Trainer in Sahiwal"
         description="FITX is Sahiwal's dedicated personal training studio in Shadman Town, Faisalabad Road. One-to-one coaching, fat loss, strength & conditioning and dedicated women's hours. Book a consultation."
         path="/"
-        image="/images/fitx/hero-ropes.jpg"
+        image="/images/fitx/hero-coaching.jpg"
       />
 
-      {/* AUTO-ROTATING HERO */}
+      {/* 1 — HERO SLIDER */}
       <HeroSlider />
 
-      {/* headline lives below the clean hero — reference style */}
+      {/* 2 — TWO BAND CARDS */}
       <section className="py-14 sm:py-20">
-        <div className="shell text-center max-w-3xl mx-auto">
-          <Reveal>
-            <p className="font-display text-[12px] font-bold uppercase tracking-[0.28em] text-brand">Personal Fitness Training Studio · Sahiwal</p>
-            <h1 className="font-display font-extrabold uppercase text-3xl sm:text-5xl text-navy leading-[1.08] tracking-tight mt-3">The most serious &amp; sophisticated personal training in Sahiwal</h1>
-            <p className="mt-5 text-[15px] sm:text-base text-silver leading-relaxed">One-to-one coaching, fat loss, strength & women’s performance — assessed, programmed and tracked by coaches who invest in you.</p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link to="/book-consultation" className="btn-primary !rounded-full">Book a Consultation</Link>
-              <Link to="/personal-training" className="btn-ghost !rounded-full">Explore Training</Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* WHO WE ARE / WOMEN — two premium cards */}
-      <section className="py-16 sm:py-24">
-        <div className="shell grid md:grid-cols-2 gap-10">
-          <ImageCard
+        <div className="shell grid md:grid-cols-2 gap-10 lg:gap-14">
+          <BandCard
             to="/about"
-            image="/images/fitx/gen-dumbbell-rack.jpg"
-            alt="The dumbbell rack at FITX Sahiwal"
+            image="/images/fitx/hero-coaching.jpg"
+            alt="FITX coach guiding a client through a barbell session"
             kicker="Who we are"
-            title="Boutique studio"
-            copy="A personal training studio, not a crowded hall. Assessment first, written programs, coached technique and tracked progress — the FITX standard."
+            title="Boutique coaching"
+            copy="FITX is a boutique personal training studio based in Shadman Town, Sahiwal. Since day one we have taken fitness seriously — client-centric coaching, rigorous custom programs and practical nutrition advice, with numerous transformations of body, mind and soul."
           />
-          <ImageCard
+          <BandCard
             to="/womens-fitness"
             image="/images/fitx/gen-women-group.jpg"
             alt="Women training together in a coached session at FITX Sahiwal"
             kicker="Women’s training"
             title="Dedicated hours"
-            copy="Coach Iqra Zahid — seven years of experience — trains women 10:30–1 & 3–6 daily. Strength and fat loss, coached properly, in a safe studio."
+            copy="Women train with coach Iqra Zahid — seven years of experience — during dedicated female hours, 10:30–1 & 3–6 daily. Progressive strength and fat-loss programming in a safe, respectful studio. Sign up now!"
           />
         </div>
       </section>
 
-      {/* OUR PROGRAMS */}
-      <section className="py-16 sm:py-24 bg-deep border-y border-steel">
-        <div className="shell grid lg:grid-cols-2 gap-12 items-center">
+      {/* 3 — STAGGERED: OUR PROGRAMS / OUR COACHES */}
+      <section className="pb-14 sm:pb-20">
+        <div className="shell grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* left column */}
           <div>
-            <SectionHead
-              label="What we do"
-              title="Our programs"
-              copy="Built on a full assessment: your starting point measured, your program written, your progress pushed through controlled cycles of stress and adaptation — to your unique potential."
-            />
-            <Reveal delay={80}>
-              <ul className="mt-8 divide-y divide-steel border-y border-steel">
-                {[
-                  ['One-to-One Personal Training', '/personal-training'],
-                  ['Weight Loss & Fat Loss', '/weight-loss'],
-                  ['Strength & Conditioning', '/strength-conditioning'],
-                  ['Women’s Performance', '/womens-fitness'],
-                  ['Group Sessions', '/programs']
-                ].map(([name, to]) => (
-                  <li key={to}>
-                    <Link to={to} className="group flex items-center justify-between py-3.5 font-display font-bold uppercase text-[14px] tracking-[0.1em] text-navy hover:text-brand transition-colors">
-                      {name}
-                      <span aria-hidden="true" className="text-brand text-lg transition-transform group-hover:translate-x-1.5">→</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8">
-                <Link to="/programs" className="btn-primary">Choose a Program</Link>
+            <Reveal className="overflow-hidden">
+              <img src="/images/fitx/gen-whiteboard.jpg" alt="FITX coach walking a client through their written program" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+            </Reveal>
+            <Reveal delay={60}>
+              <p className="font-display font-bold text-brand text-[13px] uppercase tracking-[0.08em] mt-10">What we do</p>
+              <BigTitle className="mt-3">Our Programs</BigTitle>
+              <p className="mt-6 text-[15px] sm:text-base text-navy/80 leading-[1.8]">Our personal training programs have revolutionized fitness in Sahiwal!</p>
+              <p className="mt-6 text-[15px] text-silver leading-[1.8]">
+                Our workouts are designed following a full-body assessment which allows us to determine the client’s fitness level and quality of movement. This system works with the dynamic and ever changing nature of the human body to nurture it through controlled cycles of <strong className="text-navy">stress</strong>, <strong className="text-navy">disruption</strong> and <strong className="text-navy">adaptation</strong> — taking each body to its <strong className="text-navy">unique potential</strong>.
+              </p>
+              <p className="mt-5 text-[15px] text-silver leading-[1.8]">
+                Our rigorous routines combine cardio and resistance training in coached, supervised sessions that are aimed to develop your form, function and stamina — while guaranteeing your goals!
+              </p>
+              <div className="mt-9">
+                <Link to="/training" className="btn-primary">Choose a Program</Link>
               </div>
             </Reveal>
-          </div>
-          <Reveal delay={100} className="grid gap-5">
-            <div className="overflow-hidden">
-              <img src="/images/fitx/community/fitx-trainer-neon-sign.webp" alt="FITX trainer under the studio neon sign" width={960} height={1280} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
-            </div>
-            <div className="overflow-hidden">
-              <img src="/images/fitx/gen-whiteboard.jpg" alt="FITX coach walking a client through their written program" width={1280} height={960} loading="lazy" decoding="async" className="w-full aspect-[16/9] object-cover" />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* OUR COACHES */}
-      <section className="py-16 sm:py-24">
-        <div className="shell grid lg:grid-cols-2 gap-12 items-center">
-          <Reveal className="overflow-hidden order-2 lg:order-1">
-            <img src="/images/fitx/community/fitx-trainer-neon-sign.webp" alt="FITX trainer under the studio neon sign" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover" />
-          </Reveal>
-          <div className="order-1 lg:order-2">
-            <SectionHead
-              label="Personal training"
-              title="Our coaches"
-              copy="FITX programs combined with excellent coaching guarantee results. Our coaches don’t just challenge you — they invest in you."
-            />
-            <Reveal delay={80}>
-              <div className="mt-8">
-                <Link to="/trainers" className="btn-primary">Meet Our Coaches</Link>
-              </div>
+            <Reveal delay={80} className="overflow-hidden mt-12">
+              <img src="/images/fitx/gen-squat.jpg" alt="Barbell training at FITX Sahiwal" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
             </Reveal>
           </div>
-        </div>
-        <div className="shell mt-14 grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {(trainers || []).map((t, i) => <TrainerCard key={t.slug} t={t} i={i} />)}
-        </div>
-      </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-16 sm:py-24 bg-deep border-y border-steel">
-        <div className="shell">
-          <SectionHead center label="Client testimonials" title="In their words" />
-          <div className="mt-12 grid md:grid-cols-3 gap-10">
-            {quotes.map((r, i) => <Quote key={r._id} r={r} i={i} />)}
-          </div>
-          <Reveal className="mt-10 text-center">
-            <Link to="/results" className="font-display text-[12px] font-bold uppercase tracking-[0.18em] text-brand hover:text-brand-deep">See all results →</Link>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* MEMBERSHIP */}
-      <section className="py-16 sm:py-24">
-        <div className="shell">
-          <SectionHead center label="Membership" title="Clear programs. Published rates." copy="Group Session Rs 8,500/month · One-to-One Rs 16,000/month · 3 months with 10% off." />
-          <Reveal delay={80} className="mt-10 text-center">
-            <Link to="/programs" className="btn-primary">View Membership</Link>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ASSESSMENT */}
-      <section className="py-16 sm:py-24 bg-navy">
-        <div className="shell text-center">
-          <Reveal>
-            <p className="font-display text-[12px] font-bold uppercase tracking-[0.28em] text-white/60"><span className="text-brand mr-2" aria-hidden="true">#####</span>Free tool · no account</p>
-            <h2 className="font-display font-extrabold uppercase text-3xl sm:text-4xl text-white mt-2 leading-tight">Know your body. Understand your goal.</h2>
-            <p className="mt-4 text-white/70 max-w-md mx-auto">A 2-minute body composition assessment — BMI, body fat, daily energy needs and your healthy range.</p>
-            <div className="mt-8">
-              <Link to="/body-assessment" className="btn-primary">Calculate My Results</Link>
+          {/* right column */}
+          <div>
+            <Reveal className="overflow-hidden">
+              <img src="/images/fitx/gen-mixed-group.jpg" alt="Members training together at FITX Sahiwal" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[3/4] object-cover" />
+            </Reveal>
+            <div className="border-t border-steel mt-10 pt-10">
+              <Reveal>
+                <p className="font-display font-bold text-brand text-[13px] uppercase tracking-[0.08em]">Personal training</p>
+                <BigTitle className="mt-3">Our Coaches</BigTitle>
+                <p className="mt-6 text-base sm:text-lg text-navy leading-relaxed">FITX programs combined with excellent coaching <span className="uppercase">guarantee results</span>.</p>
+                <p className="mt-5 text-[15px] text-silver leading-[1.8]">
+                  Our team of coaches is an exceptional mix of talent, knowledge, experience, and most importantly, passion. When you join FITX, rest assured that you are not the only one investing in YOU.
+                </p>
+                <p className="mt-5 text-[15px] text-silver leading-[1.8]">
+                  Each one of our experts is constantly redefining fitness ideals. They don’t just challenge you, but persistently push their own physical boundaries as well. Each of them has a fitness story and journey to share…
+                </p>
+                <div className="mt-9">
+                  <Link to="/trainers" className="btn-primary">Meet Our Coaches</Link>
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
-      <CTABand
-        image="/images/fitx/hero-coaching.jpg"
-        title="Start with a conversation"
-        copy="Free consultation at the studio. We assess, you decide."
-        waText="Hello FITX, I would like to book a consultation."
-      />
+      {/* 4 — CLIENT TESTIMONIALS carousel */}
+      <section className="py-14 sm:py-20">
+        <div className="shell">
+          <BigTitle>Client Testimonials</BigTitle>
+          <div className="mt-12">
+            <TestimonialCarousel items={quotes} />
+          </div>
+        </div>
+      </section>
     </>
   );
 }
