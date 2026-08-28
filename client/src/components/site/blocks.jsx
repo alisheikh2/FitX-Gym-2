@@ -6,9 +6,9 @@ import { wa, BRAND, tel } from '../../lib/brand.js';
 /* ============ HERO SLIDER — synced text out/in, single timer state machine (no glitches) ============ */
 export function HeroSlider() {
   const slides = [
-    { img: '/images/fitx/hero-coaching.jpg', alt: 'FITX coach spotting a client’s barbell squat' },
-    { img: '/images/fitx/hero-ropes.jpg', alt: 'Client training on the row machine beside sunlit windows at FITX' },
-    { img: '/images/fitx/gen-plate-woman.jpg', alt: 'Member holding a weight plate at FITX Sahiwal' }
+    { img: '/images/fitx/hero-coaching.jpg', mob: '/images/fitx/hero-coaching-mobile.jpg', alt: 'FITX coach spotting a client’s barbell squat' },
+    { img: '/images/fitx/hero-ropes.jpg', mob: '/images/fitx/hero-ropes-mobile.jpg', alt: 'Client training on the row machine beside sunlit windows at FITX' },
+    { img: '/images/fitx/gen-plate-woman.jpg', mob: '/images/fitx/hero-plate-mobile.jpg', alt: 'Member holding a weight plate at FITX Sahiwal' }
   ];
   const [i, setI] = useState(0);
   const [phase, setPhase] = useState('in'); // 'in' | 'out'
@@ -35,15 +35,29 @@ export function HeroSlider() {
   return (
     <section className="relative h-[72svh] sm:h-[100svh] min-h-[540px] sm:min-h-[620px] overflow-hidden" aria-roledescription="carousel" aria-label="FITX studio">
       {slides.map((sld, idx) => (
-        <img
+        <div
           key={sld.img}
-          src={sld.img}
-          alt={idx === i ? sld.alt : ''}
           aria-hidden={idx !== i}
-          loading={idx === 0 ? 'eager' : 'lazy'}
-          decoding="async"
-          className={`absolute inset-0 h-full w-full object-cover object-[50%_38%] transition-opacity duration-700 ${idx === i ? 'opacity-100' : 'opacity-0'}`}
-        />
+          className={`absolute inset-0 transition-opacity duration-700 ${idx === i ? 'opacity-100' : 'opacity-0'}`}
+        >
+          {/* mobile: portrait art-direction — no cut subjects */}
+          <img
+            src={sld.mob}
+            alt={idx === i ? sld.alt : ''}
+            loading={idx === 0 ? 'eager' : 'lazy'}
+            decoding="async"
+            className="md:hidden h-full w-full object-cover object-[50%_30%]"
+          />
+          {/* desktop: landscape */}
+          <img
+            src={sld.img}
+            alt=""
+            aria-hidden="true"
+            loading={idx === 0 ? 'eager' : 'lazy'}
+            decoding="async"
+            className="hidden md:block h-full w-full object-cover object-[50%_38%]"
+          />
+        </div>
       ))}
       <div className="absolute inset-0 bg-black/25" aria-hidden="true" />
 
