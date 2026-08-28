@@ -27,7 +27,7 @@ export default function WeightLoss() {
         <div className="shell">
           <Reveal>
             <div className="md:float-right md:ml-8 mb-6 md:mb-4 max-w-md overflow-hidden">
-              <img src="/images/fitx/gen-progress-review.jpg" alt="FITX coach reviewing a client's progress" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[3/2] object-cover" />
+              <img src="/images/fitx/gen-progress-review.jpg" alt="FITX coach reviewing a client's progress" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[3/2] object-cover" />
             </div>
             <p className="text-[15px] sm:text-base text-silver leading-relaxed max-w-3xl">
               Fat loss at FITX is coached by Arslan Ahmad — seven years of experience in Sahiwal. Training is structured, nutrition is practical (built around the food your household actually cooks), and progress is measured weekly: weight trend, waist, photos, how clothes fit.

@@ -33,7 +33,7 @@ export function HeroSlider() {
   useEffect(() => clearTimers, []);
 
   return (
-    <section className="relative h-[100svh] min-h-[620px] overflow-hidden" aria-roledescription="carousel" aria-label="FITX studio">
+    <section className="relative h-[72svh] sm:h-[100svh] min-h-[540px] sm:min-h-[620px] overflow-hidden" aria-roledescription="carousel" aria-label="FITX studio">
       {slides.map((sld, idx) => (
         <img
           key={sld.img}
@@ -42,7 +42,7 @@ export function HeroSlider() {
           aria-hidden={idx !== i}
           loading={idx === 0 ? 'eager' : 'lazy'}
           decoding="async"
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${idx === i ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute inset-0 h-full w-full object-cover object-[50%_38%] transition-opacity duration-700 ${idx === i ? 'opacity-100' : 'opacity-0'}`}
         />
       ))}
       <div className="absolute inset-0 bg-black/25" aria-hidden="true" />
@@ -76,7 +76,7 @@ export function BandCard({ to, image, alt, kicker, title, copy }) {
     <Reveal className="h-full">
       <Link to={to} className="group block h-full">
         <div className="overflow-hidden">
-          <img src={image} alt={alt} width={1000} height={620} loading="lazy" decoding="async" className="w-full aspect-[13/8] object-cover" />
+          <img src={image} alt={alt} width={1000} height={620} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[13/8] object-cover object-center" />
         </div>
         <div className="bg-navy px-7 py-6 flex items-center justify-between gap-4">
           <div>
@@ -280,7 +280,7 @@ export function TrainerCard({ t, i = 0 }) {
     <Reveal delay={i * 70} className="h-full">
       <Link to={`/trainers/${t.slug}`} className="group block h-full">
         <div className="overflow-hidden bg-deep">
-          <img src={t.photo} alt={t.photoAlt || `${t.name}, ${t.role} at FITX Sahiwal`} width={800} height={1066} loading="lazy" decoding="async" className="w-full aspect-[3/4] object-cover object-top transition-transform duration-[1.4s] group-hover:scale-[1.05]" />
+          <img src={t.photo} alt={t.photoAlt || `${t.name}, ${t.role} at FITX Sahiwal`} width={800} height={1066} loading="lazy" decoding="async" className="w-full aspect-[4/5] sm:aspect-[3/4] object-cover object-top transition-transform duration-[1.4s] group-hover:scale-[1.05]" />
         </div>
         <div className="pt-4">
           <p className="font-display text-[11px] font-bold uppercase tracking-[0.22em] text-brand">Coach</p>

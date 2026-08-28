@@ -23,7 +23,7 @@ export default function StrengthConditioning() {
         <div className="shell">
           <Reveal>
             <div className="md:float-left md:mr-8 mb-6 md:mb-4 max-w-md overflow-hidden">
-              <img src="/images/fitx/gen-squat.jpg" alt="Barbell back squat in the racks at FITX Sahiwal" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[3/2] object-cover" />
+              <img src="/images/fitx/gen-squat.jpg" alt="Barbell back squat in the racks at FITX Sahiwal" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[3/2] object-cover" />
             </div>
             <p className="text-[15px] sm:text-base text-silver leading-relaxed max-w-3xl">
               Coach Muazam leads strength and conditioning at FITX. Sessions are built on the fundamentals done well — squat, hinge, press, pull and carry — progressed carefully so members add load without borrowing from their technique.

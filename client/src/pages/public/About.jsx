@@ -23,7 +23,7 @@ export default function About() {
         <div className="shell">
           <Reveal>
             <div className="md:float-left md:mr-8 mb-6 md:mb-4 max-w-md overflow-hidden">
-              <img src="/images/fitx/trainers/fitx-founder-training-session.webp" alt="Founder coaching on the FITX Sahiwal floor" width={739} height={1600} loading="lazy" decoding="async" className="w-full aspect-[3/2] object-cover" />
+              <img src="/images/fitx/trainers/fitx-founder-training-session.webp" alt="Founder coaching on the FITX Sahiwal floor" width={739} height={1600} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[3/2] object-cover" />
             </div>
             <p className="text-[15px] sm:text-base text-silver leading-relaxed max-w-3xl">
               Most gyms sell you access and leave you alone. FITX was built the other way around: a personal training studio where every member starts with a consultation, trains on a written program, and is coached session after session. Technique is watched. Progress is recorded. Nothing is left to guesswork.
@@ -79,7 +79,7 @@ export default function About() {
               ['/images/fitx/community/fitx-founder-university-talk.webp', 'Zohaib Ali speaking at the University of Sahiwal seminar']
             ].map(([src, alt], i) => (
               <Reveal key={src} delay={i * 60} className="overflow-hidden">
-                <img src={src} alt={alt} width={900} height={1200} loading="lazy" decoding="async" className="w-full aspect-[3/4] object-cover" />
+                <img src={src} alt={alt} width={900} height={1200} loading="lazy" decoding="async" className="w-full aspect-[4/5] sm:aspect-[3/4] object-cover" />
               </Reveal>
             ))}
           </div>

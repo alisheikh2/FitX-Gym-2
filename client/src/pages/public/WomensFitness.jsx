@@ -27,7 +27,7 @@ export default function WomensFitness() {
         <div className="shell">
           <Reveal>
             <div className="md:float-right md:ml-8 mb-6 md:mb-4 max-w-md overflow-hidden">
-              <img src="/images/fitx/trainers/fitx-trainer-iqra-zahid.webp" alt="Iqra Zahid coaching at FITX Sahiwal" width={1023} height={1537} loading="lazy" decoding="async" className="w-full aspect-[3/2] object-cover object-top" />
+              <img src="/images/fitx/trainers/fitx-trainer-iqra-zahid.webp" alt="Iqra Zahid coaching at FITX Sahiwal" width={1023} height={1537} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[3/2] object-cover object-top" />
             </div>
             <p className="text-[15px] sm:text-base text-silver leading-relaxed max-w-3xl">
               Iqra Zahid coaches the women who train at FITX during the studio’s dedicated female hours. Over seven years she has coached students, brides-to-be, new mothers and women in their fifties — most of them starting from zero.

@@ -35,7 +35,7 @@ export default function PersonalTraining() {
         <div className="shell">
           <Reveal>
             <div className="md:float-left md:mr-8 mb-6 md:mb-4 max-w-md overflow-hidden">
-              <img src="/images/fitx/gen-assessment.jpg" alt="FITX coach conducting a movement assessment on the turf" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[3/2] object-cover" />
+              <img src="/images/fitx/gen-assessment.jpg" alt="FITX coach conducting a movement assessment on the turf" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[3/2] object-cover" />
             </div>
             <p className="text-[15px] sm:text-base text-silver leading-relaxed max-w-3xl">
               Your first session at FITX is a consultation, not a sales pitch. We assess your starting point — movement quality, strength, history, schedule — and write a program around it. Rigorous routines combine cardio and resistance training in coached sessions aimed to develop your form, function and stamina while guaranteeing your goals.
@@ -61,7 +61,7 @@ export default function PersonalTraining() {
                 <div className="grid sm:grid-cols-[180px_1fr] gap-5 items-start">
                   {img ? (
                     <div className="overflow-hidden">
-                      <img src={img} alt={`${title} at FITX Sahiwal`} width={1000} height={750} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+                      <img src={img} alt={`${title} at FITX Sahiwal`} width={1000} height={750} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover object-center" />
                     </div>
                   ) : (
                     <div className="hidden sm:block h-full w-[180px] border-l-4 border-brand" aria-hidden="true" />

@@ -35,7 +35,7 @@ export default function TrainerDetail() {
           <div className="grid lg:grid-cols-[minmax(0,440px)_1fr] gap-10 lg:gap-16 items-start">
             <Reveal className="relative">
               <div className="img-zoom overflow-hidden border border-steel">
-                <img src={t.photo} alt={t.photoAlt || `${t.name} at FITX Sahiwal`} width={800} height={1066} loading="eager" decoding="async" className="w-full aspect-[3/4] object-cover object-top" />
+                <img src={t.photo} alt={t.photoAlt || `${t.name} at FITX Sahiwal`} width={800} height={1066} loading="eager" decoding="async" className="w-full aspect-[4/5] sm:aspect-[3/4] object-cover object-top" />
               </div>
               <div className="absolute -bottom-5 left-5 bg-brand text-obsidian px-5 py-3">
                 <p className="font-display font-bold text-sm uppercase tracking-wider">{t.role}</p>

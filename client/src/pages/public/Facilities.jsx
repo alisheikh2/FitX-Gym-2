@@ -33,7 +33,7 @@ export default function Facilities() {
           {GALLERY.map(([src, cap], i) => (
             <Reveal key={src} delay={(i % 3) * 60} className="overflow-hidden">
               <a href={src} target="_blank" rel="noopener noreferrer" className="block group">
-                <img src={src} alt={cap} width={1200} height={800} loading="lazy" decoding="async" className="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                <img src={src} alt={cap} width={1200} height={800} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[3/2] object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]" />
               </a>
             </Reveal>
           ))}
