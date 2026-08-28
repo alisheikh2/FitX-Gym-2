@@ -35,7 +35,7 @@ export default function Results() {
               <Reveal key={t._id} delay={i * 60}>
                 <figure>
                   <div className="overflow-hidden">
-                    <img src={t.image} alt={t.imageAlt} width={800} height={900} loading="lazy" decoding="async" className="w-full object-cover" />
+                    <img src={t.image} alt={t.imageAlt} width={800} height={900} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover object-center" />
                   </div>
                   <figcaption className="mt-3">
                     <p className="font-display font-bold text-sm text-paper">{t.name}</p>
@@ -54,7 +54,7 @@ export default function Results() {
         <div className="shell">
           <SectionHead label="Reviews" title="In their words." center />
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {quotes.slice(0, 6).map((r, i) => <Quote key={r._id} r={r} i={i} />)}
+            {quotes.slice(0, 3).map((r, i) => <Quote key={r._id} r={r} i={i} />)}
           </div>
           <Reveal className="mt-10 text-center">
             <a href={BRAND.mapUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-brand underline decoration-brand/60 underline-offset-4 hover:decoration-brand">Read all reviews on Google Maps →</a>
