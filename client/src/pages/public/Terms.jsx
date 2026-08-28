@@ -13,7 +13,7 @@ const S = [
 export default function Terms() {
   return (
     <>
-      <Seo title="Terms & Conditions — FITX Sahiwal" description="Membership terms, safety, payments and website terms for FITX Personal Fitness Training Studio, Sahiwal." path="/terms-and-conditions" />
+      <Seo title="Terms & Conditions, FITX Sahiwal" description="Membership terms, safety, payments and website terms for FITX Personal Fitness Training Studio, Sahiwal." path="/terms-and-conditions" />
       <PageHero label="Legal" title="Terms & Conditions" copy={`Last updated: ${new Date().toLocaleDateString('en-PK', { month: 'long', year: 'numeric' })}`} crumbs={[['Terms & Conditions', null]]} />
       <section className="py-14 shell max-w-3xl space-y-8">
         {S.map(([h, p]) => (

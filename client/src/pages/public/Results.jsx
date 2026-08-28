@@ -14,7 +14,7 @@ export default function Results() {
   return (
     <>
       <Seo
-        title="Results & Reviews — FITX Personal Training Studio Sahiwal"
+        title="Results & Reviews, FITX Personal Training Studio Sahiwal"
         description={`Real member reviews and transformations from FITX Sahiwal. Rated ${BRAND.rating.value} on ${BRAND.rating.source}. Honest results, privacy protected.`}
         path="/results"
         image="/images/fitx/results/fitx-client-of-the-month.webp"
@@ -22,7 +22,7 @@ export default function Results() {
       <PageHero
         label="Results"
         title="Proof, not promises."
-        copy={`Rated ${BRAND.rating.value} on ${BRAND.rating.source} · real reviews, real journeys — nothing fabricated, ever.`}
+        copy={`Rated ${BRAND.rating.value} on ${BRAND.rating.source} · real reviews, real journeys, nothing fabricated, ever.`}
         image="/images/fitx/results/fitx-client-of-the-month.webp"
         crumbs={[['Results', null]]}
       />
@@ -62,7 +62,7 @@ export default function Results() {
         </div>
       </section>
 
-      <CTABand image="/images/fitx/results/fitx-transformation-03.webp" title="Your record starts here." copy="Progress you can audit — on paper, not in promises." />
+      <CTABand image="/images/fitx/results/fitx-transformation-03.webp" title="Your record starts here." copy="Progress you can audit, on paper, not in promises." />
     </>
   );
 }

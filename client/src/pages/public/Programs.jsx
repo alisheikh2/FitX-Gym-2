@@ -29,7 +29,7 @@ export default function Programs() {
       <section className="py-16 sm:py-24">
         <div className="shell grid lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {[
-            ['Group Sessions', group, 'Coach-led training on the floor — structure and supervision with group energy.', false],
+            ['Group Sessions', group, 'Coach-led training on the floor, structure and supervision with group energy.', false],
             ['One-to-One Sessions', one, 'An individual program, coached one-to-one, tracked session to session.', true]
           ].map(([title, items, desc, featured], idx) => (
             <Reveal key={title} delay={idx * 90}>
@@ -68,11 +68,11 @@ export default function Programs() {
             <figure className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
               <div>
                 <img src="/images/fitx/programs/fitx-fee-pattern-female.webp" alt="Official FITX fee pattern with female timings" width={900} height={1273} loading="lazy" decoding="async" className="w-full border border-steel shadow-card" />
-                <figcaption className="mt-2.5 text-xs text-silver text-center">Official fee pattern — female timings.</figcaption>
+                <figcaption className="mt-2.5 text-xs text-silver text-center">Official fee pattern, female timings.</figcaption>
               </div>
               <div>
                 <img src="/images/fitx/programs/fitx-fee-pattern-male.webp" alt="Official FITX fee pattern with male slots" width={900} height={1273} loading="lazy" decoding="async" className="w-full border border-steel shadow-card" />
-                <figcaption className="mt-2.5 text-xs text-silver text-center">Official fee pattern — male slots.</figcaption>
+                <figcaption className="mt-2.5 text-xs text-silver text-center">Official fee pattern, male slots.</figcaption>
               </div>
             </figure>
           </Reveal>

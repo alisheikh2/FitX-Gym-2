@@ -54,13 +54,13 @@ export default function BlogPost() {
             <div className="mt-10 space-y-6">
               {(post.content || []).map((b, i) => {
                 if (b.type === 'h2') return <h2 key={i} className="font-display font-bold text-2xl text-paper pt-4">{b.text}</h2>;
-                if (b.type === 'ul') return <ul key={i} className="space-y-2.5">{b.items.map((it) => <li key={it} className="text-silver leading-relaxed flex gap-3"><span className="text-brand font-bold shrink-0">—</span>{it}</li>)}</ul>;
+                if (b.type === 'ul') return <ul key={i} className="space-y-2.5">{b.items.map((it) => <li key={it} className="text-silver leading-relaxed flex gap-3"><span className="text-brand font-bold shrink-0">•</span>{it}</li>)}</ul>;
                 return <p key={i} className="text-silver leading-relaxed text-base sm:text-lg">{b.text}</p>;
               })}
             </div>
           </Reveal>
           <Reveal className="mt-12 card p-6 flex flex-wrap items-center justify-between gap-4">
-            <p className="text-sm text-silver">Questions about your own situation? Ask a coach — it’s free.</p>
+            <p className="text-sm text-silver">Questions about your own situation? Ask a coach, it’s free.</p>
             <Link to="/book-consultation" className="btn-primary btn-sm">Book a Consultation</Link>
           </Reveal>
         </div>

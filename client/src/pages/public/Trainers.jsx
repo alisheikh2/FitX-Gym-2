@@ -9,7 +9,7 @@ export default function Trainers() {
   return (
     <>
       <Seo
-        title="Our Coaches — Personal Trainers in Sahiwal | FITX"
+        title="Our Coaches, Personal Trainers in Sahiwal | FITX"
         description="Meet the coaches of FITX Sahiwal: founder & head coach Zohaib Ali, fat-loss expert Arslan Ahmad, strength & conditioning coach Muazam, and women's performance coach Iqra Zahid."
         path="/trainers"
         image="/images/fitx/trainers/fitx-trainer-muazam.webp"

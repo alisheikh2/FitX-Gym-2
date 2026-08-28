@@ -11,7 +11,7 @@ export default function FAQPage() {
   return (
     <>
       <Seo
-        title="FAQ — Personal Training, Hours & Pricing in Sahiwal | FITX"
+        title="FAQ, Personal Training, Hours & Pricing in Sahiwal | FITX"
         description="Answers to common questions about FITX Sahiwal: opening hours, women's training hours, pricing, personal training, beginners and how to book a consultation."
         path="/faq"
         jsonLd={{
@@ -27,7 +27,7 @@ export default function FAQPage() {
       <PageHero
         label="FAQ"
         title="Asked often, answered honestly."
-        copy={`Hours, pricing, women’s training, beginners — answered straight. Still unsure? Call ${BRAND.phoneDisplay}.`}
+        copy={`Hours, pricing, women’s training, beginners, answered straight. Still unsure? Call ${BRAND.phoneDisplay}.`}
         image="/images/fitx/facility/fitx-facility-floor-02.webp"
         crumbs={[['FAQ', null]]}
       />

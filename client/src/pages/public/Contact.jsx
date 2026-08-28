@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <>
       <Seo
-        title="Contact FITX — Gym in Shadman Town, Sahiwal | Phone, Hours & Map"
+        title="Contact FITX, Gym in Shadman Town, Sahiwal | Phone, Hours & Map"
         description={`Contact FITX Personal Fitness Training Studio: ${BRAND.address}. Call ${BRAND.phoneDisplay}, WhatsApp, or visit Sat–Thu 11 AM – 10 PM. Get directions on Google Maps.`}
         path="/contact"
       />
@@ -46,7 +46,7 @@ export default function Contact() {
           </Reveal>
           <Reveal delay={80}>
             <iframe
-              title="FITX Fitness Studio on Google Maps — Shadman Town, Sahiwal"
+              title="FITX Fitness Studio on Google Maps, Shadman Town, Sahiwal"
               src={BRAND.mapEmbed}
               className="w-full h-[420px] border border-steel bg-charcoal"
               loading="lazy"

@@ -6,7 +6,7 @@ import { BRAND, wa, tel } from '../../lib/brand.js';
 import Reveal from '../../components/ui/Reveal.jsx';
 import { PageHero } from '../../components/site/blocks.jsx';
 
-const GOALS = ['Fat loss / weight loss', 'Strength & muscle', 'General fitness & health', 'Sports performance', "Women's training", 'Not sure yet — need guidance'];
+const GOALS = ['Fat loss / weight loss', 'Strength & muscle', 'General fitness & health', 'Sports performance', "Women's training", 'Not sure yet, need guidance'];
 const TYPES = ['One-to-one personal training', 'Group sessions', "Women's dedicated hours", 'Not sure yet'];
 const TIMES = ['Morning (11 AM – 2 PM)', 'Afternoon (2 – 6 PM)', 'Evening (6 – 10 PM)'];
 
@@ -38,7 +38,7 @@ export default function BookConsultation() {
         name: form.name, phone: form.phone, email: form.email || undefined,
         goal: form.goal, preferredTraining: form.type, preferredTime: form.time,
         preferredDate: form.date || undefined,
-        message: form.message, source: 'Website — Consultation Form'
+        message: form.message, source: 'Website, Consultation Form'
       });
       setState('done');
     } catch (err) {
@@ -50,14 +50,14 @@ export default function BookConsultation() {
   return (
     <>
       <Seo
-        title="Book a Free Consultation — FITX Sahiwal Personal Training"
-        description="Book a free consultation at FITX Personal Fitness Training Studio, Sahiwal. Tell us your goal and preferred time — a coach will contact you to schedule your visit."
+        title="Book a Free Consultation, FITX Sahiwal Personal Training"
+        description="Book a free consultation at FITX Personal Fitness Training Studio, Sahiwal. Tell us your goal and preferred time, a coach will contact you to schedule your visit."
         path="/book-consultation"
       />
       <PageHero
         label="Book a Consultation"
         title="Start with a conversation."
-        copy="Tell us your goal and when you can train. Our team will contact you to schedule your consultation at the studio — free, and without obligation."
+        copy="Tell us your goal and when you can train. Our team will contact you to schedule your consultation at the studio, free, and without obligation."
         image="/images/fitx/hero-coaching.jpg"
         crumbs={[['Book a Consultation', null]]}
       />
@@ -68,7 +68,7 @@ export default function BookConsultation() {
             <div ref={doneRef} className="card p-10 text-center lg:text-left animate-fade-up">
               <div className="mx-auto lg:mx-0 h-14 w-14 bg-brand text-obsidian flex items-center justify-center text-2xl font-bold">✓</div>
               <h2 className="h-display text-3xl mt-6 text-paper">Request received.</h2>
-              <p className="mt-4 text-silver leading-relaxed">Thank you, {form.name.split(' ')[0]}. Your details have gone directly to the FITX team’s private lead list — they are never published anywhere. Our team will contact you on <strong className="text-paper">{form.phone}</strong> to schedule your consultation. Prefer not to wait? <a className="link-underline text-brand" href={wa(`Hello FITX, I just submitted a consultation request (${form.name}).`)} target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>.</p>
+              <p className="mt-4 text-silver leading-relaxed">Thank you, {form.name.split(' ')[0]}. Your details have gone directly to the FITX team’s private lead list, they are never published anywhere. Our team will contact you on <strong className="text-paper">{form.phone}</strong> to schedule your consultation. Prefer not to wait? <a className="link-underline text-brand" href={wa(`Hello FITX, I just submitted a consultation request (${form.name}).`)} target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <button className="btn-ghost btn-sm" onClick={() => setState('idle')}>Send Another Request</button>
                 <Link to="/" className="btn-dark btn-sm">Back to Home</Link>
@@ -134,7 +134,7 @@ export default function BookConsultation() {
                 <li>We contact you to fix a time.</li>
                 <li>You visit, meet a coach, see the floor.</li>
                 <li>We assess your goal & starting point.</li>
-                <li>You decide — no pressure, no hard sell.</li>
+                <li>You decide, no pressure, no hard sell.</li>
               </ol>
             </div>
             <div className="card p-6">

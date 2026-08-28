@@ -20,7 +20,7 @@ export default function WomensFitness() {
       />
       <PageHero
         title="Women’s Fitness"
-        copy="Proper coaching, dedicated hours, a floor of your own. Women train with coach Iqra Zahid — seven years of experience coaching women in Sahiwal."
+        copy="Proper coaching, dedicated hours, a floor of your own. Women train with coach Iqra Zahid, seven years of experience coaching women in Sahiwal."
         crumbs={[["Women's Fitness", null]]}
       />
 
@@ -28,20 +28,20 @@ export default function WomensFitness() {
         <div className="shell grid md:grid-cols-[1fr_380px] gap-10 lg:gap-14 items-start max-w-5xl mx-auto">
           <Reveal>
             <p className="text-[15px] sm:text-base text-silver leading-[1.9]">
-              Iqra Zahid coaches the women who train at FITX during the studio’s dedicated female hours. Over seven years she has coached students, brides-to-be, new mothers and women in their fifties — most of them starting from zero.
+              Iqra Zahid coaches the women who train at FITX during the studio’s dedicated female hours. Over seven years she has coached students, brides-to-be, new mothers and women in their fifties, most of them starting from zero.
             </p>
             <p className="mt-5 text-[15px] sm:text-base text-silver leading-[1.9]">
-              Her programming treats women’s training seriously: progressive strength work, structured fat-loss phases and honest nutrition guidance — not a lighter version of training, and never stretched-out aerobics.
+              Her programming treats women’s training seriously: progressive strength work, structured fat-loss phases and honest nutrition guidance, not a lighter version of training, and never stretched-out aerobics.
             </p>
             <h3 className="font-display font-bold text-navy text-lg mt-8">What your first month looks like</h3>
             <ul className="mt-4 space-y-2.5 text-[15px] text-silver leading-relaxed">
               {[
-                'Consultation — your goal, schedule and health considerations, discussed privately.',
-                'Technique first — the core movements taught from zero, at your pace.',
+                'Consultation, your goal, schedule and health considerations, discussed privately.',
+                'Technique first, the core movements taught from zero, at your pace.',
                 'A structured program matched to your starting point, not copied from someone else.',
-                'Weekly check-ins — measurements and adjustments, so progress is visible.'
+                'Weekly check-ins, measurements and adjustments, so progress is visible.'
               ].map((t) => (
-                <li key={t} className="flex gap-3"><span className="text-brand font-bold shrink-0">—</span>{t}</li>
+                <li key={t} className="flex gap-3"><span className="text-brand font-bold shrink-0">•</span>{t}</li>
               ))}
             </ul>
             <div className="mt-8 border-l-4 border-brand bg-deep pl-5 py-4">
@@ -74,8 +74,8 @@ export default function WomensFitness() {
                 ))}
               </div>
               <ul className="mt-6 space-y-2.5 text-sm sm:text-base text-silver">
-                {['Progressive strength & fat-loss programming', 'Beginners started from zero — technique first', 'Safe, secure, respectful — members say so'].map((t) => (
-                  <li key={t} className="flex gap-3"><span className="text-brand font-bold shrink-0">—</span>{t}</li>
+                {['Progressive strength & fat-loss programming', 'Beginners started from zero, technique first', 'Safe, secure, respectful, members say so'].map((t) => (
+                  <li key={t} className="flex gap-3"><span className="text-brand font-bold shrink-0">•</span>{t}</li>
                 ))}
               </ul>
             </Reveal>

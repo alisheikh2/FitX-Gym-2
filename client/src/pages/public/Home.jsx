@@ -11,16 +11,16 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="FITX Personal Fitness Training Studio — Personal Trainer in Sahiwal"
+        title="FITX Personal Fitness Training Studio, Personal Trainer in Sahiwal"
         description="FITX is Sahiwal's dedicated personal training studio in Shadman Town, Faisalabad Road. One-to-one coaching, fat loss, strength & conditioning and dedicated women's hours. Book a consultation."
         path="/"
         image="/images/fitx/hero-coaching.jpg"
       />
 
-      {/* 1 — HERO SLIDER */}
+      {/* 1, HERO SLIDER */}
       <HeroSlider />
 
-      {/* 2 — TWO BAND CARDS */}
+      {/* 2, TWO BAND CARDS */}
       <section className="py-14 sm:py-20">
         <div className="shell grid md:grid-cols-2 gap-10 lg:gap-14">
           <BandCard
@@ -29,7 +29,7 @@ export default function Home() {
             alt="FITX coach guiding a client through a barbell session"
             kicker="Who we are"
             title="Boutique coaching"
-            copy="FITX is a boutique personal training studio based in Shadman Town, Sahiwal. Since day one we have taken fitness seriously — client-centric coaching, rigorous custom programs and practical nutrition advice, with numerous transformations of body, mind and soul."
+            copy="FITX is a boutique personal training studio based in Shadman Town, Sahiwal. Since day one we have taken fitness seriously, client-centric coaching, rigorous custom programs and practical nutrition advice, with numerous transformations of body, mind and soul."
           />
           <BandCard
             to="/womens-fitness"
@@ -37,12 +37,12 @@ export default function Home() {
             alt="Women training together in a coached session at FITX Sahiwal"
             kicker="Women’s training"
             title="Dedicated hours"
-            copy="Women train with coach Iqra Zahid — seven years of experience — during dedicated female hours, 10:30–1 & 3–6 daily. Progressive strength and fat-loss programming in a safe, respectful studio. Sign up now!"
+            copy="Women train with coach Iqra Zahid, seven years of experience, during dedicated female hours, 10:30–1 & 3–6 daily. Progressive strength and fat-loss programming in a safe, respectful studio. Sign up now!"
           />
         </div>
       </section>
 
-      {/* 3 — STAGGERED: OUR PROGRAMS / OUR COACHES */}
+      {/* 3, STAGGERED: OUR PROGRAMS / OUR COACHES */}
       <section className="pb-14 sm:pb-20">
         <div className="shell grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* left column */}
@@ -55,10 +55,10 @@ export default function Home() {
               <BigTitle className="mt-3">Our Programs</BigTitle>
               <p className="mt-6 text-[15px] sm:text-base text-navy/80 leading-[1.8]">Our personal training programs have revolutionized fitness in Sahiwal!</p>
               <p className="mt-6 text-[15px] text-silver leading-[1.8]">
-                Our workouts are designed following a full-body assessment which allows us to determine the client’s fitness level and quality of movement. This system works with the dynamic and ever changing nature of the human body to nurture it through controlled cycles of <strong className="text-navy">stress</strong>, <strong className="text-navy">disruption</strong> and <strong className="text-navy">adaptation</strong> — taking each body to its <strong className="text-navy">unique potential</strong>.
+                Our workouts are designed following a full-body assessment which allows us to determine the client’s fitness level and quality of movement. This system works with the dynamic and ever changing nature of the human body to nurture it through controlled cycles of <strong className="text-navy">stress</strong>, <strong className="text-navy">disruption</strong> and <strong className="text-navy">adaptation</strong>, taking each body to its <strong className="text-navy">unique potential</strong>.
               </p>
               <p className="mt-5 text-[15px] text-silver leading-[1.8]">
-                Our rigorous routines combine cardio and resistance training in coached, supervised sessions that are aimed to develop your form, function and stamina — while guaranteeing your goals!
+                Our rigorous routines combine cardio and resistance training in coached, supervised sessions that are aimed to develop your form, function and stamina, while guaranteeing your goals!
               </p>
               <div className="mt-9">
                 <Link to="/training" className="btn-primary">Choose a Program</Link>
@@ -94,7 +94,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4 — CLIENT TESTIMONIALS carousel */}
+      {/* 4, CLIENT TESTIMONIALS carousel */}
       <section className="py-14 sm:py-20">
         <div className="shell">
           <BigTitle>Client Testimonials</BigTitle>

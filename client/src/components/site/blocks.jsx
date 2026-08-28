@@ -8,7 +8,8 @@ export function HeroSlider() {
   const slides = [
     { img: '/images/fitx/hero-coaching.jpg', mob: '/images/fitx/hero-coaching-mobile.jpg', alt: 'FITX coach spotting a client’s barbell squat' },
     { img: '/images/fitx/hero-ropes.jpg', mob: '/images/fitx/hero-ropes-mobile.jpg', alt: 'Client training on the row machine beside sunlit windows at FITX' },
-    { img: '/images/fitx/gen-plate-woman.jpg', mob: '/images/fitx/hero-plate-mobile.jpg', alt: 'Member holding a weight plate at FITX Sahiwal' }
+    { img: '/images/fitx/gen-plate-woman.jpg', mob: '/images/fitx/hero-plate-mobile.jpg', alt: 'Member holding a weight plate at FITX Sahiwal' },
+    { img: '/images/fitx/hero-pullups.jpg', mob: '/images/fitx/hero-pullups-mobile.jpg', alt: 'Member doing pull-ups on the rig at FITX Sahiwal' }
   ];
   const [i, setI] = useState(0);
   const [phase, setPhase] = useState('in'); // 'in' | 'out'
@@ -64,19 +65,19 @@ export function HeroSlider() {
       <button onClick={() => advance(i - 1)} aria-label="Previous slide" className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 text-white/90 hover:text-brand text-4xl sm:text-5xl font-light drop-shadow z-10">‹</button>
       <button onClick={() => advance(i + 1)} aria-label="Next slide" className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 text-white/90 hover:text-brand text-4xl sm:text-5xl font-light drop-shadow z-10">›</button>
 
-      <div className="absolute right-[6%] bottom-[26%] hidden md:block z-10">
-        <Link to="/book-consultation" className="btn-primary">Join Now</Link>
+      <div className="absolute right-[6%] bottom-[26%] hidden md:block z-20">
+        <Link to="/book-consultation" className="btn !rounded-full bg-brand text-white hover:bg-white hover:text-brand">Join Now <span aria-hidden="true" className="ml-1">›</span></Link>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 z-10">
+      <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none">
         <div className="shell pb-16 sm:pb-20">
-          <div key={i} className={phase === 'out' ? 'hero-out' : 'hero-in'}>
+          <div key={i} className={`pointer-events-none ${phase === 'out' ? 'hero-out' : 'hero-in'}`}>
             <h1 className="font-display font-extrabold uppercase text-white text-6xl sm:text-8xl lg:text-[7.5rem] leading-none tracking-tight drop-shadow-md">FITX</h1>
             <p className="font-display font-bold uppercase text-white text-lg sm:text-2xl lg:text-3xl mt-2 tracking-wide drop-shadow">Sahiwal’s premier personal training studio</p>
             <p className="text-white/95 text-sm sm:text-lg mt-4 drop-shadow">Sahiwal Studio: {BRAND.phoneDisplay}</p>
           </div>
-          <div className="md:hidden mt-6">
-            <Link to="/book-consultation" className="btn-primary">Join Now</Link>
+          <div className="md:hidden mt-6 pointer-events-auto">
+            <Link to="/book-consultation" className="btn !rounded-full bg-brand text-white hover:bg-white hover:text-brand">Join Now <span aria-hidden="true" className="ml-1">›</span></Link>
           </div>
         </div>
       </div>
@@ -92,7 +93,7 @@ export function BandCard({ to, image, alt, kicker, title, copy }) {
         <div className="overflow-hidden">
           <img src={image} alt={alt} width={1000} height={620} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[13/8] object-cover object-center" />
         </div>
-        <div className="bg-navy px-7 py-6 flex items-center justify-between gap-4">
+        <div className="bg-navy group-hover:bg-brand transition-colors duration-300 px-7 py-6 flex items-center justify-between gap-4">
           <div>
             <p className="font-display font-bold text-brand text-[13px] uppercase tracking-[0.08em]">{kicker}</p>
             <h3 className="font-display text-white text-xl sm:text-2xl uppercase mt-1.5 tracking-wide">{title}</h3>

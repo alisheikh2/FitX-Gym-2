@@ -16,7 +16,7 @@ export default function Training() {
   return (
     <>
       <Seo
-        title="What We Do — Personal Training, Fat Loss, Strength | FITX Sahiwal"
+        title="What We Do, Personal Training, Fat Loss, Strength | FITX Sahiwal"
         description="FITX Sahiwal programs: one-to-one personal training, weight loss & fat loss, strength & conditioning, women's performance, group sessions and nutrition guidance."
         path="/training"
       />

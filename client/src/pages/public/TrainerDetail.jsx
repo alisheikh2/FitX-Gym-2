@@ -23,7 +23,7 @@ export default function TrainerDetail() {
   return (
     <>
       <Seo
-        title={`${t.name} — ${t.role} | FITX Sahiwal`}
+        title={`${t.name}, ${t.role} | FITX Sahiwal`}
         description={`${t.name}, ${t.role} at FITX Personal Fitness Training Studio Sahiwal. ${t.shortBio || ''}`}
         path={`/trainers/${t.slug}`}
         image={t.photo}
@@ -68,13 +68,13 @@ export default function TrainerDetail() {
             <Reveal className="card p-7">
               <h2 className="font-display font-bold text-xl text-paper">Training focus</h2>
               <ul className="mt-4 space-y-2.5">
-                {(t.focus || []).map((f) => <li key={f} className="text-sm text-silver flex gap-3"><span className="text-brand font-bold">—</span>{f}</li>)}
+                {(t.focus || []).map((f) => <li key={f} className="text-sm text-silver flex gap-3"><span className="text-brand font-bold">•</span>{f}</li>)}
               </ul>
             </Reveal>
             <Reveal delay={80} className="card p-7">
               <h2 className="font-display font-bold text-xl text-paper">Who this coach is right for</h2>
               <ul className="mt-4 space-y-2.5">
-                {(t.suitableFor || []).map((f) => <li key={f} className="text-sm text-silver flex gap-3"><span className="text-brand font-bold">—</span>{f}</li>)}
+                {(t.suitableFor || []).map((f) => <li key={f} className="text-sm text-silver flex gap-3"><span className="text-brand font-bold">•</span>{f}</li>)}
               </ul>
             </Reveal>
           </div>

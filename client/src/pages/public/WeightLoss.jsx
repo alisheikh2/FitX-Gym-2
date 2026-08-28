@@ -19,7 +19,7 @@ export default function WeightLoss() {
       />
       <PageHero
         title="Weight Loss & Fat Loss"
-        copy="Movement-based fat loss, divided over phases to cater to all levels — beginners to regular gym-goers looking for a shred."
+        copy="Movement-based fat loss, divided over phases to cater to all levels, beginners to regular gym-goers looking for a shred."
         crumbs={[['What We Do', '/training'], ['Weight Loss', null]]}
       />
 
@@ -30,10 +30,10 @@ export default function WeightLoss() {
               <img src="/images/fitx/gen-progress-review.jpg" alt="FITX coach reviewing a client's progress" width={1600} height={900} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[3/2] object-cover" />
             </div>
             <p className="text-[15px] sm:text-base text-silver leading-relaxed max-w-3xl">
-              Fat loss at FITX is coached by Arslan Ahmad — seven years of experience in Sahiwal. Training is structured, nutrition is practical (built around the food your household actually cooks), and progress is measured weekly: weight trend, waist, photos, how clothes fit.
+              Fat loss at FITX is coached by Arslan Ahmad, seven years of experience in Sahiwal. Training is structured, nutrition is practical (built around the food your household actually cooks), and progress is measured weekly: weight trend, waist, photos, how clothes fit.
             </p>
             <p className="mt-4 text-[15px] sm:text-base text-silver leading-relaxed max-w-3xl">
-              No crash diets. No punishment plans. A realistic rate of loss that protects muscle — and a coach who notices when you drift, before you quit.
+              No crash diets. No punishment plans. A realistic rate of loss that protects muscle, and a coach who notices when you drift, before you quit.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 clear-both">
               <Link to="/trainers/arslan-ahmad" className="btn-primary">Meet Arslan Ahmad</Link>
@@ -48,10 +48,10 @@ export default function WeightLoss() {
           <SectionHead label="How it works" title="Four phases. One direction." />
           <div className="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-8">
             {[
-              ['Phase 1 — Assess', 'Starting point, movement quality, habits, schedule.'],
-              ['Phase 2 — Build', 'Training you can repeat + nutrition that fits home food.'],
-              ['Phase 3 — Accelerate', 'Progressive overload, weekly measurement, small corrections.'],
-              ['Phase 4 — Keep', 'The habits that keep the weight off for good.']
+              ['Phase 1, Assess', 'Starting point, movement quality, habits, schedule.'],
+              ['Phase 2, Build', 'Training you can repeat + nutrition that fits home food.'],
+              ['Phase 3, Accelerate', 'Progressive overload, weekly measurement, small corrections.'],
+              ['Phase 4, Keep', 'The habits that keep the weight off for good.']
             ].map(([h, p], i) => (
               <Reveal key={h} delay={i * 50} className="border-l-4 border-brand pl-5">
                 <h3 className="font-display font-extrabold uppercase text-[15px] text-navy">{h}</h3>

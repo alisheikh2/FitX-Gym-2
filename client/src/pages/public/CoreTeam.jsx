@@ -18,7 +18,7 @@ export default function CoreTeam() {
   return (
     <>
       <Seo
-        title="Core Team — FITX Personal Fitness Training Studio Sahiwal"
+        title="Core Team, FITX Personal Fitness Training Studio Sahiwal"
         description="The people behind FITX Sahiwal: founder & head coach Zohaib Ali, fat-loss expert Arslan Ahmad, women's performance coach Iqra Zahid and strength & conditioning coach Muazam."
         path="/core-team"
       />
@@ -45,7 +45,7 @@ export default function CoreTeam() {
                   </div>
                 </div>
                 <div className={i % 2 === 1 ? 'md:order-1' : ''}>
-                  <img src={t.photo} alt={t.photoAlt || `${t.name} — FITX Sahiwal`} width={800} height={1066} loading="lazy" decoding="async" className="w-full max-w-[420px] aspect-[3/4] object-cover object-top mx-auto md:mx-0" />
+                  <img src={t.photo} alt={t.photoAlt || `${t.name}, FITX Sahiwal`} width={800} height={1066} loading="lazy" decoding="async" className="w-full max-w-[420px] aspect-[3/4] object-cover object-top mx-auto md:mx-0" />
                 </div>
               </div>
             </Reveal>

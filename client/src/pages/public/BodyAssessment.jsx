@@ -37,7 +37,7 @@ export default function BodyAssessment() {
     if (s === 0) {
       const age = num(f.age);
       if (!f.age || isNaN(age) || age < 12 || age > 90) e.age = 'Enter an age between 12 and 90';
-      if (!f.gender) e.gender = 'Select an option — it changes the formulas used';
+      if (!f.gender) e.gender = 'Select an option, it changes the formulas used';
     }
     if (s === 1) {
       const h = num(f.height), w = num(f.weight), waist = num(f.waist), neck = num(f.neck), hip = num(f.hip);
@@ -102,10 +102,10 @@ export default function BodyAssessment() {
   }
 
   const focusTips = useMemo(() => ({
-    'Lose Fat': ['A modest calorie deficit with protein at every meal', 'Resistance training 3–4×/week to protect muscle', 'Weekly measurement — trend, not daily scale noise'],
+    'Lose Fat': ['A modest calorie deficit with protein at every meal', 'Resistance training 3–4×/week to protect muscle', 'Weekly measurement, trend, not daily scale noise'],
     'Build Muscle': ['Progressive overload on the core lifts', 'A small calorie surplus with adequate protein', 'Recovery: sleep and rest days are training too'],
     'Gain Healthy Weight': ['Calorie surplus from real meals, not just fried food', 'Strength training so the weight arrives as muscle', 'Consistent meal timing across the week'],
-    'Improve Fitness': ['Mix of strength work and conditioning', 'A sustainable weekly rhythm you can keep', 'Technique first — capacity follows'],
+    'Improve Fitness': ['Mix of strength work and conditioning', 'A sustainable weekly rhythm you can keep', 'Technique first, capacity follows'],
     'Body Recomposition': ['Strength training with a slight deficit or maintenance', 'High protein, structured meals', 'Patience: recomp is slower, steadier work'],
     'Maintain Current Shape': ['A repeatable training schedule', 'Habits that survive weddings, eids and travel', 'Monthly check-ins to catch drift early']
   }), []);
@@ -115,8 +115,8 @@ export default function BodyAssessment() {
   return (
     <>
       <Seo
-        title="Free Body Composition Assessment — BMI, Body Fat & TDEE | FITX Sahiwal"
-        description="Take FITX's free body composition assessment: BMI, BMR, TDEE, estimated body fat, lean mass and a healthy target range — then see how FITX coaching gets you there. No account needed."
+        title="Free Body Composition Assessment, BMI, Body Fat & TDEE | FITX Sahiwal"
+        description="Take FITX's free body composition assessment: BMI, BMR, TDEE, estimated body fat, lean mass and a healthy target range, then see how FITX coaching gets you there. No account needed."
         path="/body-assessment"
       />
       <section className="pt-32 sm:pt-40 pb-10 sm:pb-14">
@@ -124,7 +124,7 @@ export default function BodyAssessment() {
           <Reveal>
             <p className="label flex items-center gap-3"><span className="divider-x" aria-hidden="true" />Free · No account needed</p>
             <h1 className="h-display text-4xl sm:text-5xl mt-4 text-paper">Know your body. Understand your goal.</h1>
-            <p className="mt-4 text-silver leading-relaxed">Where am I now? Where should I aim? What should I focus on? Two minutes of inputs — a clear picture of your starting point, and how FITX helps you get where you’re going.</p>
+            <p className="mt-4 text-silver leading-relaxed">Where am I now? Where should I aim? What should I focus on? Two minutes of inputs, a clear picture of your starting point, and how FITX helps you get where you’re going.</p>
           </Reveal>
         </div>
       </section>
@@ -186,7 +186,7 @@ export default function BodyAssessment() {
               {step === 1 && (
                 <div className="animate-fade-up">
                   <div className="flex items-center justify-between mb-5">
-                    <p className="text-sm text-muted">Measure at home with a tape measure — relaxed, not sucked in.</p>
+                    <p className="text-sm text-muted">Measure at home with a tape measure, relaxed, not sucked in.</p>
                     <div className="grid grid-cols-2 gap-1 border border-steel p-1" role="radiogroup" aria-label="Units">
                       {['metric', 'imperial'].map((un) => (
                         <button key={un} type="button" role="radio" aria-checked={units === un} onClick={() => setUnits(un)} className={`px-3 py-1.5 text-xs font-semibold uppercase tracking-wider ${units === un ? 'bg-brand text-obsidian' : 'text-muted hover:text-silver'}`}>{un}</button>
@@ -261,7 +261,7 @@ function Results({ r, f, female, units, tips }) {
           <div className="card p-6 border-t-2 border-t-brand">
             <p className="label">Ideal direction</p>
             <p className="font-display font-bold text-2xl text-paper mt-2">{kg(r.healthyLow)} – {kg(r.healthyHigh)}</p>
-            <p className="text-sm text-silver mt-1">Healthy BMI range for your height — a direction, not a deadline.</p>
+            <p className="text-sm text-silver mt-1">Healthy BMI range for your height, a direction, not a deadline.</p>
           </div>
           <Arrow />
           <div className="card p-6 border-t-2 border-t-brand-soft">
@@ -294,14 +294,14 @@ function Results({ r, f, female, units, tips }) {
       {/* focus + fitx */}
       <div className="grid md:grid-cols-2 gap-6">
         <Reveal className="card p-7">
-          <h2 className="font-display font-bold text-xl text-paper">What to focus on — {f.goal}</h2>
+          <h2 className="font-display font-bold text-xl text-paper">What to focus on, {f.goal}</h2>
           <ul className="mt-4 space-y-3">
-            {tips.map((t) => <li key={t} className="text-sm text-silver flex gap-3"><span className="text-brand font-bold">—</span>{t}</li>)}
+            {tips.map((t) => <li key={t} className="text-sm text-silver flex gap-3"><span className="text-brand font-bold">•</span>{t}</li>)}
           </ul>
         </Reveal>
         <Reveal delay={80} className="card p-7 border-brand/40">
           <h2 className="font-display font-bold text-xl text-paper">How FITX gets you there</h2>
-          <p className="mt-3 text-sm text-silver leading-relaxed">Numbers are a starting point, not a program. At the studio we measure properly, write your training plan, and track progress weekly — so the direction becomes a result.</p>
+          <p className="mt-3 text-sm text-silver leading-relaxed">Numbers are a starting point, not a program. At the studio we measure properly, write your training plan, and track progress weekly, so the direction becomes a result.</p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link to="/book-consultation" className="btn-primary btn-sm">Book a Free Consultation</Link>
             <a href={wa('Hello FITX, I just did the body assessment and want to discuss my results.')} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">Discuss My Results</a>
@@ -311,7 +311,7 @@ function Results({ r, f, female, units, tips }) {
 
       <Reveal>
         <p className="text-xs text-muted leading-relaxed border-l-2 border-steel pl-4">
-          These results are estimates based on the information provided. BMI is a screening measure, not a complete measurement of health or body composition. An in-studio FITX assessment can provide a more accurate evaluation. This tool does not provide medical advice — consult a physician before beginning any training program if you have a medical condition.
+          These results are estimates based on the information provided. BMI is a screening measure, not a complete measurement of health or body composition. An in-studio FITX assessment can provide a more accurate evaluation. This tool does not provide medical advice, consult a physician before beginning any training program if you have a medical condition.
         </p>
       </Reveal>
     </div>

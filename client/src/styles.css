@@ -36,7 +36,7 @@
     @apply inline-flex items-center justify-center gap-2 font-display font-bold uppercase tracking-wider text-sm sm:text-[15px] px-7 py-3.5 transition-all duration-200 select-none;
   }
   .btn-primary {
-    @apply btn bg-brand text-white hover:bg-brand-soft hover:-translate-y-0.5 active:translate-y-0 !rounded-full;
+    @apply btn bg-brand text-white hover:bg-navy hover:-translate-y-0.5 active:translate-y-0 !rounded-full;
   }
   .btn-ghost {
     @apply btn border-2 border-navy/20 text-navy hover:border-brand hover:text-brand bg-transparent !rounded-full;

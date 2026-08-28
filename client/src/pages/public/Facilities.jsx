@@ -4,9 +4,9 @@ import { BRAND } from '../../lib/brand.js';
 import { PageHero, CTABand, SectionHead } from '../../components/site/blocks.jsx';
 
 const GALLERY = [
-  ['/images/fitx/facility/fitx-facility-floor-02.webp', 'The main floor — free weights, cables and boxing zone.'],
+  ['/images/fitx/facility/fitx-facility-floor-02.webp', 'The main floor, free weights, cables and boxing zone.'],
   ['/images/fitx/facility/fitx-strength-squat-rack.webp', 'Racks and barbells for squat, press and hinge work.'],
-  ['/images/fitx/fitx-conditioning-medicine-ball.webp', 'Conditioning turf — medicine balls, sleds, intervals.'],
+  ['/images/fitx/fitx-conditioning-medicine-ball.webp', 'Conditioning turf, medicine balls, sleds, intervals.'],
   ['/images/fitx/facility/fitx-floor-turf-wide.webp', 'The turf strip running the length of the studio.'],
   ['/images/fitx/facility/fitx-battle-ropes.webp', 'Battle-rope finishers.'],
   ['/images/fitx/facility/fitx-dumbbell-rdl.webp', 'Hinge patterns, coached on form.'],
@@ -22,7 +22,7 @@ export default function Facilities() {
   return (
     <>
       <Seo
-        title="Gym Facilities in Sahiwal — Tour the FITX Studio"
+        title="Gym Facilities in Sahiwal, Tour the FITX Studio"
         description="Tour FITX Personal Fitness Training Studio, Shadman Town Sahiwal: free weights, racks, machines, conditioning turf. Wheelchair-accessible entrance and parking."
         path="/facilities"
         image="/images/fitx/facility/fitx-facility-floor-02.webp"
@@ -30,7 +30,7 @@ export default function Facilities() {
       <PageHero
         label="Facilities"
         title="Gallery"
-        copy="Real photos from our floor — cleaned daily, maintained always."
+        copy="Real photos from our floor, cleaned daily, maintained always."
         image="/images/fitx/facility/fitx-facility-floor-02.webp"
         crumbs={[['Gallery', null]]}
       />

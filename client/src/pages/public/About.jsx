@@ -7,8 +7,8 @@ export default function About() {
   return (
     <>
       <Seo
-        title="About Us — FITX Personal Fitness Training Studio in Sahiwal"
-        description="FITX is a boutique personal training studio in Shadman Town, Sahiwal — client-centric coaching, rigorous custom programs and practical nutrition advice."
+        title="About Us, FITX Personal Fitness Training Studio in Sahiwal"
+        description="FITX is a boutique personal training studio in Shadman Town, Sahiwal, client-centric coaching, rigorous custom programs and practical nutrition advice."
         path="/about"
         image="/images/fitx/hero-coaching.jpg"
       />
@@ -51,7 +51,7 @@ export default function About() {
             </Reveal>
             <Reveal delay={80}>
               <h2 className="font-display text-[12px] font-bold uppercase tracking-[0.28em] text-brand">Our Vision</h2>
-              <p className="mt-3 text-[15px] text-silver leading-[1.9]">To become a leading personal training studio where fitness is approached with precision, personalization, and purpose — helping every client build a stronger body, greater confidence, and a healthier lifestyle that lasts.</p>
+              <p className="mt-3 text-[15px] text-silver leading-[1.9]">To become a leading personal training studio where fitness is approached with precision, personalization, and purpose, helping every client build a stronger body, greater confidence, and a healthier lifestyle that lasts.</p>
             </Reveal>
           </div>
         </div>
@@ -84,7 +84,7 @@ export default function About() {
       {/* Community */}
       <section className="py-16 sm:py-24 bg-deep border-y border-steel">
         <div className="shell">
-          <SectionHead label="Beyond the floor" title="A studio that gathers" copy="Members train, eat and play together — real moments from the FITX community." />
+          <SectionHead label="Beyond the floor" title="A studio that gathers" copy="Members train, eat and play together, real moments from the FITX community." />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
               ['/images/fitx/community/fitx-gym-gathering-5.webp', 'FITX members together at a community gathering', 'object-center'],
