@@ -197,24 +197,47 @@ export function SectionHead({ label, title, copy, center = false }) {
 export function PageHero({ title, copy, crumbs, cta, ctaTo }) {
   return (
     <section className="bg-navy">
-      <div className="shell pt-32 md:pt-36 pb-12 sm:pb-16">
+      <div className="shell pt-28 md:pt-32 pb-10 sm:pb-12 flex flex-wrap items-center justify-between gap-4">
         <Reveal>
-          <h1 className="font-display font-extrabold uppercase text-white text-3xl sm:text-5xl tracking-tight">{title}</h1>
-          {crumbs && (
-            <nav aria-label="Breadcrumb" className="mt-4">
-              <ol className="flex flex-wrap items-center gap-3 font-display text-[11px] font-bold uppercase tracking-[0.18em] text-white/50">
-                <li><span className="text-brand">1.</span> <Link to="/" className="hover:text-brand">Home</Link></li>
-                {crumbs.map(([label], idx) => (
-                  <li key={label}><span className="text-brand">{idx + 2}.</span> <span className="text-white/80" aria-current="page">{label}</span></li>
-                ))}
-              </ol>
-            </nav>
-          )}
-          {copy && <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-white/70">{copy}</p>}
+          <h1 className="font-display font-extrabold uppercase text-white text-3xl sm:text-4xl tracking-tight">{title}</h1>
+          {copy && <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-white/70">{copy}</p>}
           {cta && ctaTo && (
-            <div className="mt-7 flex flex-wrap gap-4">
+            <div className="mt-6 flex flex-wrap gap-4">
               <Link to={ctaTo} className="btn-primary">{cta}</Link>
             </div>
+          )}
+        </Reveal>
+        {crumbs && (
+          <nav aria-label="Breadcrumb" className="hidden sm:block">
+            <ol className="flex items-center gap-2 font-display text-[12px] font-bold uppercase tracking-[0.14em]">
+              <li><Link to="/" className="text-brand hover:text-white">Home</Link></li>
+              <li aria-hidden="true" className="text-brand">/</li>
+              {crumbs.map(([label]) => <li key={label} className="text-white/90" aria-current="page">{label}</li>)}
+            </ol>
+          </nav>
+        )}
+      </div>
+    </section>
+  );
+}
+
+/** Black banner with huge slashed title + breadcrumb below (like COACHES screenshot). */
+export function BigBanner({ title, crumbs }) {
+  return (
+    <section className="bg-black">
+      <div className="shell pt-36 md:pt-44 pb-12">
+        <Reveal>
+          <h1 className="font-display font-extrabold uppercase text-white text-5xl sm:text-6xl tracking-tight">
+            {title} <span className="text-brand" aria-hidden="true">/</span>
+          </h1>
+          {crumbs && (
+            <nav aria-label="Breadcrumb" className="mt-6">
+              <ol className="flex items-center gap-2 font-display text-[12px] font-bold uppercase tracking-[0.14em]">
+                <li><Link to="/" className="text-brand hover:text-white">Home</Link></li>
+                <li aria-hidden="true" className="text-brand">/</li>
+                {crumbs.map(([label]) => <li key={label} className="text-white/90" aria-current="page">{label}</li>)}
+              </ol>
+            </nav>
           )}
         </Reveal>
       </div>
@@ -292,24 +315,26 @@ export function Breadcrumbs({ items }) {
 export function TrainerCard({ t, i = 0 }) {
   return (
     <Reveal delay={i * 70} className="h-full">
-      <Link to={`/trainers/${t.slug}`} className="group block h-full">
-        <div className="overflow-hidden bg-deep">
-          <img src={t.photo} alt={t.photoAlt || `${t.name}, ${t.role} at FITX Sahiwal`} width={800} height={1066} loading="lazy" decoding="async" className="w-full aspect-[4/5] sm:aspect-[3/4] object-cover object-top transition-transform duration-[1.4s] group-hover:scale-[1.05]" />
-        </div>
-        <div className="pt-4">
-          <p className="font-display text-[11px] font-bold uppercase tracking-[0.22em] text-brand">Coach</p>
-          <h3 className="font-display font-extrabold uppercase text-lg text-navy group-hover:text-brand transition-colors mt-1">{t.name}</h3>
-          <p className="text-[13px] text-silver mt-2 leading-relaxed">{t.role}{t.experienceYears ? ` · ${t.experienceYears} yrs` : ''}. {t.shortBio}</p>
-          <div className="mt-3 flex gap-2">
-            <a href={BRAND.facebook} target="_blank" rel="noopener noreferrer" aria-label={`${t.name} on Facebook`} onClick={(e) => e.stopPropagation()} className="h-8 w-8 border border-steel flex items-center justify-center text-navy/70 hover:bg-brand hover:border-brand hover:text-white transition-colors">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 22v-8h3l.5-4H13V7.5c0-1.1.3-1.5 1.7-1.5H16.6V2.2C15.9 2.1 14.7 2 13.6 2 10.6 2 9 3.7 9 7v3H6v4h3v8h4z"/></svg>
-            </a>
-            <a href={BRAND.instagram} target="_blank" rel="noopener noreferrer" aria-label={`${t.name} on Instagram`} onClick={(e) => e.stopPropagation()} className="h-8 w-8 border border-steel flex items-center justify-center text-navy/70 hover:bg-brand hover:border-brand hover:text-white transition-colors">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.7 0 3 .01 4.1.06 1.1.05 1.8.22 2.5.49.7.26 1.3.62 1.9 1.2.6.6.95 1.2 1.2 1.9.27.7.44 1.4.49 2.5.05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1.1-.22 1.8-.49 2.5-.26.7-.62 1.3-1.2 1.9-.6.6-1.2.95-1.9 1.2-.7.27-1.4.44-2.5.49-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1.1-.05-1.8-.22-2.5-.49-.7-.26-1.3-.62-1.9-1.2-.6-.6-.95-1.2-1.2-1.9-.27-.7-.44-1.4-.49-2.5C2.01 15 2 14.7 2 12s.01-3 .06-4.1c.05-1.1.22-1.8.49-2.5.26-.7.62-1.3 1.2-1.9.6-.6 1.2-.95 1.9-1.2.7-.27 1.4-.44 2.5-.49C9 2.01 9.3 2 12 2zm0 4.9a5.1 5.1 0 1 0 0 10.2 5.1 5.1 0 0 0 0-10.2zm0 2a3.1 3.1 0 1 1 0 6.2 3.1 3.1 0 0 1 0-6.2z"/></svg>
-            </a>
+      <div className="h-full flex flex-col">
+        <Link to={`/trainers/${t.slug}`} className="group block">
+          <div className="overflow-hidden">
+            <img src={t.photo} alt={t.photoAlt || `${t.name}, ${t.role} at FITX Sahiwal`} width={800} height={1066} loading="lazy" decoding="async" className="w-full aspect-[3/4] object-cover object-top" />
           </div>
+          <div className="bg-navy px-6 py-5 flex items-center justify-between gap-3">
+            <div>
+              <p className="font-display font-bold text-brand text-[12px] uppercase tracking-[0.08em]">Coach</p>
+              <h3 className="font-display text-white text-lg sm:text-xl uppercase mt-1 tracking-wide">{t.name}</h3>
+            </div>
+            <span aria-hidden="true" className="text-brand text-xl transition-transform group-hover:translate-x-2">→</span>
+          </div>
+        </Link>
+        <div className="flex justify-center gap-4 py-6 text-silver/70">
+          <a href={BRAND.facebook} target="_blank" rel="noopener noreferrer" aria-label={`${t.name} on Facebook`} className="hover:text-brand"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 22v-8h3l.5-4H13V7.5c0-1.1.3-1.5 1.7-1.5H16.6V2.2C15.9 2.1 14.7 2 13.6 2 10.6 2 9 3.7 9 7v3H6v4h3v8h4z"/></svg></a>
+          <a href={BRAND.instagram} target="_blank" rel="noopener noreferrer" aria-label={`${t.name} on Instagram`} className="hover:text-brand"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.7 0 3 .01 4.1.06 1.1.05 1.8.22 2.5.49.7.26 1.3.62 1.9 1.2.6.6.95 1.2 1.2 1.9.27.7.44 1.4.49 2.5.05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1.1-.22 1.8-.49 2.5-.26.7-.62 1.3-1.2 1.9-.6.6-1.2.95-1.9 1.2-.7.27-1.4.44-2.5.49-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1.1-.05-1.8-.22-2.5-.49-.7-.26-1.3-.62-1.9-1.2-.6-.6-.95-1.2-1.2-1.9-.27-.7-.44-1.4-.49-2.5C2.01 15 2 14.7 2 12s.01-3 .06-4.1c.05-1.1.22-1.8.49-2.5.26-.7.62-1.3 1.2-1.9.6-.6 1.2-.95 1.9-1.2.7-.27 1.4-.44 2.5-.49C9 2.01 9.3 2 12 2zm0 4.9a5.1 5.1 0 1 0 0 10.2 5.1 5.1 0 0 0 0-10.2zm0 2a3.1 3.1 0 1 1 0 6.2 3.1 3.1 0 0 1 0-6.2z"/></svg></a>
         </div>
-      </Link>
+        <p className="text-[14px] text-silver leading-[1.8] px-1">{t.bio || t.shortBio}</p>
+        <div className="mt-8 border-b-2 border-navy" aria-hidden="true" />
+      </div>
     </Reveal>
   );
 }

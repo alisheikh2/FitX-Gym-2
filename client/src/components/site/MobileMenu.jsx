@@ -4,14 +4,15 @@ import { BRAND, wa, tel } from '../../lib/brand.js';
 
 const LINKS = [
   { to: '/', label: 'Home' },
-  { to: '/about', label: 'Who We Are' },
+  { to: '/about', label: 'About Us' },
+  { to: '/core-team', label: 'Core Team' },
+  { to: '/trainers', label: 'Our Coaches' },
   { to: '/training', label: 'What We Do' },
   { to: '/personal-training', label: 'Personal Training' },
   { to: '/weight-loss', label: 'Weight Loss' },
   { to: '/strength-conditioning', label: 'Strength & Conditioning' },
   { to: '/womens-fitness', label: "Women's Fitness" },
-  { to: '/trainers', label: 'Coaches' },
-  { to: '/facilities', label: 'Gallery' },
+    { to: '/facilities', label: 'Gallery' },
   { to: '/results', label: 'Success Stories' },
   { to: '/programs', label: 'Membership' },
   { to: '/body-assessment', label: 'Body Assessment' },

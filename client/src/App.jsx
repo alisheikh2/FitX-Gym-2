@@ -12,6 +12,7 @@ import WeightLoss from './pages/public/WeightLoss.jsx';
 import StrengthConditioning from './pages/public/StrengthConditioning.jsx';
 import WomensFitness from './pages/public/WomensFitness.jsx';
 import Trainers from './pages/public/Trainers.jsx';
+import CoreTeam from './pages/public/CoreTeam.jsx';
 import TrainerDetail from './pages/public/TrainerDetail.jsx';
 import Results from './pages/public/Results.jsx';
 import Facilities from './pages/public/Facilities.jsx';
@@ -83,6 +84,7 @@ export default function App() {
           <Route path="/weight-loss" element={<WeightLoss />} />
           <Route path="/strength-conditioning" element={<StrengthConditioning />} />
           <Route path="/womens-fitness" element={<WomensFitness />} />
+          <Route path="/core-team" element={<CoreTeam />} />
           <Route path="/trainers" element={<Trainers />} />
           <Route path="/trainers/:slug" element={<TrainerDetail />} />
           <Route path="/results" element={<Results />} />
