@@ -20,7 +20,7 @@ export default function WeightLoss() {
       <PageHero
         title="Weight Loss & Fat Loss"
         copy="Movement-based fat loss, divided over phases to cater to all levels — beginners to regular gym-goers looking for a shred."
-        crumbs={[['Weight Loss', null]]}
+        crumbs={[['What We Do', '/training'], ['Weight Loss', null]]}
       />
 
       <section className="py-16 sm:py-24">

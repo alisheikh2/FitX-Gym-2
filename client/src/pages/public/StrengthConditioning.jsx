@@ -16,7 +16,7 @@ export default function StrengthConditioning() {
       <PageHero
         title="Strength & Conditioning"
         copy="Strength is a skill before it is a number. Earn the load with clean reps — the number takes care of itself."
-        crumbs={[['Strength & Conditioning', null]]}
+        crumbs={[['What We Do', '/training'], ['Strength & Conditioning', null]]}
       />
 
       <section className="py-16 sm:py-24">
