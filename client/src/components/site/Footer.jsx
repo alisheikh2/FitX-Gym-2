@@ -60,18 +60,20 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="shell py-5 flex flex-col sm:flex-row gap-3 items-center justify-between text-xs text-white/40">
-          <p>© {new Date().getFullYear()} {BRAND.fullName}. All rights reserved.</p>
-          <p className="flex gap-5">
+        <div className="shell py-5 flex flex-col sm:flex-row gap-2.5 sm:gap-6 items-center justify-between text-xs">
+          <div className="text-white/40 leading-relaxed sm:text-left">
+            <p>
+              © {new Date().getFullYear()} <span className="font-semibold text-[#01cff8]">AH Systems</span>. All Rights Reserved.
+            </p>
+            <p className="mt-0.5">
+              Built with <span aria-hidden="true">❤️</span> by <span className="font-semibold text-[#01cff8]">AH Systems</span>
+              <span aria-hidden="true" className="mx-1.5 text-white/20">|</span>
+              <a href="tel:+923146172203" className="text-[#01cff8]/80 transition-colors hover:text-[#01cff8]">+92 314 6172203</a>
+            </p>
+          </div>
+          <p className="flex gap-5 text-white/40">
             <Link to="/privacy-policy" className="hover:text-white">Privacy</Link>
             <Link to="/terms-and-conditions" className="hover:text-white">Terms</Link>
-          </p>
-        </div>
-        <div className="shell pb-5 flex justify-center text-[11px] tracking-wide text-white/30">
-          <p>
-            © {new Date().getFullYear()} AH Systems. All Rights Reserved.
-            <span aria-hidden="true" className="mx-1.5 text-white/15">|</span>
-            <a href="tel:+923106172203" className="transition-colors hover:text-white/70">+92 310 6172203</a>
           </p>
         </div>
       </div>
