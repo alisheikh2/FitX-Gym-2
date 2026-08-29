@@ -56,7 +56,7 @@ export default function Header() {
   const transparent = isHome && !scrolled;
 
   const linkCls = () =>
-    `font-display text-[14px] font-light uppercase tracking-[0.12em] transition-colors text-white hover:text-brand`;
+    `font-display text-[14px] font-light hover:font-normal uppercase tracking-[0.12em] transition-colors text-white hover:text-brand`;
 
   return (
     <>
@@ -90,7 +90,7 @@ export default function Header() {
                 <ul className="bg-black border border-white/10 border-b-2 border-b-brand divide-y divide-white/10 py-2 min-w-[180px] shadow-lift">
                   {WHO.map((w) => (
                     <li key={w.to}>
-                      <Link to={w.to} onClick={() => setDropdown(null)} className="block px-5 py-2.5 font-display text-[13px] font-light uppercase tracking-[0.12em] text-white/80 hover:text-brand hover:underline decoration-brand underline-offset-4 transition-colors duration-200">
+                      <Link to={w.to} onClick={() => setDropdown(null)} className="block px-5 py-2.5 font-display text-[13px] font-light hover:font-normal uppercase tracking-[0.12em] text-white/80 hover:text-brand hover:underline decoration-brand underline-offset-4 transition-colors duration-200">
                         {w.label}
                       </Link>
                     </li>
@@ -118,7 +118,7 @@ export default function Header() {
                 <ul className="bg-black border border-white/10 border-b-2 border-b-brand divide-y divide-white/10 py-2 min-w-[220px] shadow-lift">
                   {WWD.map((w) => (
                     <li key={w.to}>
-                      <Link to={w.to} onClick={() => setDropdown(null)} className="block px-5 py-2.5 font-display text-[13px] font-light uppercase tracking-[0.12em] text-white/80 hover:text-brand hover:underline decoration-brand underline-offset-4 transition-colors duration-200">
+                      <Link to={w.to} onClick={() => setDropdown(null)} className="block px-5 py-2.5 font-display text-[13px] font-light hover:font-normal uppercase tracking-[0.12em] text-white/80 hover:text-brand hover:underline decoration-brand underline-offset-4 transition-colors duration-200">
                         {w.label}
                       </Link>
                     </li>
