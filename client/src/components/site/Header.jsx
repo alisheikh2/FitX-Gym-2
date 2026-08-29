@@ -87,12 +87,10 @@ export default function Header() {
                 <span aria-hidden="true" className="ml-1 text-[9px] align-middle">▼</span>
               </button>
               <div className={`absolute left-0 top-full pt-3 transition-all duration-300 ease-out ${dropdown === 'who' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
-                <ul className="relative bg-black/95 backdrop-blur-md border border-white/10 py-2 min-w-[180px] shadow-lift">
-                  <li className="absolute inset-x-0 top-0 h-px bg-brand" aria-hidden="true" />
+                <ul className="bg-black border border-white/10 py-2 min-w-[180px] shadow-lift">
                   {WHO.map((w) => (
                     <li key={w.to}>
-                      <Link to={w.to} onClick={() => setDropdown(null)} className="group/item relative block pl-5 pr-6 py-2.5 font-display text-[13px] font-light uppercase tracking-[0.12em] text-white/80 hover:text-brand hover:bg-white/5 transition-all duration-200">
-                        <span className="absolute left-0 top-0 h-full w-0.5 bg-brand scale-y-0 group-hover/item:scale-y-100 transition-transform duration-200 origin-center" aria-hidden="true" />
+                      <Link to={w.to} onClick={() => setDropdown(null)} className="block px-5 py-2.5 font-display text-[13px] font-light uppercase tracking-[0.12em] text-white/80 hover:text-brand hover:underline decoration-brand underline-offset-4 transition-colors duration-200">
                         {w.label}
                       </Link>
                     </li>
@@ -117,12 +115,10 @@ export default function Header() {
                 <span aria-hidden="true" className="ml-1 text-[9px] align-middle">▼</span>
               </button>
               <div className={`absolute left-0 top-full pt-3 transition-all duration-300 ease-out ${dropdown === 'wwd' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
-                <ul className="relative bg-black/95 backdrop-blur-md border border-white/10 py-2 min-w-[220px] shadow-lift">
-                  <li className="absolute inset-x-0 top-0 h-px bg-brand" aria-hidden="true" />
+                <ul className="bg-black border border-white/10 py-2 min-w-[220px] shadow-lift">
                   {WWD.map((w) => (
                     <li key={w.to}>
-                      <Link to={w.to} onClick={() => setDropdown(null)} className="group/item relative block pl-5 pr-6 py-2.5 font-display text-[13px] font-light uppercase tracking-[0.12em] text-white/80 hover:text-brand hover:bg-white/5 transition-all duration-200">
-                        <span className="absolute left-0 top-0 h-full w-0.5 bg-brand scale-y-0 group-hover/item:scale-y-100 transition-transform duration-200 origin-center" aria-hidden="true" />
+                      <Link to={w.to} onClick={() => setDropdown(null)} className="block px-5 py-2.5 font-display text-[13px] font-light uppercase tracking-[0.12em] text-white/80 hover:text-brand hover:underline decoration-brand underline-offset-4 transition-colors duration-200">
                         {w.label}
                       </Link>
                     </li>
