@@ -41,7 +41,6 @@ export default function Login() {
         <input id="password" type="password" className="input" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" required />
         {err && <p className="text-sm text-red-400 mt-3" role="alert">{err}</p>}
         <button disabled={busy} className="btn-primary w-full mt-6 disabled:opacity-60">{busy ? 'Signing in…' : 'Sign In'}</button>
-        <p className="text-xs text-muted mt-4 text-center">Demo accounts: admin@fitx.pk / Admin@123 · staff@fitx.pk / Staff@123</p>
         <Link to="/" className="block text-center text-xs text-muted mt-3 hover:text-silver">← Back to website</Link>
       </form>
     </div>
