@@ -2,6 +2,7 @@ import Lead from '../models/Lead.js';
 import Appointment from '../models/Appointment.js';
 import { ok, created, fail } from '../utils/response.js';
 import { leadNotificationEmail } from '../utils/email.js';
+import { waitUntil } from '@vercel/functions';
 
 export async function createPublic(req, res, next) {
   try {
@@ -17,15 +18,13 @@ export async function createPublic(req, res, next) {
         status: 'Scheduled'
       });
     }
-    // Awaited (not fire-and-forget): on Vercel, a serverless function can be
-    // frozen/killed right after the response is sent, which was cutting the
-    // Resend request off mid-flight. Wrapped so an email failure still never
-    // blocks the lead from saving.
-    try {
-      await leadNotificationEmail(lead);
-    } catch (e) {
-      console.error('[email] lead notification failed:', e);
-    }
+    // waitUntil (not await): the response goes out immediately — so the
+    // success card shows instantly — while Vercel keeps this function alive
+    // in the background just long enough for the email to actually send.
+    // Locally (outside Vercel) this just runs the promise normally.
+    waitUntil(
+      leadNotificationEmail(lead).catch((e) => console.error('[email] lead notification failed:', e))
+    );
     created(res, lead);
   } catch (e) { next(e); }
 }
