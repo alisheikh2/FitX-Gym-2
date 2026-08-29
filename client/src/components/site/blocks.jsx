@@ -96,10 +96,10 @@ export function BandCard({ to, image, alt, kicker, title, copy }) {
         </div>
         <div className="bg-navy group-hover:bg-brand transition-colors duration-300 px-7 py-6 flex items-center justify-between gap-4">
           <div>
-            <p className="font-display font-bold text-brand text-[13px] uppercase tracking-[0.08em]">{kicker}</p>
-            <h3 className="font-display text-white text-xl sm:text-2xl uppercase mt-1.5 tracking-wide">{title}</h3>
+            <p className="font-display font-bold text-brand group-hover:text-obsidian text-[13px] uppercase tracking-[0.08em] transition-colors duration-300">{kicker}</p>
+            <h3 className="font-display text-white group-hover:text-navy text-xl sm:text-2xl uppercase mt-1.5 tracking-wide transition-colors duration-300">{title}</h3>
           </div>
-          <span aria-hidden="true" className="text-brand text-2xl transition-transform group-hover:translate-x-2">→</span>
+          <span aria-hidden="true" className="text-brand group-hover:text-obsidian text-2xl transition-all duration-300 group-hover:translate-x-2">→</span>
         </div>
         <p className="pt-8 text-[15px] text-silver leading-[1.8]">{copy}</p>
       </Link>

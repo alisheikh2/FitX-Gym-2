@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import Seo from '../../lib/Seo.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
 import { BRAND } from '../../lib/brand.js';
+import Lightbox from '../../components/site/Lightbox.jsx';
 import { PageHero, CTABand, SectionHead } from '../../components/site/blocks.jsx';
 
 const GALLERY = [
@@ -19,6 +21,12 @@ const GALLERY = [
 ];
 
 export default function Facilities() {
+  const [lightbox, setLightbox] = useState(null); // index or null
+  const open = (i) => setLightbox(i);
+  const close = () => setLightbox(null);
+  const prev = () => setLightbox((i) => (i === null ? i : (i - 1 + GALLERY.length) % GALLERY.length));
+  const next = () => setLightbox((i) => (i === null ? i : (i + 1) % GALLERY.length));
+
   return (
     <>
       <Seo
@@ -39,15 +47,19 @@ export default function Facilities() {
         <div className="shell grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {GALLERY.map(([src, cap], i) => (
             <Reveal key={src} delay={(i % 3) * 60} className="overflow-hidden">
-              <a href={src} target="_blank" rel="noopener noreferrer" className="block group relative overflow-hidden">
+              <button type="button" onClick={() => open(i)} className="block group relative w-full overflow-hidden cursor-zoom-in text-left">
                 <img src={src} alt={cap} width={1200} height={800} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[3/2] object-cover object-center" />
                 <span className="absolute inset-0 bg-brand/0 group-hover:bg-brand/60 transition-colors duration-300 flex items-center justify-center">
                   <span className="text-white text-4xl font-light opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true">+</span>
                 </span>
-              </a>
+              </button>
             </Reveal>
           ))}
         </div>
+
+        {lightbox !== null && (
+          <Lightbox items={GALLERY} index={lightbox} onClose={close} onPrev={prev} onNext={next} />
+        )}
       </section>
 
       <section className="py-14 bg-deep border-y border-steel/50">
