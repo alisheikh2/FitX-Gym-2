@@ -65,7 +65,6 @@ export default function Footer() {
           <p className="flex gap-5">
             <Link to="/privacy-policy" className="hover:text-white">Privacy</Link>
             <Link to="/terms-and-conditions" className="hover:text-white">Terms</Link>
-            <Link to="/admin" className="hover:text-white">Staff</Link>
           </p>
         </div>
       </div>
