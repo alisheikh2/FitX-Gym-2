@@ -6,7 +6,12 @@ import { HeroSlider, BandCard, BigTitle, TestimonialCarousel } from '../../compo
 
 export default function Home() {
   const { data: testimonials } = useFetch('/testimonials');
-  const quotes = (testimonials || []).filter((t) => t.kind === 'quote');
+  // Show only the 5 featured male client testimonials (with photos), de-duplicated by name.
+  const featuredNames = ['Muhammad F.', 'Hassan F.', 'A R J.', 'Sami S.', 'Ali B.'];
+  const quotes = (testimonials || [])
+    .filter((t) => t.kind === 'quote' && featuredNames.includes(t.name) && t.image)
+    .filter((t, i, arr) => arr.findIndex((x) => x.name === t.name) === i)
+    .sort((a, b) => featuredNames.indexOf(a.name) - featuredNames.indexOf(b.name));
 
   return (
     <>

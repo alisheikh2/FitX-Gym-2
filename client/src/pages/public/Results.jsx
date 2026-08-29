@@ -27,7 +27,11 @@ const FEATURED = [
 
 export default function Results() {
   const { data: testimonials } = useFetch('/testimonials');
-  const quotes = (testimonials || []).filter((t) => t.kind === 'quote');
+  const featuredNames = ['Muhammad F.', 'Hassan F.', 'A R J.', 'Sami S.', 'Ali B.'];
+  const quotes = (testimonials || [])
+    .filter((t) => t.kind === 'quote' && featuredNames.includes(t.name))
+    .filter((t, i, arr) => arr.findIndex((x) => x.name === t.name) === i)
+    .sort((a, b) => featuredNames.indexOf(a.name) - featuredNames.indexOf(b.name));
   const transforms = (testimonials || []).filter((t) => t.kind === 'transformation');
   const journeys = transforms.filter((t) => FEATURED.some((f) => (t.image || '').includes(f)));
 
