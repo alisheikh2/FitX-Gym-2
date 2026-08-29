@@ -1,6 +1,7 @@
 import Lead from '../models/Lead.js';
 import Appointment from '../models/Appointment.js';
 import { ok, created, fail } from '../utils/response.js';
+import { leadNotificationEmail } from '../utils/email.js';
 
 export async function createPublic(req, res, next) {
   try {
@@ -16,6 +17,8 @@ export async function createPublic(req, res, next) {
         status: 'Scheduled'
       });
     }
+    // Fire-and-forget: email failing should never block the lead from saving
+    leadNotificationEmail(lead).catch((e) => console.error('[email] lead notification failed:', e));
     created(res, lead);
   } catch (e) { next(e); }
 }
