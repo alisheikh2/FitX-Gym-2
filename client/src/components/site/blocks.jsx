@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import Reveal from '../ui/Reveal.jsx';
 import { wa, BRAND, tel } from '../../lib/brand.js';
+import { LogoX } from './Logo.jsx';
 import { renderRich } from '../../lib/rich.jsx';
 
 /* ============ HERO SLIDER, synced text out/in, single timer state machine (no glitches) ============ */
@@ -73,9 +74,10 @@ export function HeroSlider() {
       <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none">
         <div className="shell pb-16 sm:pb-20">
           <div key={i} className={`pointer-events-none ${phase === 'out' ? 'hero-out' : 'hero-in'}`}>
-            <h1 className="font-display font-extrabold uppercase text-white text-6xl sm:text-8xl lg:text-[7.5rem] leading-none tracking-tight drop-shadow-md">FITX</h1>
-            <p className="font-display font-bold uppercase text-white text-lg sm:text-2xl lg:text-3xl mt-2 tracking-wide drop-shadow">Sahiwal’s premier personal training studio</p>
-            <p className="text-white/95 text-sm sm:text-lg mt-4 drop-shadow">Sahiwal Studio: {BRAND.phoneDisplay}</p>
+            <h1 className="font-display font-extrabold uppercase text-white text-5xl sm:text-7xl lg:text-[6.5rem] leading-none tracking-tight drop-shadow-md">
+              FIT<LogoX className="ml-[0.03em]" style={{ height: '0.83em', width: '1.26em', verticalAlign: '-0.19em' }} />
+            </h1>
+            <p className="font-display font-bold uppercase text-white text-lg sm:text-2xl lg:text-3xl mt-2 tracking-wide drop-shadow">The Most Premium Personal Training Program</p>
           </div>
           <div className="md:hidden mt-6 pointer-events-auto">
             <Link to="/book-consultation" className="btn !rounded-full bg-brand text-white hover:bg-white hover:text-brand">Join Now <span aria-hidden="true" className="ml-1">›</span></Link>
