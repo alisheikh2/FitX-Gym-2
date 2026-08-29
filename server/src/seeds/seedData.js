@@ -46,6 +46,12 @@ export async function syncTestimonials() {
   }
 }
 
+export async function syncTrainers(trainers) {
+  for (const t of trainers) {
+    await Trainer.updateOne({ slug: t.slug }, { $set: t }, { upsert: true });
+  }
+}
+
 export async function runSeed() {
   // ---- Users (staff accounts) ----
   const users = [
@@ -64,15 +70,10 @@ export async function runSeed() {
   await syncTestimonials();
   console.log('[seed] testimonials synced');
 
-  if ((await Trainer.countDocuments()) > 0) {
-    console.log('[seed] content already present, skipping content seed');
-    await Setting.getSite();
-
-    return;
-  }
-
   // ---- Trainers (verified identities & experience only) ----
-  await Trainer.create([
+  // Always upserted by slug so bio/text corrections (e.g. em-dash → comma)
+  // propagate to an existing database on re-seed, not just fresh installs.
+  await syncTrainers([
     {
       name: 'Zohaib Ali',
       slug: 'zohaib-ali',
@@ -136,6 +137,13 @@ export async function runSeed() {
       sortOrder: 3
     }
   ]);
+
+  if ((await Program.countDocuments()) > 0) {
+    console.log('[seed] other content already present, skipping content seed');
+    await Setting.getSite();
+
+    return;
+  }
 
   // ---- Programs ----
   await Program.create([
