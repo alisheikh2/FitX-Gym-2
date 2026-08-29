@@ -67,6 +67,13 @@ export default function Footer() {
             <Link to="/terms-and-conditions" className="hover:text-white">Terms</Link>
           </p>
         </div>
+        <div className="shell pb-5 flex justify-center text-[11px] tracking-wide text-white/30">
+          <p>
+            © {new Date().getFullYear()} AH Systems. All Rights Reserved.
+            <span aria-hidden="true" className="mx-1.5 text-white/15">|</span>
+            <a href="tel:+923106172203" className="transition-colors hover:text-white/70">+92 310 6172203</a>
+          </p>
+        </div>
       </div>
     </footer>
   );
