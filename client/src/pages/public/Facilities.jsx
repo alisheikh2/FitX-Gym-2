@@ -47,7 +47,7 @@ export default function Facilities() {
         <div className="shell grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {GALLERY.map(([src, cap], i) => (
             <Reveal key={src} delay={(i % 3) * 60} className="overflow-hidden">
-              <button type="button" onClick={() => open(i)} className="block group relative w-full overflow-hidden cursor-zoom-in text-left">
+              <button type="button" onClick={() => open(i)} className="block group relative w-full overflow-hidden cursor-pointer text-left">
                 <img src={src} alt={cap} width={1200} height={800} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[3/2] object-cover object-center" />
                 <span className="absolute inset-0 bg-brand/0 group-hover:bg-brand/60 transition-colors duration-300 flex items-center justify-center">
                   <span className="text-white text-4xl font-light opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true">+</span>

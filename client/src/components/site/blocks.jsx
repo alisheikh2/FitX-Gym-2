@@ -90,11 +90,11 @@ export function HeroSlider() {
 export function BandCard({ to, image, alt, kicker, title, copy }) {
   return (
     <Reveal className="h-full">
-      <Link to={to} className="group block h-full">
+      <Link to={to} className="block h-full">
         <div className="overflow-hidden">
           <img src={image} alt={alt} width={1000} height={620} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[13/8] object-cover object-center" />
         </div>
-        <div className="bg-navy group-hover:bg-brand transition-colors duration-300 px-7 py-6 flex items-center justify-between gap-4">
+        <div className="group bg-navy hover:bg-brand transition-colors duration-300 px-7 py-6 flex items-center justify-between gap-4">
           <div>
             <p className="font-display font-bold text-brand group-hover:text-obsidian text-[13px] uppercase tracking-[0.08em] transition-colors duration-300">{kicker}</p>
             <h3 className="font-display text-white group-hover:text-navy text-xl sm:text-2xl uppercase mt-1.5 tracking-wide transition-colors duration-300">{title}</h3>

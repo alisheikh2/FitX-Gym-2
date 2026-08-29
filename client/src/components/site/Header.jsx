@@ -26,6 +26,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const isHome = pathname === '/';
   const whoActive = WHO.some((w) => pathname.startsWith(w.to));
   const wwdActive = WWD.some((w) => pathname.startsWith(w.to));
 
@@ -41,15 +42,19 @@ export default function Header() {
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
+  // On the homepage the nav bar is transparent (over the hero) until you scroll;
+  // on every other page it keeps the solid black background. Always pinned to top.
+  const transparent = isHome && !scrolled;
+
   const linkCls = (active) =>
-    `font-display text-[14px] font-bold uppercase tracking-[0.06em] transition-colors drop-shadow-sm ${active ? 'text-brand' : scrolled ? 'text-navy hover:text-brand' : 'text-white hover:text-brand'}`;
+    `font-display text-[14px] font-bold uppercase tracking-[0.06em] transition-colors ${active ? 'text-brand' : 'text-white hover:text-brand'}`;
 
   return (
     <>
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-brand focus:text-white focus:px-4 focus:py-2 focus:font-bold">
         Skip to content
       </a>
-      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black shadow-card' : 'bg-black'}`}>
+      <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${transparent ? 'bg-transparent' : 'bg-black shadow-card'}`}>
         <div className={`shell flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-14' : 'h-16 md:h-20'}`}>
           <Logo compact={scrolled} onDark />
           <nav aria-label="Primary" className="hidden lg:flex items-center gap-8">
