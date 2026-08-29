@@ -63,12 +63,9 @@ export default function Footer() {
         <div className="shell py-5 flex flex-col sm:flex-row gap-2.5 sm:gap-6 items-center justify-between text-xs">
           <div className="text-white/40 leading-relaxed sm:text-left">
             <p>
-              © {new Date().getFullYear()} <span className="font-semibold text-[#01cff8]">AH Systems</span>. All Rights Reserved.
-            </p>
-            <p className="mt-0.5">
-              Built with <span aria-hidden="true">❤️</span> by <span className="font-semibold text-[#01cff8]">AH Systems</span>
+              © {new Date().getFullYear()} AH Systems. All Rights Reserved. Built with <span aria-hidden="true" className="inline-block animate-pulse">❤️</span> by AH Systems
               <span aria-hidden="true" className="mx-1.5 text-white/20">|</span>
-              <a href="tel:+923146172203" className="text-[#01cff8]/80 transition-colors hover:text-[#01cff8]">+92 314 6172203</a>
+              <a href="tel:+923146172203" className="transition-colors hover:text-white">+92 314 6172203</a>
             </p>
           </div>
           <p className="flex gap-5 text-white/40">
