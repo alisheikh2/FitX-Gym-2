@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom';
 
 // Logo mark (chrome ring + dumbbell) = client's exact artwork, extracted from the brand PNG
 // (client/public/images/fitx/logo/fitx-mark.png — 229 x 220, transparent)
-export function LogoMark({ size = 40, className = '' }) {
+// onLight = light-background variant (darker ring) for admin/receipt screens
+export function LogoMark({ size = 40, className = '', onLight = false }) {
   return (
     <img
-      src="/images/fitx/logo/fitx-mark.png"
+      src={onLight ? '/images/fitx/logo/fitx-mark-dark.png' : '/images/fitx/logo/fitx-mark.png'}
       alt=""
       aria-hidden="true"
       width={size}

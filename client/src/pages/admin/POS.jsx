@@ -124,7 +124,7 @@ export default function POS() {
             <div className="print-area bg-white text-neutral-900 p-6">
               <div className="flex items-center justify-between border-b-2 border-neutral-800 pb-4">
                 <div className="flex items-center gap-3">
-                  <LogoMark size={44} />
+                  <LogoMark size={44} onLight />
                   <div>
                     <p className="font-display font-bold text-lg leading-none">FIT<span className="text-brand-deep">X</span></p>
                     <p className="text-[10px] uppercase tracking-widest">Personal Fitness Training Studio</p>

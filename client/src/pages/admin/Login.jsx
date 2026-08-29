@@ -29,7 +29,7 @@ export default function Login() {
     <div className="min-h-screen bg-obsidian flex items-center justify-center p-6">
       <form onSubmit={submit} className="card p-9 max-w-md w-full">
         <div className="flex items-center gap-3">
-          <LogoMark size={44} />
+          <LogoMark size={44} onLight />
           <div>
             <h1 className="font-display font-bold text-xl text-paper leading-none">FIT<span className="text-brand">X</span> Admin</h1>
             <p className="text-xs text-muted mt-1">Gym management & POS</p>
