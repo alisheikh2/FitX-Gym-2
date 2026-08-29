@@ -29,18 +29,25 @@ function fallbackFor(path) {
 }
 
 export function useFetch(path, deps = []) {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const initial = fallbackFor(path);
+  // Start with the verified fallback snapshot so content renders instantly on
+  // first paint (no blank/skeleton wait for the API). Then swap in the live DB
+  // response the moment it arrives. Loading only blocks if there is no fallback.
+  const [data, setData] = useState(initial);
+  const [loading, setLoading] = useState(initial == null);
   const [error, setError] = useState(null);
   const load = useCallback(() => {
-    setLoading(true);
+    if (initial == null) setLoading(true);
     api
       .get(path)
-      .then(setData) // live DB always wins
+      .then((live) => setData(live)) // live DB wins once available
       .catch((e) => {
         setError(e);
-        const f = fallbackFor(path);
-        if (f !== null) setData(f); // API down only → verified snapshot
+        // keep the fallback already shown (or fall back to it)
+        if (initial == null) {
+          const f = fallbackFor(path);
+          if (f !== null) setData(f);
+        }
       })
       .finally(() => setLoading(false));
   }, [path]);

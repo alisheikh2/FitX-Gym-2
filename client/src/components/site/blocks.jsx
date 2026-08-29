@@ -148,7 +148,7 @@ export function TestimonialCarousel({ items }) {
       <div key={i} className={leaving ? 'hero-out' : 'hero-in'}>
         {r.image ? (
           <span className="mx-auto block h-40 w-40 overflow-hidden rounded-full ring-2 ring-brand/30">
-            <img src={r.image} alt={r.name || 'FITX client'} width={320} height={320} loading="lazy" decoding="async" className="h-full w-full object-cover object-top" />
+            <img src={r.image} alt={r.name || 'FITX client'} width={320} height={320} loading="lazy" decoding="async" className="h-full w-full object-cover object-center" />
           </span>
         ) : (
           <span className="mx-auto h-40 w-40 rounded-full bg-navy text-white font-display font-extrabold text-4xl flex items-center justify-center uppercase" aria-hidden="true">{initials}</span>
@@ -306,7 +306,13 @@ export function Quote({ r, i = 0 }) {
   return (
     <Reveal delay={i * 80} className="h-full">
       <figure className="h-full flex flex-col items-center text-center px-2">
-        <span className="h-14 w-14 rounded-full bg-brand text-white font-display font-extrabold uppercase flex items-center justify-center text-lg" aria-hidden="true">{initials}</span>
+        {r.image ? (
+          <span className="h-14 w-14 overflow-hidden rounded-full ring-2 ring-brand/30 inline-flex">
+            <img src={r.image} alt={r.name || 'FITX client'} width={112} height={112} loading="lazy" decoding="async" className="h-full w-full object-cover object-center" />
+          </span>
+        ) : (
+          <span className="h-14 w-14 rounded-full bg-brand text-white font-display font-extrabold uppercase flex items-center justify-center text-lg" aria-hidden="true">{initials}</span>
+        )}
         <blockquote className="mt-5 text-sm leading-relaxed text-silver flex-1">{r.text}</blockquote>
         <figcaption className="mt-5">
           <p className="font-display font-bold text-[13px] uppercase tracking-[0.14em] text-navy">{r.name}</p>
