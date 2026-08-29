@@ -68,7 +68,7 @@ export default function Header() {
           <Logo compact={scrolled} onDark />
           <nav aria-label="Primary" className="hidden lg:flex items-center gap-6">
             <NavLink to="/" end className={() => linkCls()}>
-              {({ isActive }) => <>Home{isActive && <span className="text-brand ml-1" aria-hidden="true">/</span>}</>}
+              {({ isActive }) => <>Home{isActive && <span className="text-brand ml-1 font-bold text-base" aria-hidden="true">/</span>}</>}
             </NavLink>
 
             {/* Who We Are dropdown */}
@@ -83,8 +83,8 @@ export default function Header() {
                 aria-expanded={dropdown === 'who'}
                 onClick={() => setDropdown((d) => (d === 'who' ? null : 'who'))}
               >
-                Who We Are{whoActive && <span className="text-brand ml-1" aria-hidden="true">/</span>}
-                <span aria-hidden="true" className="ml-1 text-[9px] align-middle">▼</span>
+                Who We Are
+                <span aria-hidden="true" className={`ml-1.5 text-[9px] align-middle ${whoActive ? 'text-brand' : ''}`}>▼</span>
               </button>
               <div className={`absolute left-0 top-full pt-3 transition-all duration-300 ease-out ${dropdown === 'who' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
                 <ul className="bg-black border border-white/10 border-b-2 border-b-brand divide-y divide-white/10 py-2 min-w-[180px] shadow-lift">
@@ -111,8 +111,8 @@ export default function Header() {
                 aria-expanded={dropdown === 'wwd'}
                 onClick={() => setDropdown((d) => (d === 'wwd' ? null : 'wwd'))}
               >
-                What We Do{wwdActive && <span className="text-brand ml-1" aria-hidden="true">/</span>}
-                <span aria-hidden="true" className="ml-1 text-[9px] align-middle">▼</span>
+                What We Do
+                <span aria-hidden="true" className={`ml-1.5 text-[9px] align-middle ${wwdActive ? 'text-brand' : ''}`}>▼</span>
               </button>
               <div className={`absolute left-0 top-full pt-3 transition-all duration-300 ease-out ${dropdown === 'wwd' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
                 <ul className="bg-black border border-white/10 border-b-2 border-b-brand divide-y divide-white/10 py-2 min-w-[220px] shadow-lift">
@@ -129,7 +129,7 @@ export default function Header() {
 
             {NAV.map((n) => (
               <NavLink key={n.to} to={n.to} className={() => linkCls()}>
-                {({ isActive }) => <>{n.label}{isActive && <span className="text-brand ml-1" aria-hidden="true">/</span>}</>}
+                {({ isActive }) => <>{n.label}{isActive && <span className="text-brand ml-1 font-bold text-base" aria-hidden="true">/</span>}</>}
               </NavLink>
             ))}
           </nav>
