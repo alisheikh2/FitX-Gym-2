@@ -91,15 +91,20 @@ export function BandCard({ to, image, alt, kicker, title, copy }) {
   return (
     <Reveal className="h-full">
       <Link to={to} className="block h-full">
-        <div className="overflow-hidden">
-          <img src={image} alt={alt} width={1000} height={620} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[13/8] object-cover object-center" />
-        </div>
-        <div className="group bg-navy hover:bg-brand transition-colors duration-300 px-7 py-6 flex items-center justify-between gap-4">
-          <div>
-            <p className="font-display font-bold text-brand group-hover:text-obsidian text-[13px] uppercase tracking-[0.08em] transition-colors duration-300">{kicker}</p>
-            <h3 className="font-display text-white group-hover:text-navy text-xl sm:text-2xl uppercase mt-1.5 tracking-wide transition-colors duration-300">{title}</h3>
+        {/* The group lives on the media+title block only, so the hover effects
+            (image zoom, band colour, shadow) trigger on the image & title band,
+            never on the copy text below. */}
+        <div className="group overflow-hidden transition-shadow duration-300 hover:shadow-2xl hover:shadow-navy/25">
+          <div className="overflow-hidden">
+            <img src={image} alt={alt} width={1000} height={620} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[13/8] object-cover object-center transition-transform duration-[1.4s] group-hover:scale-[1.06]" />
           </div>
-          <span aria-hidden="true" className="text-brand group-hover:text-obsidian text-2xl transition-all duration-300 group-hover:translate-x-2">→</span>
+          <div className="bg-navy group-hover:bg-brand transition-colors duration-300 px-7 py-6 flex items-center justify-between gap-4">
+            <div>
+              <p className="font-display font-bold text-brand group-hover:text-obsidian text-[13px] uppercase tracking-[0.08em] transition-colors duration-300">{kicker}</p>
+              <h3 className="font-display text-white group-hover:text-navy text-xl sm:text-2xl uppercase mt-1.5 tracking-wide transition-colors duration-300">{title}</h3>
+            </div>
+            <span aria-hidden="true" className="text-brand group-hover:text-obsidian text-2xl transition-all duration-300 group-hover:translate-x-2">→</span>
+          </div>
         </div>
         <p className="pt-8 text-[15px] text-silver leading-[1.8]">{copy}</p>
       </Link>
@@ -141,7 +146,13 @@ export function TestimonialCarousel({ items }) {
   return (
     <div className="text-center">
       <div key={i} className={leaving ? 'hero-out' : 'hero-in'}>
-        <span className="mx-auto h-40 w-40 rounded-full bg-navy text-white font-display font-extrabold text-4xl flex items-center justify-center uppercase" aria-hidden="true">{initials}</span>
+        {r.image ? (
+          <span className="mx-auto block h-40 w-40 overflow-hidden rounded-full ring-2 ring-brand/30">
+            <img src={r.image} alt={r.name || 'FITX client'} width={320} height={320} loading="lazy" decoding="async" className="h-full w-full object-cover object-top" />
+          </span>
+        ) : (
+          <span className="mx-auto h-40 w-40 rounded-full bg-navy text-white font-display font-extrabold text-4xl flex items-center justify-center uppercase" aria-hidden="true">{initials}</span>
+        )}
         <blockquote className="mt-12 max-w-4xl mx-auto text-lg sm:text-2xl leading-relaxed text-navy/90">
           <span className="text-brand font-display font-extrabold text-2xl align-top" aria-hidden="true">“</span>
           {r.text}

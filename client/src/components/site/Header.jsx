@@ -25,6 +25,7 @@ const NAV = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [dropdown, setDropdown] = useState(null); // 'who' | 'wwd' | null
   const { pathname } = useLocation();
   const isHome = pathname === '/';
   const whoActive = WHO.some((w) => pathname.startsWith(w.to));
@@ -36,11 +37,19 @@ export default function Header() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-  useEffect(() => setOpen(false), [pathname]);
+  // Close the mobile menu AND any open dropdown whenever the route changes
+  useEffect(() => { setOpen(false); setDropdown(null); }, [pathname]);
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [open]);
+  // Clicking anywhere outside closes an open dropdown
+  useEffect(() => {
+    if (!dropdown) return;
+    const close = () => setDropdown(null);
+    document.addEventListener('click', close);
+    return () => document.removeEventListener('click', close);
+  }, [dropdown]);
 
   // On the homepage the nav bar is transparent (over the hero) until you scroll;
   // on every other page it keeps the solid black background. Always pinned to top.
@@ -63,17 +72,26 @@ export default function Header() {
             </NavLink>
 
             {/* Who We Are dropdown */}
-            <div className="relative group">
-              <button className={linkCls(whoActive)} aria-haspopup="true">
+            <div
+              className="relative group"
+              onMouseEnter={() => setDropdown('who')}
+              onMouseLeave={() => setDropdown((d) => (d === 'who' ? null : d))}
+            >
+              <button
+                className={linkCls(whoActive)}
+                aria-haspopup="true"
+                aria-expanded={dropdown === 'who'}
+                onClick={() => setDropdown((d) => (d === 'who' ? null : 'who'))}
+              >
                 Who We Are{whoActive && <span className="text-brand ml-1" aria-hidden="true">/</span>}
                 <span aria-hidden="true" className="ml-1 text-[9px] align-middle">▼</span>
               </button>
-              <div className="absolute left-0 top-full pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 transition-all duration-300 ease-out">
+              <div className={`absolute left-0 top-full pt-3 transition-all duration-300 ease-out ${dropdown === 'who' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
                 <ul className="relative bg-black/95 backdrop-blur-md border border-white/10 py-2 min-w-[180px] shadow-lift">
                   <li className="absolute inset-x-0 top-0 h-px bg-brand" aria-hidden="true" />
                   {WHO.map((w) => (
                     <li key={w.to}>
-                      <Link to={w.to} className="group/item relative block pl-5 pr-6 py-2.5 font-display text-[13px] font-bold uppercase tracking-[0.06em] text-white/80 hover:text-brand hover:bg-white/5 transition-all duration-200">
+                      <Link to={w.to} onClick={() => setDropdown(null)} className="group/item relative block pl-5 pr-6 py-2.5 font-display text-[13px] font-bold uppercase tracking-[0.06em] text-white/80 hover:text-brand hover:bg-white/5 transition-all duration-200">
                         <span className="absolute left-0 top-0 h-full w-0.5 bg-brand scale-y-0 group-hover/item:scale-y-100 transition-transform duration-200 origin-center" aria-hidden="true" />
                         {w.label}
                       </Link>
@@ -84,17 +102,26 @@ export default function Header() {
             </div>
 
             {/* What We Do dropdown */}
-            <div className="relative group">
-              <button className={linkCls(wwdActive)} aria-haspopup="true">
+            <div
+              className="relative group"
+              onMouseEnter={() => setDropdown('wwd')}
+              onMouseLeave={() => setDropdown((d) => (d === 'wwd' ? null : d))}
+            >
+              <button
+                className={linkCls(wwdActive)}
+                aria-haspopup="true"
+                aria-expanded={dropdown === 'wwd'}
+                onClick={() => setDropdown((d) => (d === 'wwd' ? null : 'wwd'))}
+              >
                 What We Do{wwdActive && <span className="text-brand ml-1" aria-hidden="true">/</span>}
                 <span aria-hidden="true" className="ml-1 text-[9px] align-middle">▼</span>
               </button>
-              <div className="absolute left-0 top-full pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 transition-all duration-300 ease-out">
+              <div className={`absolute left-0 top-full pt-3 transition-all duration-300 ease-out ${dropdown === 'wwd' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
                 <ul className="relative bg-black/95 backdrop-blur-md border border-white/10 py-2 min-w-[220px] shadow-lift">
                   <li className="absolute inset-x-0 top-0 h-px bg-brand" aria-hidden="true" />
                   {WWD.map((w) => (
                     <li key={w.to}>
-                      <Link to={w.to} className="group/item relative block pl-5 pr-6 py-2.5 font-display text-[13px] font-bold uppercase tracking-[0.06em] text-white/80 hover:text-brand hover:bg-white/5 transition-all duration-200">
+                      <Link to={w.to} onClick={() => setDropdown(null)} className="group/item relative block pl-5 pr-6 py-2.5 font-display text-[13px] font-bold uppercase tracking-[0.06em] text-white/80 hover:text-brand hover:bg-white/5 transition-all duration-200">
                         <span className="absolute left-0 top-0 h-full w-0.5 bg-brand scale-y-0 group-hover/item:scale-y-100 transition-transform duration-200 origin-center" aria-hidden="true" />
                         {w.label}
                       </Link>
