@@ -56,7 +56,7 @@ export default function Header() {
   const transparent = isHome && !scrolled;
 
   const linkCls = (active) =>
-    `font-display text-[14px] font-bold uppercase tracking-[0.06em] transition-colors ${active ? 'text-brand' : 'text-white hover:text-brand'}`;
+    `font-display text-[14px] font-light uppercase tracking-[0.12em] transition-colors ${active ? 'text-brand' : 'text-white hover:text-brand'}`;
 
   return (
     <>
@@ -91,7 +91,7 @@ export default function Header() {
                   <li className="absolute inset-x-0 top-0 h-px bg-brand" aria-hidden="true" />
                   {WHO.map((w) => (
                     <li key={w.to}>
-                      <Link to={w.to} onClick={() => setDropdown(null)} className="group/item relative block pl-5 pr-6 py-2.5 font-display text-[13px] font-bold uppercase tracking-[0.06em] text-white/80 hover:text-brand hover:bg-white/5 transition-all duration-200">
+                      <Link to={w.to} onClick={() => setDropdown(null)} className="group/item relative block pl-5 pr-6 py-2.5 font-display text-[13px] font-light uppercase tracking-[0.12em] text-white/80 hover:text-brand hover:bg-white/5 transition-all duration-200">
                         <span className="absolute left-0 top-0 h-full w-0.5 bg-brand scale-y-0 group-hover/item:scale-y-100 transition-transform duration-200 origin-center" aria-hidden="true" />
                         {w.label}
                       </Link>
@@ -121,7 +121,7 @@ export default function Header() {
                   <li className="absolute inset-x-0 top-0 h-px bg-brand" aria-hidden="true" />
                   {WWD.map((w) => (
                     <li key={w.to}>
-                      <Link to={w.to} onClick={() => setDropdown(null)} className="group/item relative block pl-5 pr-6 py-2.5 font-display text-[13px] font-bold uppercase tracking-[0.06em] text-white/80 hover:text-brand hover:bg-white/5 transition-all duration-200">
+                      <Link to={w.to} onClick={() => setDropdown(null)} className="group/item relative block pl-5 pr-6 py-2.5 font-display text-[13px] font-light uppercase tracking-[0.12em] text-white/80 hover:text-brand hover:bg-white/5 transition-all duration-200">
                         <span className="absolute left-0 top-0 h-full w-0.5 bg-brand scale-y-0 group-hover/item:scale-y-100 transition-transform duration-200 origin-center" aria-hidden="true" />
                         {w.label}
                       </Link>
