@@ -34,7 +34,7 @@ export default function Logo({ to = '/', compact = false, onDark = false }) {
       ) : (
         <LogoMark size={compact ? 32 : 38} />
       )}
-      <span className={`font-display font-extrabold tracking-tight leading-none ${compact ? 'text-xl' : 'text-2xl'} ${onDark ? 'text-white' : 'text-navy'}`}>
+      <span className={`font-display font-semibold tracking-wide leading-none ${compact ? 'text-xl' : 'text-2xl'} ${onDark ? 'text-white' : 'text-navy'}`}>
         FIT<span className="text-brand">X</span>
       </span>
     </Link>

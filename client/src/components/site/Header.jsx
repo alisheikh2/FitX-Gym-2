@@ -55,8 +55,8 @@ export default function Header() {
   // on every other page it keeps the solid black background. Always pinned to top.
   const transparent = isHome && !scrolled;
 
-  const linkCls = (active) =>
-    `font-display text-[14px] font-light uppercase tracking-[0.12em] transition-colors ${active ? 'text-brand' : 'text-white hover:text-brand'}`;
+  const linkCls = () =>
+    `font-display text-[14px] font-light uppercase tracking-[0.12em] transition-colors text-white hover:text-brand`;
 
   return (
     <>
@@ -66,8 +66,8 @@ export default function Header() {
       <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${transparent ? 'bg-transparent' : 'bg-black shadow-card'}`}>
         <div className={`shell flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-14' : 'h-16 md:h-20'}`}>
           <Logo compact={scrolled} onDark />
-          <nav aria-label="Primary" className="hidden lg:flex items-center gap-8">
-            <NavLink to="/" end className={({ isActive }) => linkCls(isActive)}>
+          <nav aria-label="Primary" className="hidden lg:flex items-center gap-6">
+            <NavLink to="/" end className={() => linkCls()}>
               {({ isActive }) => <>Home{isActive && <span className="text-brand ml-1" aria-hidden="true">/</span>}</>}
             </NavLink>
 
@@ -78,7 +78,7 @@ export default function Header() {
               onMouseLeave={() => setDropdown((d) => (d === 'who' ? null : d))}
             >
               <button
-                className={linkCls(whoActive)}
+                className={linkCls()}
                 aria-haspopup="true"
                 aria-expanded={dropdown === 'who'}
                 onClick={() => setDropdown((d) => (d === 'who' ? null : 'who'))}
@@ -106,7 +106,7 @@ export default function Header() {
               onMouseLeave={() => setDropdown((d) => (d === 'wwd' ? null : d))}
             >
               <button
-                className={linkCls(wwdActive)}
+                className={linkCls()}
                 aria-haspopup="true"
                 aria-expanded={dropdown === 'wwd'}
                 onClick={() => setDropdown((d) => (d === 'wwd' ? null : 'wwd'))}
@@ -128,7 +128,7 @@ export default function Header() {
             </div>
 
             {NAV.map((n) => (
-              <NavLink key={n.to} to={n.to} className={({ isActive }) => linkCls(isActive)}>
+              <NavLink key={n.to} to={n.to} className={() => linkCls()}>
                 {({ isActive }) => <>{n.label}{isActive && <span className="text-brand ml-1" aria-hidden="true">/</span>}</>}
               </NavLink>
             ))}
