@@ -4,10 +4,11 @@ import Reveal from '../../components/ui/Reveal.jsx';
 import { useFetch } from '../../lib/hooks.js';
 import { wa } from '../../lib/brand.js';
 import { PageHero, SectionHead, Quote, CallNow } from '../../components/site/blocks.jsx';
+import { featuredBoys } from '../../lib/testimonials.js';
 
 export default function WeightLoss() {
   const { data: testimonials } = useFetch('/testimonials');
-  const quotes = (testimonials || []).filter((t) => t.kind === 'quote' && /weight|fat/i.test(t.text)).slice(0, 2);
+  const quotes = featuredBoys(testimonials).slice(0, 2);
 
   return (
     <>

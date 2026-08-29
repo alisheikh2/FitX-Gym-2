@@ -1,17 +1,14 @@
 import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import { useFetch } from '../../lib/hooks.js';
+import { featuredBoys } from '../../lib/testimonials.js';
 import Reveal from '../../components/ui/Reveal.jsx';
 import { HeroSlider, BandCard, BigTitle, TestimonialCarousel } from '../../components/site/blocks.jsx';
 
 export default function Home() {
   const { data: testimonials } = useFetch('/testimonials');
-  // Show only the 5 featured male client testimonials (with photos), de-duplicated by name.
-  const featuredNames = ['Muhammad F.', 'Hassan F.', 'A R J.', 'Sami S.', 'Ali B.'];
-  const quotes = (testimonials || [])
-    .filter((t) => t.kind === 'quote' && featuredNames.includes(t.name) && t.image)
-    .filter((t, i, arr) => arr.findIndex((x) => x.name === t.name) === i)
-    .sort((a, b) => featuredNames.indexOf(a.name) - featuredNames.indexOf(b.name));
+  // Show only the 5 featured male client testimonials (with photos), de-duplicated.
+  const quotes = featuredBoys(testimonials);
 
   return (
     <>

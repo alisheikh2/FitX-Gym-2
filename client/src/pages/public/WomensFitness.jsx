@@ -1,15 +1,10 @@
 import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
-import { useFetch } from '../../lib/hooks.js';
 import { BRAND, wa } from '../../lib/brand.js';
-import { PageHero, SectionHead, Quote, CallNow } from '../../components/site/blocks.jsx';
+import { PageHero, SectionHead, CallNow } from '../../components/site/blocks.jsx';
 
 export default function WomensFitness() {
-  const { data: testimonials } = useFetch('/testimonials');
-  const all = (testimonials || []).filter((t) => t.kind === 'quote');
-  const womenReview = [...all.filter((t) => /ladies|women|safe/i.test(t.text)), ...all.filter((t) => !/ladies|women|safe/i.test(t.text))].slice(0, 2);
-
   return (
     <>
       <Seo
@@ -82,15 +77,6 @@ export default function WomensFitness() {
           </div>
         </div>
       </section>
-
-      {womenReview.length > 0 && (
-        <section className="py-16 sm:py-24">
-          <div className="shell">
-            <SectionHead center label="Client testimonials" title="In their words" />
-            <div className="mt-12 grid md:grid-cols-2 gap-10">{womenReview.map((r, i) => <Quote key={r._id} r={r} i={i} />)}</div>
-          </div>
-        </section>
-      )}
 
       <CallNow />
     </>
