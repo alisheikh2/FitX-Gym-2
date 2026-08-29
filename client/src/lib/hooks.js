@@ -5,7 +5,7 @@ import fb from '../data/fallback.json';
 /**
  * Verified-content safety net.
  * IMPORTANT: the fallback is used ONLY when the API is unreachable (network/500).
- * Whenever the API responds — even with empty data — the live database wins,
+ * Whenever the API responds, even with empty data, the live database wins,
  * so admin/POS edits always show on the public site.
  */
 const FALLBACK = [

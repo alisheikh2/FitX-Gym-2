@@ -45,7 +45,7 @@ export default function Programs() {
                         {p.durationMonths === 3 && <p className="text-xs text-brand mt-0.5">10% off</p>}
                       </div>
                       <p className="font-display font-bold text-3xl text-paper">
-                        {p.price != null ? <>Rs {p.price.toLocaleString()}</> : '—'}
+                        {p.price != null ? <>Rs {p.price.toLocaleString()}</> : ','}
                       </p>
                     </div>
                   ))}

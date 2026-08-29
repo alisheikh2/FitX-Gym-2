@@ -5,11 +5,31 @@ import { BRAND } from '../../lib/brand.js';
 import Reveal from '../../components/ui/Reveal.jsx';
 import { PageHero, Quote, CTABand, SectionHead } from '../../components/site/blocks.jsx';
 
+/* Curated set of client transformation testimonials to feature on Success Stories.
+   Only the neat, clean photos are included, all shown full, in equal frames. */
+const FEATURED = [
+  'fitx-testimonial-01',
+  'fitx-testimonial-06',
+  'fitx-testimonial-08',
+  'fitx-testimonial-12',
+  'fitx-testimonial-13',
+  'fitx-testimonial-14',
+  'fitx-testimonial-15',
+  'fitx-testimonial-16',
+  'fitx-testimonial-17',
+  'fitx-testimonial-18',
+  'fitx-testimonial-19',
+  'fitx-testimonial-20',
+  'fitx-testimonial-23',
+  'fitx-testimonial-24',
+  'fitx-testimonial-25'
+];
+
 export default function Results() {
   const { data: testimonials } = useFetch('/testimonials');
   const quotes = (testimonials || []).filter((t) => t.kind === 'quote');
   const transforms = (testimonials || []).filter((t) => t.kind === 'transformation');
-  const journeys = transforms.filter((t) => t.result !== 'Client testimonial shared by FITX');
+  const journeys = transforms.filter((t) => FEATURED.some((f) => (t.image || '').includes(f)));
 
   return (
     <>
@@ -34,8 +54,8 @@ export default function Results() {
             {journeys.map((t, i) => (
               <Reveal key={t._id} delay={i * 60}>
                 <figure>
-                  <div className="overflow-hidden">
-                    <img src={t.image} alt={t.imageAlt} width={800} height={900} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover object-center" />
+                  <div className="overflow-hidden bg-navy/10">
+                    <img src={t.image} alt={t.imageAlt} width={800} height={800} loading="lazy" decoding="async" className="w-full aspect-square object-contain object-center" />
                   </div>
                   <figcaption className="mt-3">
                     <p className="font-display font-bold text-sm text-paper">{t.name}</p>

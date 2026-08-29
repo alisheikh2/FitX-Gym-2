@@ -23,7 +23,7 @@ export default function AdminTrainers() {
         slug: editing.slug || editing.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
       };
       if (editing._id) await api.put(`/trainers/${editing._id}`, body); else await api.post('/trainers', body);
-      toast('Trainer saved — public site updates instantly'); setEditing(null); reload();
+      toast('Trainer saved, public site updates instantly'); setEditing(null); reload();
     } catch (err) { toast(err.message, 'err'); } finally { setBusy(false); }
   }
 

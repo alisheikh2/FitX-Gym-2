@@ -1,4 +1,4 @@
-/** Verified FITX business facts — researched from Google Maps listing, official
+/** Verified FITX business facts, researched from Google Maps listing, official
  *  Facebook/Instagram profiles and the studio's published fee pattern.
  *  Admin-editable equivalents live in Settings; these are the build-time defaults. */
 export const BRAND = {

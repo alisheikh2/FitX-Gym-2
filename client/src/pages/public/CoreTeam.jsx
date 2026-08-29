@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
 import { useFetch } from '../../lib/hooks.js';
+import { renderRich } from '../../lib/rich.jsx';
 import { PageHero, CallNow } from '../../components/site/blocks.jsx';
 
 const TITLES = {
@@ -10,6 +11,20 @@ const TITLES = {
   'iqra-zahid': 'Women Fat Loss & Performance Coach',
   'muazam': 'Strength & Conditioning Coach'
 };
+
+/* Split a coach bio into paragraphs:
+   - if the bio already carries explicit "\n\n" breaks (structured bios), respect them;
+   - otherwise fall back to grouping sentences into ~3-sentence paragraphs. */
+function coreTeamParagraphs(t) {
+  const bio = t.bio || t.shortBio || '';
+  if (bio.includes('\n\n')) {
+    return bio.split('\n\n').map((p) => p.trim()).filter(Boolean);
+  }
+  return bio.split('. ').reduce((paras, sentence, idx, arr) => {
+    if (idx % 3 === 0) paras.push(arr.slice(idx, idx + 3).join('. '));
+    return paras;
+  }, []).map((p) => (p.endsWith('.') ? p : p + '.'));
+}
 
 export default function CoreTeam() {
   const { data: trainers } = useFetch('/trainers');
@@ -32,12 +47,8 @@ export default function CoreTeam() {
                 <div className={i % 2 === 1 ? 'md:order-2' : ''}>
                   <h2 className="font-display font-bold text-navy text-lg sm:text-xl">{t.name} – {TITLES[t.slug] || t.role}</h2>
                   <div className="mt-5 space-y-4 text-[15px] text-silver leading-[1.8]">
-                    {(t.bio || t.shortBio || '').split('. ').reduce((paras, sentence, idx, arr) => {
-                      // group sentences into paragraphs of ~3
-                      if (idx % 3 === 0) paras.push(arr.slice(idx, idx + 3).join('. '));
-                      return paras;
-                    }, []).map((p, idx) => (
-                      <p key={idx}>{p.endsWith('.') ? p : p + '.'}</p>
+                    {coreTeamParagraphs(t).map((p, idx) => (
+                      <p key={idx}>{renderRich(p)}</p>
                     ))}
                   </div>
                   <div className="mt-6">

@@ -39,7 +39,7 @@ export default function Appointments() {
                   <td className="text-silver">{a.date}</td>
                   <td className="text-paper font-semibold">{a.time}</td>
                   <td className="text-paper">{a.personName}</td>
-                  <td className="text-silver">{a.trainer?.name || '—'}</td>
+                  <td className="text-silver">{a.trainer?.name || ','}</td>
                   <td>
                     <select className="input !w-auto !py-1 text-xs" value={a.status} onChange={async (e) => { await api.put(`/appointments/${a._id}`, { status: e.target.value }); toast('Status updated'); reload(); }} aria-label={`Status for ${a.personName}`}>
                       {APPOINTMENT_STATUSES.map((s) => <option key={s}>{s}</option>)}
@@ -60,7 +60,7 @@ export default function Appointments() {
             <Field label="Time *"><input type="time" className="input" required value={editing.time} onChange={(e) => setEditing({ ...editing, time: e.target.value })} /></Field>
             <Field label="Trainer" className="col-span-2">
               <select className="input" value={editing.trainer} onChange={(e) => setEditing({ ...editing, trainer: e.target.value })}>
-                <option value="">—</option>
+                <option value="">,</option>
                 {(trainers || []).map((t) => <option key={t._id} value={t._id}>{t.name}</option>)}
               </select>
             </Field>

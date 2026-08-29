@@ -51,13 +51,13 @@ export default function Attendance() {
           )}
           {history && (
             <div className="mt-5 border-t border-steel pt-4">
-              <h3 className="text-sm font-semibold text-paper">{history.member.name} — last {history.rows.length} check-ins</h3>
+              <h3 className="text-sm font-semibold text-paper">{history.member.name}, last {history.rows.length} check-ins</h3>
               <p className="text-xs text-muted mt-2 leading-relaxed">{history.rows.length ? history.rows.slice(0, 14).map((r) => r.date).join(' · ') : 'No attendance recorded yet.'}</p>
             </div>
           )}
         </div>
         <div className="card p-6">
-          <h2 className="font-display font-bold text-paper mb-4">Today — {new Date().toLocaleDateString('en-PK', { day: 'numeric', month: 'long' })}</h2>
+          <h2 className="font-display font-bold text-paper mb-4">Today, {new Date().toLocaleDateString('en-PK', { day: 'numeric', month: 'long' })}</h2>
           {loading ? <Skeleton rows={5} /> : (today || []).length === 0 ? <EmptyState title="No check-ins yet today" hint="Search a member on the left and mark their check-in." /> : (
             <ul className="divide-y divide-steel/60">
               {(today || []).map((r) => (

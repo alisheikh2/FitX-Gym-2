@@ -278,14 +278,14 @@ function Results({ r, f, female, units, tips }) {
         <Card title="BMI" big={round1(r.bmi)} sub={r.bmiCat}>
           <BmiGauge pos={gaugePos} />
         </Card>
-        <Card title="Est. body fat" big={r.bf !== null ? `${round1(r.bf)}%` : '—'} sub={female ? 'U.S. Navy method (est.)' : 'U.S. Navy method (est.)'}>
+        <Card title="Est. body fat" big={r.bf !== null ? `${round1(r.bf)}%` : ','} sub={female ? 'U.S. Navy method (est.)' : 'U.S. Navy method (est.)'}>
           {r.bf !== null && <Ring pos={bfPos} />}
         </Card>
         <Card title="BMR" big={`${Math.round(r.bmr).toLocaleString()}`} sub="kcal/day at rest" />
         <Card title="Est. daily needs (TDEE)" big={`${Math.round(r.tdee).toLocaleString()}`} sub="kcal/day at your activity level" />
-        <Card title="Est. fat mass" big={r.fatMass !== null ? kg(r.fatMass) : '—'} sub="estimate" />
-        <Card title="Est. lean mass" big={r.leanMass !== null ? kg(r.leanMass) : '—'} sub="muscle, bone, water" />
-        <Card title="Est. body water" big={r.water !== null ? `${round1(r.water)}%` : '—'} sub="derived from lean mass" />
+        <Card title="Est. fat mass" big={r.fatMass !== null ? kg(r.fatMass) : ','} sub="estimate" />
+        <Card title="Est. lean mass" big={r.leanMass !== null ? kg(r.leanMass) : ','} sub="muscle, bone, water" />
+        <Card title="Est. body water" big={r.water !== null ? `${round1(r.water)}%` : ','} sub="derived from lean mass" />
         <Card title="Current weight" big={kg(r.weight)} sub={`healthy range ${kg(r.healthyLow)} – ${kg(r.healthyHigh)}`}>
           <RangeBar low={r.healthyLow} high={r.healthyHigh} current={r.weight} />
         </Card>

@@ -18,7 +18,7 @@ export function LogoMark({ size = 38, className = '' }) {
 
 export default function Logo({ to = '/', compact = false, onDark = false }) {
   return (
-    <Link to={to} className="flex items-center gap-2.5" aria-label="FITX — home">
+    <Link to={to} className="flex items-center gap-2.5" aria-label="FITX, home">
       {onDark ? (
         <svg width={compact ? 32 : 38} height={compact ? 32 : 38} viewBox="0 0 64 64" fill="none" aria-hidden="true">
           <path d="M6.6 27.6 A 26 26 0 0 1 57.4 27.6" stroke="#ffffff" strokeWidth="6.5" strokeLinecap="round" />

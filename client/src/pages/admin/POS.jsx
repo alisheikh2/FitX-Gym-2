@@ -68,7 +68,7 @@ export default function POS() {
                         </button>
                       </li>
                     ))}
-                    {matches.length === 0 && <li className="px-4 py-2.5 text-sm text-muted">No match — add the member first.</li>}
+                    {matches.length === 0 && <li className="px-4 py-2.5 text-sm text-muted">No match, add the member first.</li>}
                   </ul>
                 )}
               </>

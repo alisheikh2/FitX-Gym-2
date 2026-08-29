@@ -190,7 +190,7 @@ function TestimonialsTab() {
           </form>
         )}
       </Modal>
-      <Confirm open={!!confirm} onClose={() => setConfirm(null)} onYes={async () => { await api.del(`/testimonials/${confirm._id}`); toast('Deleted'); reload(); }} title="Delete testimonial?" body={`${confirm?.name} — this only removes it from the site.`} />
+      <Confirm open={!!confirm} onClose={() => setConfirm(null)} onYes={async () => { await api.del(`/testimonials/${confirm._id}`); toast('Deleted'); reload(); }} title="Delete testimonial?" body={`${confirm?.name}, this only removes it from the site.`} />
     </>
   );
 }

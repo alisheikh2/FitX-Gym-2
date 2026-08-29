@@ -60,8 +60,8 @@ export default function Members() {
                 <tr key={m._id} className="hover:bg-charcoal/50">
                   <td className="font-semibold text-paper">{m.name}</td>
                   <td className="text-silver">{m.phone}</td>
-                  <td className="text-silver">{m.trainer?.name || '—'}</td>
-                  <td className="text-silver">{m.expiryDate ? new Date(m.expiryDate).toLocaleDateString('en-PK', { day: 'numeric', month: 'short', year: 'numeric' }) : '—'}</td>
+                  <td className="text-silver">{m.trainer?.name || ','}</td>
+                  <td className="text-silver">{m.expiryDate ? new Date(m.expiryDate).toLocaleDateString('en-PK', { day: 'numeric', month: 'short', year: 'numeric' }) : ','}</td>
                   <td><Badge tone={statusTone(m.status)}>{m.status}</Badge></td>
                   <td className="text-right whitespace-nowrap">
                     <button className="text-xs text-brand mr-3" onClick={() => setEditing({ ...m, trainer: m.trainer?._id || m.trainer || '', plan: m.plan?._id || m.plan || '', joiningDate: (m.joiningDate || '').slice(0, 10), expiryDate: (m.expiryDate || '').slice(0, 10) })}>Edit</button>
@@ -82,18 +82,18 @@ export default function Members() {
             <Field label="Email"><input className="input" type="email" value={editing.email} onChange={(e) => setEditing({ ...editing, email: e.target.value })} /></Field>
             <Field label="Gender">
               <select className="input" value={editing.gender} onChange={(e) => setEditing({ ...editing, gender: e.target.value })}>
-                <option value="">—</option><option value="male">Male</option><option value="female">Female</option><option value="other">Other</option>
+                <option value="">,</option><option value="male">Male</option><option value="female">Female</option><option value="other">Other</option>
               </select>
             </Field>
             <Field label="Trainer">
               <select className="input" value={editing.trainer} onChange={(e) => setEditing({ ...editing, trainer: e.target.value })}>
-                <option value="">—</option>
+                <option value="">,</option>
                 {(trainers || []).map((t) => <option key={t._id} value={t._id}>{t.name}</option>)}
               </select>
             </Field>
             <Field label="Membership plan">
               <select className="input" value={editing.plan} onChange={(e) => setEditing({ ...editing, plan: e.target.value })}>
-                <option value="">—</option>
+                <option value="">,</option>
                 {(plans || []).map((p) => <option key={p._id} value={p._id}>{p.name}</option>)}
               </select>
             </Field>

@@ -28,8 +28,8 @@ export default function Home() {
             image="/images/fitx/hero-coaching.jpg"
             alt="FITX coach guiding a client through a barbell session"
             kicker="Who we are"
-            title="Boutique coaching"
-            copy="FITX is a boutique personal training studio based in Shadman Town, Sahiwal. Since day one we have taken fitness seriously, client-centric coaching, rigorous custom programs and practical nutrition advice, with numerous transformations of body, mind and soul."
+            title="Boutique Training"
+            copy={<> <strong className="text-navy">FITX Personal Studio</strong> is one of Sahiwal’s most sophisticated and serious personal training studios, dedicated to revolutionizing the way society approaches health and wellness. Through personalized training, expert guidance, and purposeful programs, FITX empowers individuals to build strength, confidence, and a healthier lifestyle.</>}
           />
           <BandCard
             to="/womens-fitness"
@@ -37,7 +37,7 @@ export default function Home() {
             alt="Women training together in a coached session at FITX Sahiwal"
             kicker="Women’s training"
             title="Dedicated hours"
-            copy="Women train with coach Iqra Zahid, seven years of experience, during dedicated female hours, 10:30–1 & 3–6 daily. Progressive strength and fat-loss programming in a safe, respectful studio. Sign up now!"
+            copy="FITX offers dedicated women’s fitness coaching with Coach Iqra Zahid, backed by seven years of experience. Our programs focus on progressive strength, fat loss, and overall fitness in a safe, respectful, and supportive studio environment. Personalized coaching helps every woman train with confidence and work toward lasting results. Sign up now!"
           />
         </div>
       </section>
@@ -53,7 +53,7 @@ export default function Home() {
             <Reveal delay={60}>
               <p className="font-display font-bold text-brand text-[13px] uppercase tracking-[0.08em] mt-10">What we do</p>
               <BigTitle className="mt-3">Our Programs</BigTitle>
-              <p className="mt-6 text-[15px] sm:text-base text-navy/80 leading-[1.8]">Our personal training programs have revolutionized fitness in Sahiwal!</p>
+              <p className="mt-6 text-[15px] sm:text-base font-bold text-navy/90 leading-[1.8]">Our personal training programs have revolutionized fitness in Sahiwal!</p>
               <p className="mt-6 text-[15px] text-silver leading-[1.8]">
                 Our workouts are designed following a full-body assessment which allows us to determine the client’s fitness level and quality of movement. This system works with the dynamic and ever changing nature of the human body to nurture it through controlled cycles of <strong className="text-navy">stress</strong>, <strong className="text-navy">disruption</strong> and <strong className="text-navy">adaptation</strong>, taking each body to its <strong className="text-navy">unique potential</strong>.
               </p>

@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import Reveal from '../ui/Reveal.jsx';
 import { wa, BRAND, tel } from '../../lib/brand.js';
+import { renderRich } from '../../lib/rich.jsx';
 
-/* ============ HERO SLIDER — synced text out/in, single timer state machine (no glitches) ============ */
+/* ============ HERO SLIDER, synced text out/in, single timer state machine (no glitches) ============ */
 export function HeroSlider() {
   const slides = [
     { img: '/images/fitx/hero-coaching.jpg', mob: '/images/fitx/hero-coaching-mobile.jpg', alt: 'FITX coach spotting a client’s barbell squat' },
@@ -41,7 +42,7 @@ export function HeroSlider() {
           aria-hidden={idx !== i}
           className={`absolute inset-0 transition-opacity duration-700 ${idx === i ? 'opacity-100' : 'opacity-0'}`}
         >
-          {/* mobile: portrait art-direction — no cut subjects */}
+          {/* mobile: portrait art-direction, no cut subjects */}
           <img
             src={sld.mob}
             alt={idx === i ? sld.alt : ''}
@@ -115,7 +116,7 @@ export function BigTitle({ children, className = '' }) {
   );
 }
 
-/* ============ Testimonial carousel — avatar, big quote, square dots ============ */
+/* ============ Testimonial carousel, avatar, big quote, square dots ============ */
 export function TestimonialCarousel({ items }) {
   const [i, setI] = useState(0);
   const [leaving, setLeaving] = useState(false);
@@ -341,7 +342,7 @@ export function TrainerCard({ t, i = 0 }) {
           <a href={BRAND.facebook} target="_blank" rel="noopener noreferrer" aria-label={`${t.name} on Facebook`} className="hover:text-brand"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 22v-8h3l.5-4H13V7.5c0-1.1.3-1.5 1.7-1.5H16.6V2.2C15.9 2.1 14.7 2 13.6 2 10.6 2 9 3.7 9 7v3H6v4h3v8h4z"/></svg></a>
           <a href={BRAND.instagram} target="_blank" rel="noopener noreferrer" aria-label={`${t.name} on Instagram`} className="hover:text-brand"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.7 0 3 .01 4.1.06 1.1.05 1.8.22 2.5.49.7.26 1.3.62 1.9 1.2.6.6.95 1.2 1.2 1.9.27.7.44 1.4.49 2.5.05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1.1-.22 1.8-.49 2.5-.26.7-.62 1.3-1.2 1.9-.6.6-1.2.95-1.9 1.2-.7.27-1.4.44-2.5.49-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1.1-.05-1.8-.22-2.5-.49-.7-.26-1.3-.62-1.9-1.2-.6-.6-.95-1.2-1.2-1.9-.27-.7-.44-1.4-.49-2.5C2.01 15 2 14.7 2 12s.01-3 .06-4.1c.05-1.1.22-1.8.49-2.5.26-.7.62-1.3 1.2-1.9.6-.6 1.2-.95 1.9-1.2.7-.27 1.4-.44 2.5-.49C9 2.01 9.3 2 12 2zm0 4.9a5.1 5.1 0 1 0 0 10.2 5.1 5.1 0 0 0 0-10.2zm0 2a3.1 3.1 0 1 1 0 6.2 3.1 3.1 0 0 1 0-6.2z"/></svg></a>
         </div>
-        <p className="text-[14px] text-silver leading-[1.8] px-1">{t.bio || t.shortBio}</p>
+        <p className="text-[14px] text-silver leading-[1.8] px-1">{renderRich(t.bio || t.shortBio)}</p>
         <div className="mt-8 border-b-2 border-navy" aria-hidden="true" />
       </div>
     </Reveal>

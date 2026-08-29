@@ -3,6 +3,7 @@ import Seo from '../../lib/Seo.jsx';
 import { useFetch } from '../../lib/hooks.js';
 import { wa } from '../../lib/brand.js';
 import Reveal from '../../components/ui/Reveal.jsx';
+import { renderRich } from '../../lib/rich.jsx';
 import { Breadcrumbs, CallNow } from '../../components/site/blocks.jsx';
 
 export default function TrainerDetail() {
@@ -48,7 +49,7 @@ export default function TrainerDetail() {
                 {t.experienceYears && <p className="mt-3 text-brand font-semibold">{t.experienceYears} years of coaching experience</p>}
               </Reveal>
               <Reveal delay={100}>
-                <p className="mt-6 text-silver leading-relaxed text-base sm:text-lg">{t.bio}</p>
+                <p className="mt-6 text-silver leading-relaxed text-base sm:text-lg">{renderRich(t.bio)}</p>
               </Reveal>
               <Reveal delay={160}>
                 <blockquote className="mt-8 border-l-2 border-brand pl-6 py-1">

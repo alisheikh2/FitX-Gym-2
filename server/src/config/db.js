@@ -23,7 +23,7 @@ export async function connectDB() {
     throw new Error('MONGODB_URI is required on Vercel (set it in Project → Settings → Environment Variables, e.g. a MongoDB Atlas connection string).');
   }
 
-  console.warn('[db] MONGODB_URI not set — starting embedded MongoDB (dev mode, persistent dbPath)');
+  console.warn('[db] MONGODB_URI not set, starting embedded MongoDB (dev mode, persistent dbPath)');
   // Indirect specifier keeps dev-only mongodb-memory-server out of production bundles (Vercel).
   const memPkg = 'mongodb-memory' + '-server';
   const { MongoMemoryServer } = await import(memPkg);

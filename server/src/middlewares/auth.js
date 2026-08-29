@@ -20,7 +20,7 @@ export async function requireAuth(req, res, next) {
     req.user = user;
     next();
   } catch {
-    fail(res, 401, 'Session expired — sign in again');
+    fail(res, 401, 'Session expired, sign in again');
   }
 }
 

@@ -9,7 +9,7 @@ const settingSchema = new mongoose.Schema(
       heroHeadline: { type: String, default: 'Training that is built around you.' },
       heroSub: {
         type: String,
-        default: 'FITX is a personal training studio in Shadman Town, Sahiwal — one-to-one coaching, structured fat-loss and strength programs, and dedicated women’s hours, guided by coaches who track your progress session after session.'
+        default: 'FITX is a personal training studio in Shadman Town, Sahiwal, one-to-one coaching, structured fat-loss and strength programs, and dedicated women’s hours, guided by coaches who track your progress session after session.'
       }
     },
     contact: {

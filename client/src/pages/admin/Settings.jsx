@@ -28,7 +28,7 @@ export default function AdminSettings() {
     try {
       const { brand, contact, hours, socials, rating } = s;
       await api.put('/settings', { brand, contact, hours: { ...hours, female: typeof hours.female === 'string' ? hours.female.split('\n').filter(Boolean) : hours.female }, socials, rating });
-      toast('Settings saved — website updated');
+      toast('Settings saved, website updated');
       api.get('/settings').then(setS);
     } catch (err) { toast(err.message, 'err'); } finally { setBusy(false); }
   }

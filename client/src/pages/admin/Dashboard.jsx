@@ -42,12 +42,12 @@ export default function Dashboard() {
 
       <div className="grid lg:grid-cols-2 gap-6">
         <div className="card p-6">
-          <h2 className="font-display font-bold text-paper">Revenue — last 6 months</h2>
+          <h2 className="font-display font-bold text-paper">Revenue, last 6 months</h2>
           <p className="text-xs text-muted mb-4">This month: Rs {(data.monthRevenue || 0).toLocaleString()} ({data.monthPayments} payments)</p>
           <BarChart data={revData} format={(v) => `Rs ${v.toLocaleString()}`} />
         </div>
         <div className="card p-6">
-          <h2 className="font-display font-bold text-paper">Attendance — last 7 days</h2>
+          <h2 className="font-display font-bold text-paper">Attendance, last 7 days</h2>
           <p className="text-xs text-muted mb-4">Check-ins recorded by staff</p>
           <BarChart data={attData} />
         </div>
@@ -60,7 +60,7 @@ export default function Dashboard() {
           <ul className="space-y-3">
             {data.todayAppointments.map((a) => (
               <li key={a._id} className="flex items-center justify-between gap-3 text-sm">
-                <span className="text-silver">{a.time} — <strong className="text-paper">{a.personName}</strong></span>
+                <span className="text-silver">{a.time}, <strong className="text-paper">{a.personName}</strong></span>
                 <Badge tone={statusTone(a.status)}>{a.status}</Badge>
               </li>
             ))}

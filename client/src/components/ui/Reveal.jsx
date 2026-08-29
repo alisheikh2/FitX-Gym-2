@@ -11,7 +11,7 @@ export default function Reveal({ children, delay = 0, as: Tag = 'div', className
       return;
     }
     // Elements already above the viewport (e.g. swapped-in content after a scroll)
-    // would never intersect — reveal them immediately.
+    // would never intersect, reveal them immediately.
     if (el.getBoundingClientRect().bottom <= 0) {
       el.classList.add('is-in');
       return;
