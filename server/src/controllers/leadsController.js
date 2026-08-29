@@ -17,8 +17,15 @@ export async function createPublic(req, res, next) {
         status: 'Scheduled'
       });
     }
-    // Fire-and-forget: email failing should never block the lead from saving
-    leadNotificationEmail(lead).catch((e) => console.error('[email] lead notification failed:', e));
+    // Awaited (not fire-and-forget): on Vercel, a serverless function can be
+    // frozen/killed right after the response is sent, which was cutting the
+    // Resend request off mid-flight. Wrapped so an email failure still never
+    // blocks the lead from saving.
+    try {
+      await leadNotificationEmail(lead);
+    } catch (e) {
+      console.error('[email] lead notification failed:', e);
+    }
     created(res, lead);
   } catch (e) { next(e); }
 }
