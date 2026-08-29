@@ -83,8 +83,8 @@ export default function Header() {
                 aria-expanded={dropdown === 'who'}
                 onClick={() => setDropdown((d) => (d === 'who' ? null : 'who'))}
               >
-                Who We Are
-                <span aria-hidden="true" className={`ml-1.5 text-[9px] align-middle ${whoActive ? 'text-brand' : ''}`}>▼</span>
+                Who We Are{whoActive && <span className="text-brand ml-1 font-bold text-base" aria-hidden="true">/</span>}
+                <span aria-hidden="true" className={`ml-2 text-[9px] align-middle ${whoActive ? 'text-brand' : ''}`}>▼</span>
               </button>
               <div className={`absolute left-0 top-full pt-3 transition-all duration-300 ease-out ${dropdown === 'who' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
                 <ul className="bg-black border border-white/10 border-b-2 border-b-brand divide-y divide-white/10 py-2 min-w-[180px] shadow-lift">
@@ -111,8 +111,8 @@ export default function Header() {
                 aria-expanded={dropdown === 'wwd'}
                 onClick={() => setDropdown((d) => (d === 'wwd' ? null : 'wwd'))}
               >
-                What We Do
-                <span aria-hidden="true" className={`ml-1.5 text-[9px] align-middle ${wwdActive ? 'text-brand' : ''}`}>▼</span>
+                What We Do{wwdActive && <span className="text-brand ml-1 font-bold text-base" aria-hidden="true">/</span>}
+                <span aria-hidden="true" className={`ml-2 text-[9px] align-middle ${wwdActive ? 'text-brand' : ''}`}>▼</span>
               </button>
               <div className={`absolute left-0 top-full pt-3 transition-all duration-300 ease-out ${dropdown === 'wwd' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
                 <ul className="bg-black border border-white/10 border-b-2 border-b-brand divide-y divide-white/10 py-2 min-w-[220px] shadow-lift">
