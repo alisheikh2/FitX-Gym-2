@@ -3,23 +3,6 @@ import { Link } from 'react-router-dom';
 // Original client logo colours (sampled 1:1 from the brand file)
 const LOGO_ORANGE = '#eb880e';
 
-// The "X" of FITX — custom shape traced 1:1 from the client's original logo
-// (65 x 44 unit grid: flat tops, V-notch above, open sides, arms overshoot below baseline)
-export function LogoX({ height = 20, className = '' }) {
-  return (
-    <svg
-      height={height}
-      width={(height * 65) / 44}
-      viewBox="0 0 65 44"
-      fill={LOGO_ORANGE}
-      aria-hidden="true"
-      className={className}
-    >
-      <polygon points="1,0 17,0 26,8 34,0 51,0 51,3 38,15 38,18 64,40 64,43 44,42.5 38,37 26,27 16,36 0,36 0,32 15,18 15,16 1,4" />
-    </svg>
-  );
-}
-
 export function LogoMark({ size = 40, className = '' }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64" fill="none" aria-hidden="true" className={className}>
@@ -43,19 +26,22 @@ export function LogoMark({ size = 40, className = '' }) {
   );
 }
 
+// "FITX" wordmark = client's exact artwork, extracted from the brand PNG
+// (client/public/images/fitx/logo/fitx-wordmark.png — 279 x 89)
 export default function Logo({ to = '/', compact = false, onDark = false }) {
-  // matches text-xl (20px) / text-2xl (24px); X sized to original proportions (≈0.83 × font size)
-  const fs = compact ? 20 : 24;
+  const h = compact ? 17 : 20;
   return (
     <Link to={to} className="flex items-center gap-2.5 group" aria-label="FITX — home">
       <LogoMark size={compact ? 34 : 40} />
-      <span
-        className={`flex items-center font-display font-extrabold tracking-tight leading-none ${onDark ? 'text-white' : 'text-navy'}`}
-        style={{ fontSize: fs }}
-      >
-        FIT
-        <LogoX height={Math.round(fs * 0.83)} className="ml-[0.02em] translate-y-[0.06em]" />
-      </span>
+      <img
+        src="/images/fitx/logo/fitx-wordmark.png"
+        alt=""
+        aria-hidden="true"
+        width={Math.round((h * 279) / 89)}
+        height={h}
+        className="select-none"
+        style={{ transform: 'translateY(1px)' }}
+      />
     </Link>
   );
 }
