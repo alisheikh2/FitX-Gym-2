@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Seo
         title="FITX Personal Fitness Training Studio, Personal Trainer in Sahiwal"
-        description="FITX is Sahiwal's dedicated personal training studio in Shadman Town, Faisalabad Road. One-to-one coaching, fat loss, strength & conditioning and dedicated women's hours. Book a consultation."
+        description="FITX is Sahiwal's dedicated personal training studio in Shadman Town, Faisalabad Road. One-to-one coaching, boxing sessions, nutrition guidance and fat loss. Book a consultation."
         path="/"
         image="/images/fitx/hero-coaching.jpg"
       />
@@ -34,12 +34,12 @@ export default function Home() {
             copy={<> <strong className="text-navy">FITX Personal Studio</strong> is one of Sahiwal’s most sophisticated and serious personal training studios, dedicated to revolutionizing the way society approaches health and wellness. Through personalized training, expert guidance, and purposeful programs, FITX empowers individuals to build strength, confidence, and a healthier lifestyle.</>}
           />
           <BandCard
-            to="/womens-fitness"
-            image="/images/fitx/gen-women-group.jpg"
-            alt="Women training together in a coached session at FITX Sahiwal"
-            kicker="Women’s training"
-            title="Dedicated hours"
-            copy="FITX offers dedicated women’s fitness coaching with Coach Iqra Zahid, backed by seven years of experience. Our programs focus on progressive strength, fat loss, and overall fitness in a safe, respectful, and supportive studio environment. Personalized coaching helps every woman train with confidence and work toward lasting results. Sign up now!"
+            to="/boxing-session"
+            image="/images/fitx/boxing/fitx-boxing-pads.jpg"
+            alt="FITX coach holding focus mitts during a boxing session at FITX Sahiwal"
+            kicker="Combat training"
+            title="Boxing Session"
+            copy="FITX offers personalized boxing sessions designed to improve your fitness, strength, stamina, coordination, and confidence. Our expert trainers guide you through proper boxing techniques, combinations, pad work, and conditioning drills. Each session is tailored to your fitness level and individual goals, making your workout both challenging and rewarding. Sign up now!"
           />
         </div>
       </section>

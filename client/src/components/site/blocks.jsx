@@ -75,9 +75,10 @@ export function HeroSlider() {
         <div className="shell pb-16 sm:pb-20">
           <div key={i} className={`pointer-events-none ${phase === 'out' ? 'hero-out' : 'hero-in'}`}>
             <h1 className="font-display font-extrabold uppercase text-white text-5xl sm:text-7xl lg:text-[6.5rem] leading-none tracking-tight drop-shadow-md">
-              FIT<LogoX className="ml-[0.03em]" style={{ height: '0.83em', width: '1.26em', verticalAlign: '-0.19em' }} />
+              {/* X matched to the brand logo: same cap height as the letters, top flush with the cap line, bottom flush with the baseline */}
+              FIT<LogoX className="ml-[0.05em]" color="#ff4200" style={{ height: '0.717em', width: '1.092em', verticalAlign: '-0.017em' }} />
             </h1>
-            <p className="font-display font-bold uppercase text-white text-lg sm:text-2xl lg:text-3xl mt-2 tracking-wide drop-shadow">The Most Premium Personal Training Program</p>
+            <p className="font-logo font-bold text-white text-base sm:text-2xl lg:text-[2rem] mt-3 tracking-[0.02em] drop-shadow">The Most Premium Personal Training Program</p>
           </div>
           <div className="md:hidden mt-6 pointer-events-auto">
             <Link to="/book-consultation" className="btn !rounded-full bg-brand text-white hover:bg-white hover:text-brand">Join Now <span aria-hidden="true" className="ml-1">›</span></Link>

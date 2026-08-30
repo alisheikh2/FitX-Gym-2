@@ -5,7 +5,7 @@ export const BRAND = {
   name: 'FITX',
   fullName: 'FITX Personal Fitness Training Studio',
   mapsName: 'FITX Fitness Studio',
-  tagline: 'The most serious & sophisticated personal fitness training in Sahiwal.',
+  tagline: 'The Most Premium Personal Training Program',
   city: 'Sahiwal',
   address: 'Shadman Town, Faisalabad Road, Sahiwal 57000, Punjab, Pakistan',
   phoneDisplay: '0300 6900206',

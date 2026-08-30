@@ -6,6 +6,7 @@ import '@fontsource/montserrat/400.css';
 import '@fontsource/montserrat/600.css';
 import '@fontsource/montserrat/700.css';
 import '@fontsource/montserrat/800.css';
+import '@fontsource/lora/700.css';
 import '@fontsource/open-sans/400.css';
 import '@fontsource/open-sans/600.css';
 import './styles.css';

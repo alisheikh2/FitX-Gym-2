@@ -99,9 +99,6 @@ export default function TrainerDetail() {
 
 function routeFor(slug) {
   return {
-    'personal-training': '/personal-training',
-    'weight-loss-fat-loss': '/weight-loss',
-    'strength-conditioning': '/strength-conditioning',
-    'womens-performance': '/womens-fitness'
-  }[slug] || '/programs';
+    'personal-training': '/personal-training'
+  }[slug] || '/training';
 }

@@ -13,16 +13,16 @@ Production-grade website + lightweight gym management / POS system for **FITX Pe
 
 | Route | Purpose |
 |---|---|
-| `/` | Conversion homepage (hero, brand story, programs, trainers, results, women’s split, facilities, CTA) |
+| `/` | Conversion homepage (hero, brand story, boxing session, trainers, results, facilities, CTA) |
 | `/about` | Editorial brand story + university recognition + community |
 | `/personal-training` | The 4-step coaching system |
-| `/weight-loss` | Fat-loss program + real transformations (privacy protected) |
-| `/strength-conditioning` | Strength & conditioning coaching |
-| `/womens-fitness` | Women’s program, dedicated hours, female coach |
+| `/boxing-session` | Coach-led boxing session: technique, mitts, conditioning |
+| `/yoga-sessions` | Yoga sessions: mindful movement, breathing, flexibility |
+| `/family-sessions` | Family fitness sessions for the whole family |
 | `/trainers`, `/trainers/:slug` | Trainer directory + individual SEO profiles |
 | `/results` | Real Google reviews + transformations, no fabricated stats |
 | `/facilities` | Real photo gallery with context |
-| `/programs` | Published fee pattern (Group Rs 8,500/mo · One-to-One Rs 16,000/mo · 3-month 10% off) |
+
 | `/nutrition` | Practical nutrition guidance |
 | `/blog`, `/blog/:slug` | 6 locally-relevant SEO articles |
 | `/faq` | Category FAQs with FAQPage schema |

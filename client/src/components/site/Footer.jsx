@@ -9,7 +9,7 @@ export default function Footer() {
         {/* brand */}
         <div>
           <Logo onDark />
-          <p className="mt-6 text-sm text-white/60 leading-relaxed">{BRAND.tagline}</p>
+          <p className="mt-6 font-logo font-bold text-[15px] leading-relaxed text-white/75">{BRAND.tagline}</p>
         </div>
 
         {/* instagram */}

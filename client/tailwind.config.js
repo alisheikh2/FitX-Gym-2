@@ -22,6 +22,7 @@ export default {
       },
       fontFamily: {
         display: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        logo: ['Lora', 'Georgia', 'ui-serif', 'serif'],
         body: ['"Open Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
       },
       letterSpacing: {

@@ -5,12 +5,12 @@ const LOGO_ORANGE = '#eb880e';
 
 // The "X" of FITX — the logo's exact custom shape (traced 1:1 from the client's brand PNG,
 // 131 x 86 unit grid, re-traced from the client's 800 x 398 brand PNG — includes the small chamfered end-cuts and the clean notch/channel junction). Reused for the hero headline without shrinking the text.
-export function LogoX({ height, className = '', style = {} }) {
+export function LogoX({ height, className = '', style = {}, color = LOGO_ORANGE }) {
   return (
     <svg
       {...(height ? { height, width: (height * 131) / 86 } : {})}
       viewBox="0 0 131 86"
-      fill={LOGO_ORANGE}
+      fill={color}
       aria-hidden="true"
       className={className}
       style={{ display: 'inline-block', ...style }}

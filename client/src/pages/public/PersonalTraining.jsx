@@ -12,7 +12,7 @@ export default function PersonalTraining() {
     <>
       <Seo
         title="Personal Training in Sahiwal, One-to-One Coaching | FITX"
-        description="One-to-one personal training at FITX Sahiwal: assessment, individual program, coached sessions and progress tracking. The most structured personal training in Sahiwal."
+        description="One complete, personalized fitness system built around you. Consultation, assessment, goal alignment, customized training, nutrition guidance and progress tracking. Book a consultation at FITX Sahiwal."
         path="/personal-training"
         image="/images/fitx/hero-coaching.jpg"
       />
@@ -22,8 +22,9 @@ export default function PersonalTraining() {
       <section className="py-14 sm:py-20">
         <div className="shell max-w-3xl mx-auto text-center px-2">
           <Reveal>
-            <p className="text-[15px] sm:text-base text-silver leading-[1.9]">
-              Our workouts are designed following a full-body assessment which allows us to determine the client’s fitness level and quality of movement. This system works with the dynamic and ever changing nature of the human body to nurture it through controlled cycles of <strong className="text-navy">stress</strong>, <strong className="text-navy">disruption</strong> and <strong className="text-navy">adaptation</strong>, taking each body to its <strong className="text-navy">unique potential</strong>.
+            <p className="font-display font-bold text-navy text-lg sm:text-xl leading-relaxed">One complete, personalized fitness system built around you.</p>
+            <p className="mt-5 text-[15px] sm:text-base text-silver leading-[1.9]">
+              Every individual starts with a different body, lifestyle, experience, and goal. Our Personal Training program brings everything together in one structured, one-on-one approach — from understanding where you are today to building a strategy that moves you towards where you want to be.
             </p>
           </Reveal>
         </div>
@@ -32,28 +33,29 @@ export default function PersonalTraining() {
       {/* alternating blocks, reference structure */}
       <section className="pb-16 sm:pb-24">
         <div className="shell max-w-5xl space-y-16">
-          {/* row 1: image left, text right */}
+          {/* row 1: image left, text right — steps 01 & 02 */}
           <Reveal>
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="overflow-hidden">
                 <img src="/images/fitx/hero-coaching.jpg" alt="FITX coach spotting a client’s barbell squat" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
               </div>
               <div>
-                <p className="text-[15px] text-silver leading-[1.9]">Our rigorous routines combine cardio and resistance training in coached, supervised sessions that are aimed to develop your form, function and stamina, while guaranteeing your goals!</p>
-                <h3 className="font-display font-bold text-navy text-lg mt-7">Movement-Based Fat Loss</h3>
-                <p className="text-[15px] text-silver leading-[1.9] mt-3">This combines multiple movements and muscle-group activation to launch our clients into accelerated fat loss. It is divided over four phases to cater to clients of all levels, beginners to regular gym-goers looking for a shred.</p>
+                <h3 className="font-display font-bold text-navy text-lg">01 — One-on-One Consultation</h3>
+                <p className="text-[15px] text-silver leading-[1.9] mt-3">Your journey begins with a personal consultation with your trainer. We understand your goals, lifestyle, training background, challenges, and expectations.</p>
+                <h3 className="font-display font-bold text-navy text-lg mt-7">02 — Assessment &amp; Analysis</h3>
+                <p className="text-[15px] text-silver leading-[1.9] mt-3">We assess your current physical condition through body composition, measurements, weight, fitness level, and other relevant indicators using our body composition scanner.</p>
               </div>
             </div>
           </Reveal>
 
-          {/* row 2: text left, image right */}
+          {/* row 2: text left, image right — steps 03 & 04 */}
           <Reveal>
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div>
-                <h3 className="font-display font-bold text-navy text-lg">Full-Body Fusion Training</h3>
-                <p className="text-[15px] text-silver leading-[1.9] mt-3">A fusion-style training approach hitting <strong className="text-navy">every</strong> part of your body <strong className="text-navy">every</strong> session, anterior, posterior, functional kinetic chain emphasis (body angles). You name it, we cover it within your coached session. Divided over varying levels of progression as well.</p>
-                <h3 className="font-display font-bold text-navy text-lg mt-7">Plateau-Breaking Blocks</h3>
-                <p className="text-[15px] text-silver leading-[1.9] mt-3">Devised specifically and used at the right moments to break the plateaus our clients face in meeting their goals.</p>
+                <h3 className="font-display font-bold text-navy text-lg">03 — Goal Alignment</h3>
+                <p className="text-[15px] text-silver leading-[1.9] mt-3">Your goals are evaluated against your current condition and lifestyle. We identify what is realistic, set clear objectives, and define the right direction for your training.</p>
+                <h3 className="font-display font-bold text-navy text-lg mt-7">04 — Customized Training</h3>
+                <p className="text-[15px] text-silver leading-[1.9] mt-3">Your training program is built specifically around you and your goals — whether you’re looking to manage your weight, reduce body fat, build strength, improve conditioning, enhance sports performance, or simply become fitter and healthier.</p>
               </div>
               <div className="overflow-hidden">
                 <img src="/images/fitx/gen-squat.jpg" alt="Coach teaching a client the barbell deadlift at FITX" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
@@ -61,19 +63,17 @@ export default function PersonalTraining() {
             </div>
           </Reveal>
 
-          {/* row 3: image left, stacked text right */}
+          {/* row 3: image left, stacked text right — steps 05 & 06 */}
           <Reveal>
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="overflow-hidden">
                 <img src="/images/fitx/gen-medball-coach.jpg" alt="Coach guiding a member through medicine ball conditioning" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
               </div>
               <div>
-                <h3 className="font-display font-bold text-navy text-lg">Strength & Hypertrophy</h3>
-                <p className="text-[15px] text-silver leading-[1.9] mt-3">Our sculpting and strength track for members who already boast good stamina and functional mobility but want to build their body the way they envision, squat, hinge, press, pull and carry, progressed honestly.</p>
-                <h3 className="font-display font-bold text-navy text-lg mt-7">High-Volume Muscle Building</h3>
-                <p className="text-[15px] text-silver leading-[1.9] mt-3">A higher-volume, bodybuilding-style track geared to build muscle mass, paired with practical nutrition guidance so you fuel the work.</p>
-                <h3 className="font-display font-bold text-navy text-lg mt-7">Women’s Dedicated Hours</h3>
-                <p className="text-[15px] text-silver leading-[1.9] mt-3">A focused version of our movement-based programs during dedicated female hours (10:30–1 & 3–6), coached by Iqra Zahid, including pregnancy-appropriate programming with medical clearance.</p>
+                <h3 className="font-display font-bold text-navy text-lg">05 — Nutrition Guidance</h3>
+                <p className="text-[15px] text-silver leading-[1.9] mt-3">Your training is supported with personalized nutrition guidance based on your assessment, goals, lifestyle, food availability, and daily routine.</p>
+                <h3 className="font-display font-bold text-navy text-lg mt-7">06 — Progress Tracking</h3>
+                <p className="text-[15px] text-silver leading-[1.9] mt-3">Your progress is regularly monitored through reassessments and body composition scans. This allows us to understand what is working, measure your progress, and adjust your strategy when needed.</p>
               </div>
             </div>
           </Reveal>

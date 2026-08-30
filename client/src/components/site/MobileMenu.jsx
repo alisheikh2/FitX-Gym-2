@@ -9,10 +9,9 @@ const WHO = [
 ];
 const WWD = [
   { to: '/personal-training', label: 'Personal Training' },
-  { to: '/weight-loss', label: 'Weight Loss & Fat Loss' },
-  { to: '/strength-conditioning', label: 'Strength & Conditioning' },
-  { to: '/womens-fitness', label: 'Women’s Performance' },
-  { to: '/programs', label: 'Group Sessions' },
+  { to: '/boxing-session', label: 'Boxing Session' },
+  { to: '/yoga-sessions', label: 'Yoga Sessions' },
+  { to: '/family-sessions', label: 'Family Sessions' },
   { to: '/nutrition', label: 'Nutrition Guidance' }
 ];
 

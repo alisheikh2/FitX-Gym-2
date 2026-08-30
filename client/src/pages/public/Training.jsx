@@ -5,10 +5,9 @@ import { PageHero, CallNow } from '../../components/site/blocks.jsx';
 
 const PILLS = [
   ['Personal Training', '/personal-training'],
-  ['Weight Loss & Fat Loss', '/weight-loss'],
-  ['Strength & Conditioning', '/strength-conditioning'],
-  ['Women’s Performance', '/womens-fitness'],
-  ['Group Sessions', '/programs'],
+  ['Boxing Session', '/boxing-session'],
+  ['Yoga Sessions', '/yoga-sessions'],
+  ['Family Sessions', '/family-sessions'],
   ['Nutrition Guidance', '/nutrition']
 ];
 
@@ -16,8 +15,8 @@ export default function Training() {
   return (
     <>
       <Seo
-        title="What We Do, Personal Training, Fat Loss, Strength | FITX Sahiwal"
-        description="FITX Sahiwal programs: one-to-one personal training, weight loss & fat loss, strength & conditioning, women's performance, group sessions and nutrition guidance."
+        title="What We Do, Personal Training, Boxing, Yoga, Family, Nutrition | FITX Sahiwal"
+        description="FITX Sahiwal programs: one-to-one personal training, boxing sessions, yoga sessions, family sessions and nutrition guidance."
         path="/training"
       />
       <PageHero title="What We Do" crumbs={[['What We Do', null]]} />
