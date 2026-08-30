@@ -16,7 +16,7 @@ export default function Footer() {
         <div>
           <h3 className="font-display font-extrabold uppercase text-lg tracking-wide">Instagram</h3>
           <a href={BRAND.instagram} target="_blank" rel="noopener noreferrer" className="block mt-6 max-w-[220px] overflow-hidden group" aria-label="FITX on Instagram">
-            <img src="/images/fitx/results/fitx-client-of-the-month.webp" alt="FITX client of the month on Instagram" width={908} height={1280} loading="lazy" decoding="async" className="w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src="/images/fitx/fitx-footer-instagram.jpeg" alt="FITX on Instagram" width={736} height={954} loading="lazy" decoding="async" className="w-full object-cover transition-transform duration-700 group-hover:scale-105" />
           </a>
         </div>
 
