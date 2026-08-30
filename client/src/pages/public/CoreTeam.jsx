@@ -8,10 +8,10 @@ const TEAM = [
     slug: 'zohaib-ali',
     name: 'Zohaib Ali',
     title: 'Founder & Head Coach',
-    photo: '/images/fitx/trainers/fitx-trainer-zohaib-ali.webp',
+    photo: '/images/fitx/trainers/fitx-coreteam-zohaib-ali.jpeg',
     photoAlt: 'Zohaib Ali, founder and head coach of FITX Personal Fitness Training Studio Sahiwal',
     paragraphs: [
-      'Zohaib Ali founded FITX Personal Fitness Training Studio in Shadman Town, Sahiwal, with a vision to redefine how the city approaches fitness. Rather than a crowded gym where members are left to figure things out on their own, FITX is built around structured personal training, from an initial consultation and goal-focused programming to consistent coaching and technique guidance.',
+      { lead: 'Zohaib Ali founded FITX Personal Fitness Training Studio in Shadman Town, Sahiwal, with a vision to redefine how the city approaches fitness.', text: 'Rather than a crowded gym where members are left to figure things out on their own, FITX is built around structured personal training, from an initial consultation and goal-focused programming to consistent coaching and technique guidance.' },
       'In December 2025, Zohaib was invited as a guest speaker at the University of Sahiwal for an HEC-funded NRPU project on youth-led entrepreneurship, where he was presented with a token of appreciation for his contribution.',
       'He continues to train personal clients while overseeing the training programs developed at FITX.'
     ],
@@ -50,7 +50,9 @@ export default function CoreTeam() {
                   <h2 className="font-display font-bold text-navy text-lg sm:text-xl">{t.name} – {t.title}</h2>
                   <div className="mt-5 space-y-4 text-[15px] text-silver leading-[1.8]">
                     {t.paragraphs.map((p, idx) => (
-                      <p key={idx}>{p}</p>
+                      <p key={idx}>
+                        {typeof p === 'string' ? p : (<><strong className="text-navy">{p.lead}</strong> {p.text}</>)}
+                      </p>
                     ))}
                   </div>
                   {t.profileTo && (
