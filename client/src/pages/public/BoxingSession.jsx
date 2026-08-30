@@ -9,7 +9,7 @@ export default function BoxingSession() {
     <>
       <Seo
         title="Boxing Session Training in Sahiwal | FITX"
-        description="Structured boxing sessions at FITX Sahiwal: stance, footwork, punching technique, combinations, pad work and conditioning — coached one-on-one, tailored to your level. Book a consultation."
+        description="Structured boxing sessions at FITX Sahiwal: stance, footwork, punching technique, combinations, pad work and conditioning - coached one-on-one, tailored to your level. Book a consultation."
         path="/boxing-session"
         image="/images/fitx/boxing/fitx-boxing-bag.jpg"
       />
@@ -39,7 +39,7 @@ export default function BoxingSession() {
                   During your boxing session, you will work on the fundamentals of boxing, including stance, footwork, balance, punching techniques, combinations, defensive movements, and coordination. Sessions may also include pad work, shadow boxing, conditioning drills, and functional movements to improve overall performance.
                 </p>
                 <p className="text-[15px] text-silver leading-[1.9] mt-5">
-                  Boxing is not only about learning punches — it is a full-body workout that can help improve strength, stamina, agility, coordination, speed, balance, and cardiovascular fitness. It also provides an effective way to release stress, build confidence, and stay mentally focused.
+                  Boxing is not only about learning punches, it is a full-body workout that can help improve strength, stamina, agility, coordination, speed, balance, and cardiovascular fitness. It also provides an effective way to release stress, build confidence, and stay mentally focused.
                 </p>
               </div>
             </div>
@@ -67,7 +67,7 @@ export default function BoxingSession() {
         <div className="shell max-w-5xl">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <SectionHead label="The coaches" title="FITX coaching team" copy="Boxing sessions are run by the same coaching team that runs the FITX personal training floor — your technique watched, corrected and adapted to your level, every single session." />
+              <SectionHead label="The coaches" title="FITX coaching team" copy="Boxing sessions are run by the same coaching team that runs the FITX personal training floor, your technique watched, corrected and adapted to your level, every single session." />
               <Reveal delay={80}>
                 <div className="mt-7 flex flex-wrap gap-4">
                   <Link to="/trainers" className="btn-primary">Meet Our Coaches</Link>

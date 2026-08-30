@@ -24,7 +24,7 @@ export default function PersonalTraining() {
           <Reveal>
             <p className="font-display font-bold text-navy text-lg sm:text-xl leading-relaxed">One complete, personalized fitness system built around you.</p>
             <p className="mt-5 text-[15px] sm:text-base text-silver leading-[1.9]">
-              Every individual starts with a different body, lifestyle, experience, and goal. Our Personal Training program brings everything together in one structured, one-on-one approach — from understanding where you are today to building a strategy that moves you towards where you want to be.
+              Every individual starts with a different body, lifestyle, experience, and goal. Our Personal Training program brings everything together in one structured, one-on-one approach, from understanding where you are today to building a strategy that moves you towards where you want to be.
             </p>
           </Reveal>
         </div>
@@ -55,7 +55,7 @@ export default function PersonalTraining() {
                 <h3 className="font-display font-bold text-navy text-lg">03 — Goal Alignment</h3>
                 <p className="text-[15px] text-silver leading-[1.9] mt-3">Your goals are evaluated against your current condition and lifestyle. We identify what is realistic, set clear objectives, and define the right direction for your training.</p>
                 <h3 className="font-display font-bold text-navy text-lg mt-7">04 — Customized Training</h3>
-                <p className="text-[15px] text-silver leading-[1.9] mt-3">Your training program is built specifically around you and your goals — whether you’re looking to manage your weight, reduce body fat, build strength, improve conditioning, enhance sports performance, or simply become fitter and healthier.</p>
+                <p className="text-[15px] text-silver leading-[1.9] mt-3">Your training program is built specifically around you and your goals, whether you’re looking to manage your weight, reduce body fat, build strength, improve conditioning, enhance sports performance, or simply become fitter and healthier.</p>
               </div>
               <div className="overflow-hidden">
                 <img src="/images/fitx/gen-squat.jpg" alt="Coach teaching a client the barbell deadlift at FITX" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />

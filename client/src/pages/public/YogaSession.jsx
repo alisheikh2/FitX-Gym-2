@@ -21,7 +21,7 @@ export default function YogaSession() {
           <Reveal>
             <p className="font-display font-bold text-navy text-lg sm:text-xl leading-relaxed">Move Better. Breathe Deeper. Feel Your Best.</p>
             <p className="mt-5 text-[15px] sm:text-base text-silver leading-[1.9]">
-              At FITX, our yoga sessions are designed to help you reconnect with your body and create a stronger sense of balance — both physically and mentally. Through mindful movement, guided breathing, stretching, and controlled flows, you’ll improve flexibility, mobility, balance, and strength while releasing everyday tension.
+              At FITX, our yoga sessions are designed to help you reconnect with your body and create a stronger sense of balance, both physically and mentally. Through mindful movement, guided breathing, stretching, and controlled flows, you’ll improve flexibility, mobility, balance, and strength while releasing everyday tension.
             </p>
           </Reveal>
         </div>
@@ -39,7 +39,7 @@ export default function YogaSession() {
                 <h3 className="font-display font-bold text-navy text-lg">Mindful Movement</h3>
                 <p className="text-[15px] text-silver leading-[1.9] mt-3">Every session moves with intention. Controlled flows and guided breathing bring your attention back to your body, so each posture is held with awareness rather than habit.</p>
                 <h3 className="font-display font-bold text-navy text-lg mt-6">Flexibility & Mobility</h3>
-                <p className="text-[15px] text-silver leading-[1.9] mt-3">Progressive stretching and full-range movements open up tight hips, shoulders and back, improving how you move — in training and in everyday life.</p>
+                <p className="text-[15px] text-silver leading-[1.9] mt-3">Progressive stretching and full-range movements open up tight hips, shoulders and back, improving how you move, in training and in everyday life.</p>
               </div>
             </div>
           </Reveal>
@@ -51,9 +51,9 @@ export default function YogaSession() {
               </div>
               <div className="md:order-1">
                 <h3 className="font-display font-bold text-navy text-lg">Balance & Strength</h3>
-                <p className="text-[15px] text-silver leading-[1.9] mt-3">The practice builds balanced strength — stability through the core, steady posture and controlled control — a foundation that supports every other program at FITX.</p>
+                <p className="text-[15px] text-silver leading-[1.9] mt-3">The practice builds balanced strength, stability through the core, steady posture and controlled control, a foundation that supports every other program at FITX.</p>
                 <h3 className="font-display font-bold text-navy text-lg mt-6">Release Everyday Tension</h3>
-                <p className="text-[15px] text-silver leading-[1.9] mt-3">Long working hours, stress and screen time tighten the body. These sessions are a regular reset — a space to slow down, breathe deeper and leave feeling renewed.</p>
+                <p className="text-[15px] text-silver leading-[1.9] mt-3">Long working hours, stress and screen time tighten the body. These sessions are a regular reset, a space to slow down, breathe deeper and leave feeling renewed.</p>
               </div>
             </div>
           </Reveal>

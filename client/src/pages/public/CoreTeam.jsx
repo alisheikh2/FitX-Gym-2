@@ -11,7 +11,7 @@ const TEAM = [
     photo: '/images/fitx/trainers/fitx-trainer-zohaib-ali.webp',
     photoAlt: 'Zohaib Ali, founder and head coach of FITX Personal Fitness Training Studio Sahiwal',
     paragraphs: [
-      'Zohaib Ali founded FITX Personal Fitness Training Studio in Shadman Town, Sahiwal, with a vision to redefine how the city approaches fitness. Rather than a crowded gym where members are left to figure things out on their own, FITX is built around structured personal training — from an initial consultation and goal-focused programming to consistent coaching and technique guidance.',
+      'Zohaib Ali founded FITX Personal Fitness Training Studio in Shadman Town, Sahiwal, with a vision to redefine how the city approaches fitness. Rather than a crowded gym where members are left to figure things out on their own, FITX is built around structured personal training, from an initial consultation and goal-focused programming to consistent coaching and technique guidance.',
       'In December 2025, Zohaib was invited as a guest speaker at the University of Sahiwal for an HEC-funded NRPU project on youth-led entrepreneurship, where he was presented with a token of appreciation for his contribution.',
       'He continues to train personal clients while overseeing the training programs developed at FITX.'
     ],
@@ -24,9 +24,9 @@ const TEAM = [
     photo: '/images/fitx/trainers/fitx-trainer-rana-usman-munir.jpeg',
     photoAlt: 'Rana Usman Munir, Co-Owner & Executive Director of FITX Personal Fitness Training Studio Sahiwal',
     paragraphs: [
-      'Rana Usman Munir is the Co-Owner & Executive Director of FITX Personal Fitness Training Studio. Working alongside founder Zohaib Ali, he oversees the studio’s operations, member experience and long-term growth — making sure the standard that FITX is known for holds true every single day: serious coaching, a professional floor, and honest service.',
-      'With a strong background in business and operations, Usman works as much behind the scenes as on the floor — managing members, trainers, timings and the small details that make a training studio feel truly professional. He believes a fitness journey should never be complicated by poor service; your program, your schedule and your goals always come first.',
-      'Under his direction, FITX continues to grow into one of Sahiwal’s most respected personal training studios — one member, one result, one session at a time.'
+      'Rana Usman Munir is the Co-Owner & Executive Director of FITX Personal Fitness Training Studio. Working alongside founder Zohaib Ali, he oversees the studio’s operations, member experience and long-term growth, making sure the standard that FITX is known for holds true every single day: serious coaching, a professional floor, and honest service.',
+      'With a strong background in business and operations, Usman works as much behind the scenes as on the floor, managing members, trainers, timings and the small details that make a training studio feel truly professional. He believes a fitness journey should never be complicated by poor service; your program, your schedule and your goals always come first.',
+      'Under his direction, FITX continues to grow into one of Sahiwal’s most respected personal training studios, one member, one result, one session at a time.'
     ]
   }
 ];

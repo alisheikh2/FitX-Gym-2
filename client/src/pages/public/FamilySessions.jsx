@@ -9,7 +9,7 @@ export default function FamilySessions() {
     <>
       <Seo
         title="Family Fitness Sessions in Sahiwal | FITX"
-        description="Family fitness sessions at FITX Sahiwal: train together, stay active, build strength and spend quality time as a family — with exercises adapted to every age and fitness level. Book a session."
+        description="Family fitness sessions at FITX Sahiwal: train together, stay active, build strength and spend quality time as a family, with exercises adapted to every age and fitness level. Book a session."
         path="/family-sessions"
         image="/images/fitx/family/fitx-family-training.jpg"
       />
@@ -37,7 +37,7 @@ export default function FamilySessions() {
               </div>
               <div>
                 <h3 className="font-display font-bold text-navy text-lg">Fitness For Everyone</h3>
-                <p className="text-[15px] text-silver leading-[1.9] mt-3">From parents to young kids, every session keeps the whole family moving — built around play, teamwork and shared effort rather than solo grind.</p>
+                <p className="text-[15px] text-silver leading-[1.9] mt-3">From parents to young kids, every session keeps the whole family moving, built around play, teamwork and shared effort rather than solo grind.</p>
                 <h3 className="font-display font-bold text-navy text-lg mt-6">Motivation That's Shared</h3>
                 <p className="text-[15px] text-silver leading-[1.9] mt-3">Training together makes the journey more motivating, engaging and rewarding. When one family member pushes, everyone rises with them.</p>
               </div>
@@ -64,7 +64,7 @@ export default function FamilySessions() {
         <div className="shell max-w-5xl">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <SectionHead label="The coaches" title="Guided by FITX trainers" copy="Sessions are coached by the FITX training team, who adapt every exercise to each family member's level — safe, positive and properly structured from start to finish." />
+              <SectionHead label="The coaches" title="Guided by FITX trainers" copy="Sessions are coached by the FITX training team, who adapt every exercise to each family member's level, safe, positive and properly structured from start to finish." />
               <Reveal delay={80}>
                 <div className="mt-7 flex flex-wrap gap-4">
                   <Link to="/book-consultation" className="btn-primary">Book a Session</Link>

@@ -7,7 +7,7 @@ export default function Nutrition() {
     <>
       <Seo
         title="Nutrition Guidance, Personalized Nutrition Plans | FITX Sahiwal"
-        description="Personalized nutrition guidance at FITX Sahiwal: plans built around your goals, lifestyle, food preferences and the food available to you — practical, sustainable, and easy to follow."
+        description="Personalized nutrition guidance at FITX Sahiwal: plans built around your goals, lifestyle, food preferences and the food available to you, practical, sustainable, and easy to follow."
         path="/nutrition"
         image="/images/fitx/nutrition-meal.jpg"
       />
@@ -25,7 +25,7 @@ export default function Nutrition() {
           </Reveal>
           <Reveal delay={60}>
             <p className="text-[15px] sm:text-base text-silver leading-[1.9]">
-              Nutrition is an essential part of achieving your fitness and wellness goals. Our nutrition plans are designed around you — not a one-size-fits-all approach.
+              Nutrition is an essential part of achieving your fitness and wellness goals. Our nutrition plans are designed around you, not a one-size-fits-all approach.
             </p>
             <p className="mt-5 text-[15px] sm:text-base text-silver leading-[1.9]">
               We first understand your individual goals, lifestyle, daily routine, food preferences, and nutritional needs. Your plan is then created according to the foods that are easily available to you, making it practical, realistic, and easier to follow in your everyday life.
