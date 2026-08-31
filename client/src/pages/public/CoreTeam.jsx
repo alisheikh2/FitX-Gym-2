@@ -42,31 +42,50 @@ export default function CoreTeam() {
       <PageHero title="Core Team" crumbs={[['Core Team', null]]} />
 
       <section className="py-16 sm:py-24">
-        <div className="shell max-w-5xl space-y-20">
-          {TEAM.map((t, i) => (
-            <Reveal key={t.slug}>
-              <div className="grid md:grid-cols-2 gap-10 items-start">
-                <div className={i % 2 === 1 ? 'md:order-2' : ''}>
+        <div className="shell max-w-5xl space-y-16 sm:space-y-20">
+          {TEAM.map((t, i) => {
+            const imageRight = i % 2 === 0;
+            return (
+              <Reveal key={t.slug}>
+                {/* Float based layout: image sits beside the text on every screen size
+                    (mobile included) and the paragraphs wrap around it. */}
+                <article className="after:block after:clear-both after:content-['']">
                   <h2 className="font-display font-bold text-navy text-lg sm:text-xl">{t.name} – {t.title}</h2>
-                  <div className="mt-5 space-y-4 text-[15px] text-silver leading-[1.8]">
+
+                  <div className="mt-5 text-[15px] text-silver leading-[1.8]">
+                    <img
+                      src={t.photo}
+                      alt={t.photoAlt}
+                      width={800}
+                      height={1066}
+                      loading="lazy"
+                      decoding="async"
+                      className={[
+                        'aspect-[3/4] object-cover object-top',
+                        'w-[46%] max-w-[300px] sm:w-[42%] sm:max-w-[360px] md:w-[40%] md:max-w-[420px]',
+                        'mb-4 sm:mb-5',
+                        imageRight
+                          ? 'float-right ml-4 sm:ml-6 md:ml-10'
+                          : 'float-left mr-4 sm:mr-6 md:mr-10'
+                      ].join(' ')}
+                    />
+
                     {t.paragraphs.map((p, idx) => (
-                      <p key={idx}>
+                      <p key={idx} className={idx === 0 ? '' : 'mt-4'}>
                         {typeof p === 'string' ? p : (<><strong className="text-navy">{p.lead}</strong> {p.text}</>)}
                       </p>
                     ))}
+
+                    {t.profileTo && (
+                      <div className="mt-6">
+                        <Link to={t.profileTo} className="font-display text-[12px] font-bold uppercase tracking-[0.14em] text-brand hover:text-brand-deep">View Coach Profile →</Link>
+                      </div>
+                    )}
                   </div>
-                  {t.profileTo && (
-                    <div className="mt-6">
-                      <Link to={t.profileTo} className="font-display text-[12px] font-bold uppercase tracking-[0.14em] text-brand hover:text-brand-deep">View Coach Profile →</Link>
-                    </div>
-                  )}
-                </div>
-                <div className={i % 2 === 1 ? 'md:order-1' : ''}>
-                  <img src={t.photo} alt={t.photoAlt} width={800} height={1066} loading="lazy" decoding="async" className="w-full max-w-[420px] aspect-[3/4] object-cover object-top mx-auto md:mx-0" />
-                </div>
-              </div>
-            </Reveal>
-          ))}
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 
