@@ -49,14 +49,15 @@ export default function CoreTeam() {
       <section className="py-16 sm:py-24">
         <div className="shell max-w-5xl space-y-16 sm:space-y-20">
           {TEAM.map((t, i) => {
-            const imageRight = i % 2 === 0;
+            // only the mobile float side alternates; desktop layout is identical for everyone
+            const floatRight = i % 2 === 0;
             return (
               <Reveal key={t.slug}>
                 {/* Mobile: photo floats beside the copy (text wraps around it).
-                    Desktop: 2-column grid, the photo column stretches so the frame
-                    starts and ends exactly with the text block. */}
+                    Desktop: identical 2-column grid for every member - same photo
+                    column width, same spacing, frame height follows the copy. */}
                 <article className="md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,360px)] md:gap-10 md:items-stretch">
-                  <div className={imageRight ? '' : 'md:order-2'}>
+                  <div>
                     <h2 className="font-display font-bold text-navy text-lg sm:text-xl">{t.name} – {t.title}</h2>
 
                     <div className="mt-5 text-[15px] text-silver leading-[1.8] after:block after:clear-both after:content-['']">
@@ -65,7 +66,7 @@ export default function CoreTeam() {
                         className={[
                           'md:hidden block overflow-hidden bg-navy/5',
                           'aspect-[4/5] w-[46%] max-w-[260px] mb-4',
-                          imageRight ? 'float-right ml-4 sm:ml-6' : 'float-left mr-4 sm:mr-6'
+                          floatRight ? 'float-right ml-4 sm:ml-6' : 'float-left mr-4 sm:mr-6'
                         ].join(' ')}
                       >
                         <img
@@ -98,8 +99,9 @@ export default function CoreTeam() {
                     </div>
                   </div>
 
-                  {/* desktop: frame height follows the content height */}
-                  <div className={`hidden md:block relative min-h-[420px] ${imageRight ? '' : 'md:order-1'}`}>
+                  {/* desktop: same column width + same framing for every member,
+                      height follows the text so the frame ends where the copy ends */}
+                  <div className="hidden md:block relative min-h-[420px]">
                     <img
                       src={t.photo}
                       alt={t.photoAlt}
