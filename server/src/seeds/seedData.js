@@ -103,7 +103,7 @@ export async function runSeed() {
       focus: ['Sustainable fat loss programs', 'Nutrition guidance for Pakistani diets', 'Weekly progress tracking', 'Training for complete beginners'],
       suitableFor: ['People whose main goal is losing fat, not just “exercise”', 'First-time gym members', 'Anyone who has lost weight before and regained it'],
       programs: ['weight-loss-fat-loss', 'personal-training'],
-      sortOrder: 1
+      sortOrder: 3
     },
     {
       name: 'Trainer Muazam',
@@ -129,12 +129,12 @@ export async function runSeed() {
       photo: '/images/fitx/trainers/fitx-trainer-iqra-zahid.webp',
       photoAlt: 'Iqra Zahid, women’s fat loss and performance coach at FITX Sahiwal, coaching on the cable station',
       shortBio: 'Dedicated women’s fitness coach at FITX Personal Studio with over seven years of coaching experience.',
-      bio: '**COACH IQRA ZAHID**\n\nIqra Zahid is a dedicated women’s fitness coach at FITX Personal Studio, bringing over seven years of coaching experience. She has worked with students, brides-to-be, new mothers, and women in their fifties, many beginning their fitness journey from zero.\n\nHer approach to women’s training is structured and purposeful, combining progressive strength training, focused fat-loss programming, and practical nutrition guidance tailored to each client’s goals.\n\nFor Iqra, creating a safe, respectful, and supportive training environment is just as important as the results. Her commitment to thoughtful coaching and genuine client care continues to make her an important part of the FITX team.',
+      bio: 'Iqra Zahid is a dedicated women’s fitness coach at FITX Personal Studio, bringing over seven years of coaching experience. She has worked with students, brides-to-be, new mothers, and women in their fifties, many beginning their fitness journey from zero.\n\nHer approach to women’s training is structured and purposeful, combining progressive strength training, focused fat-loss programming, and practical nutrition guidance tailored to each client’s goals.\n\nFor Iqra, creating a safe, respectful, and supportive training environment is just as important as the results. Her commitment to thoughtful coaching and genuine client care continues to make her an important part of the FITX team.',
       philosophy: 'Women don’t need a lighter version of training. They need a proper program, a coach who takes them seriously, and a space where they can focus.',
       focus: ['Women’s fat loss programs', 'Strength training for women', 'Postpartum-appropriate programming (with clearance)', 'Confidence with technique and equipment'],
       suitableFor: ['Women starting fitness for the first time', 'Women who want structured fat loss with a female coach', 'Women who tried home workouts and plateaued'],
       programs: ['womens-performance', 'weight-loss-fat-loss'],
-      sortOrder: 3
+      sortOrder: 1
     }
   ]);
 

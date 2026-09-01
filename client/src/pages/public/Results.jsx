@@ -7,30 +7,32 @@ import { PageHero, Quote, CTABand, SectionHead } from '../../components/site/blo
 import { featuredBoys } from '../../lib/testimonials.js';
 
 /* Curated set of client transformation testimonials to feature on Success Stories.
-   Only the neat, clean photos are included, all shown full, in equal frames. */
+   Order below is the display order: one male, then two women, then two men,
+   then two women, then the remaining transformations. */
 const FEATURED = [
-  'fitx-testimonial-01',
-  'fitx-testimonial-06',
-  'fitx-testimonial-08',
-  'fitx-testimonial-12',
+  'fitx-testimonial-06', // male
+  'fitx-testimonial-01', // female
+  'fitx-testimonial-14', // female
+  'fitx-testimonial-08', // male
+  'fitx-testimonial-12', // male
+  'fitx-testimonial-19', // female
+  'fitx-testimonial-25', // female
   'fitx-testimonial-13',
-  'fitx-testimonial-14',
   'fitx-testimonial-15',
   'fitx-testimonial-16',
   'fitx-testimonial-17',
   'fitx-testimonial-18',
-  'fitx-testimonial-19',
   'fitx-testimonial-20',
   'fitx-testimonial-23',
-  'fitx-testimonial-24',
-  'fitx-testimonial-25'
+  'fitx-testimonial-24'
 ];
 
 export default function Results() {
   const { data: testimonials } = useFetch('/testimonials');
   const quotes = featuredBoys(testimonials);
   const transforms = (testimonials || []).filter((t) => t.kind === 'transformation');
-  const journeys = transforms.filter((t) => FEATURED.some((f) => (t.image || '').includes(f)));
+  // keep the curated FEATURED order (not the database order) so the mix stays as intended
+  const journeys = FEATURED.map((f) => transforms.find((t) => (t.image || '').includes(f))).filter(Boolean);
 
   return (
     <>
