@@ -7,16 +7,16 @@ import { PageHero, Quote, CTABand, SectionHead } from '../../components/site/blo
 import { featuredBoys } from '../../lib/testimonials.js';
 
 /* Curated set of client transformation testimonials to feature on Success Stories.
-   Order below is the display order: one male, then two women, then two men,
-   then two women, then the remaining transformations. */
+   Display order: one male, two women, one male, two women, then the remaining
+   male transformations. */
 const FEATURED = [
   'fitx-testimonial-06', // male
   'fitx-testimonial-01', // female
   'fitx-testimonial-14', // female
   'fitx-testimonial-08', // male
-  'fitx-testimonial-12', // male
   'fitx-testimonial-19', // female
   'fitx-testimonial-25', // female
+  'fitx-testimonial-12',
   'fitx-testimonial-13',
   'fitx-testimonial-15',
   'fitx-testimonial-16',
