@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
+import PhotoFrame from '../../components/site/PhotoFrame.jsx';
 import { wa } from '../../lib/brand.js';
 import { PageHero, CallNow, SectionHead } from '../../components/site/blocks.jsx';
 
@@ -32,7 +33,13 @@ export default function BoxingSession() {
           <Reveal>
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div className="overflow-hidden">
-                <img src="/images/fitx/boxing/fitx-boxing-bag.jpg" alt="Member working on the heavy bag with coach support at FITX Sahiwal" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+                <PhotoFrame
+                  src="/images/fitx/boxing/fitx-boxing-session-page-01.jpg"
+                  alt="FITX coach holding focus mitts while a member practices boxing"
+                  width={1536}
+                  height={1024}
+                  className="w-full aspect-[4/3]"
+                />
               </div>
               <div>
                 <p className="text-[15px] text-silver leading-[1.9]">
@@ -48,7 +55,13 @@ export default function BoxingSession() {
           <Reveal>
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div className="md:order-2 overflow-hidden">
-                <img src="/images/fitx/boxing/fitx-boxing-conditioning.jpg" alt="Skipping rope and conditioning work at FITX Sahiwal" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+                <PhotoFrame
+                  src="/images/fitx/boxing/fitx-boxing-session-page-02.jpg"
+                  alt="FITX member building conditioning on the air bike"
+                  width={853}
+                  height={1280}
+                  className="w-full aspect-[4/3]"
+                />
               </div>
               <div className="md:order-1">
                 <p className="text-[15px] text-silver leading-[1.9]">
@@ -76,7 +89,13 @@ export default function BoxingSession() {
               </Reveal>
             </div>
             <Reveal delay={60} className="overflow-hidden">
-              <img src="/images/fitx/boxing/fitx-boxing-pads.jpg" alt="Coach holding focus mitts during a boxing session at FITX Sahiwal" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover object-center" />
+              <PhotoFrame
+                src="/images/fitx/boxing/fitx-boxing-session-page-03.jpg"
+                alt="FITX coach coaching a member through a boxing combination"
+                width={1536}
+                height={1024}
+                className="w-full aspect-[4/3]"
+              />
             </Reveal>
           </div>
         </div>

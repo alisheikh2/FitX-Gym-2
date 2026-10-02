@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
+import PhotoFrame from '../../components/site/PhotoFrame.jsx';
 import { useFetch } from '../../lib/hooks.js';
 import { PageHero, CallNow, FAQAccordion, SectionHead } from '../../components/site/blocks.jsx';
 
@@ -37,7 +38,13 @@ export default function PersonalTraining() {
           <Reveal>
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="overflow-hidden">
-                <img src="/images/fitx/hero-coaching.jpg" alt="FITX coach spotting a client’s barbell squat" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+                <PhotoFrame
+                  src="/images/fitx/programs/fitx-personal-training-01.jpg"
+                  alt="FITX coach assisting a member with a strength exercise"
+                  width={853}
+                  height={1280}
+                  className="w-full aspect-[4/3]"
+                />
               </div>
               <div>
                 <h3 className="font-display font-bold text-navy text-lg">01 — One-on-One Consultation</h3>
@@ -58,7 +65,14 @@ export default function PersonalTraining() {
                 <p className="text-[15px] text-silver leading-[1.9] mt-3">Your training program is built specifically around you and your goals, whether you’re looking to manage your weight, reduce body fat, build strength, improve conditioning, enhance sports performance, or simply become fitter and healthier.</p>
               </div>
               <div className="overflow-hidden">
-                <img src="/images/fitx/gen-squat.jpg" alt="Coach teaching a client the barbell deadlift at FITX" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+                <PhotoFrame
+                  src="/images/fitx/programs/fitx-personal-training-02.jpg"
+                  alt="FITX member training on the air bike"
+                  width={853}
+                  height={1280}
+                  objectPosition="50% 30%"
+                  className="w-full aspect-[4/3]"
+                />
               </div>
             </div>
           </Reveal>
@@ -67,7 +81,13 @@ export default function PersonalTraining() {
           <Reveal>
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div className="overflow-hidden">
-                <img src="/images/fitx/gen-medball-coach.jpg" alt="Coach guiding a member through medicine ball conditioning" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+                <PhotoFrame
+                  src="/images/fitx/programs/fitx-personal-training-03.jpg"
+                  alt="FITX coach helping a member with a floor exercise"
+                  width={1280}
+                  height={853}
+                  className="w-full aspect-[4/3]"
+                />
               </div>
               <div>
                 <h3 className="font-display font-bold text-navy text-lg">05 — Nutrition Guidance</h3>

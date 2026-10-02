@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Reveal from '../ui/Reveal.jsx';
 import { wa, BRAND, tel } from '../../lib/brand.js';
 import { LogoX } from './Logo.jsx';
+import PhotoFrame from './PhotoFrame.jsx';
 import { renderRich } from '../../lib/rich.jsx';
 
 /* ============ HERO SLIDER, synced text out/in, single timer state machine (no glitches) ============ */
@@ -99,12 +100,16 @@ export function BandCard({ to, image, alt, kicker, title, copy }) {
     <Reveal className="h-full">
       <Link to={to} className="block h-full">
         {/* The group lives on the media+title block only, so the hover effects
-            (image zoom, band colour, shadow) trigger on the image & title band,
-            never on the copy text below. */}
+            (band colour and shadow) trigger on the image & title band, never
+            on the copy text below. */}
         <div className="group overflow-hidden transition-shadow duration-300 hover:shadow-2xl hover:shadow-navy/25">
-          <div className="overflow-hidden">
-            <img src={image} alt={alt} width={1000} height={620} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[13/8] object-cover object-center transition-transform duration-[1.4s] group-hover:scale-[1.06]" />
-          </div>
+          <PhotoFrame
+            src={image}
+            alt={alt}
+            width={1536}
+            height={1024}
+            className="w-full aspect-[4/3] sm:aspect-[13/8]"
+          />
           <div className="bg-navy group-hover:bg-brand transition-colors duration-300 px-7 py-6 flex items-center justify-between gap-4">
             <div>
               <p className="font-display font-bold text-brand group-hover:text-obsidian text-[13px] uppercase tracking-[0.08em] transition-colors duration-300">{kicker}</p>

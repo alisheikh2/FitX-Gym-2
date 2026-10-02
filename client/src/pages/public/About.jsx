@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Seo from '../../lib/Seo.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
+import PhotoFrame from '../../components/site/PhotoFrame.jsx';
 import { PageHero, CallNow, SectionHead } from '../../components/site/blocks.jsx';
 
 export default function About() {
@@ -18,7 +19,13 @@ export default function About() {
       <section className="py-16 sm:py-24">
         <div className="shell grid md:grid-cols-[380px_1fr] gap-10 lg:gap-16 items-start">
           <Reveal className="overflow-hidden">
-            <img src="/images/fitx/hero-coaching.jpg" alt="FITX coach guiding a client through a barbell session" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+            <PhotoFrame
+              src="/images/fitx/home/fitx-home-page-3rd.jpg"
+              alt="FITX coach guiding a member through a strength exercise"
+              width={1280}
+              height={853}
+              className="w-full aspect-[4/3]"
+            />
           </Reveal>
           <Reveal delay={60}>
             <p className="text-[15px] sm:text-base text-silver leading-[1.9]">

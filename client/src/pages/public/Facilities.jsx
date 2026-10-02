@@ -3,21 +3,22 @@ import Seo from '../../lib/Seo.jsx';
 import Reveal from '../../components/ui/Reveal.jsx';
 import { BRAND } from '../../lib/brand.js';
 import Lightbox from '../../components/site/Lightbox.jsx';
+import PhotoFrame from '../../components/site/PhotoFrame.jsx';
 import { PageHero, CTABand, SectionHead } from '../../components/site/blocks.jsx';
 
 const GALLERY = [
-  ['/images/fitx/facility/fitx-facility-floor-02.webp', 'The main floor, free weights, cables and boxing zone.'],
   ['/images/fitx/facility/fitx-strength-squat-rack.webp', 'Racks and barbells for squat, press and hinge work.'],
   ['/images/fitx/fitx-conditioning-medicine-ball.webp', 'Conditioning turf, medicine balls, sleds, intervals.'],
-  ['/images/fitx/facility/fitx-floor-turf-wide.webp', 'The turf strip running the length of the studio.'],
   ['/images/fitx/facility/fitx-battle-ropes.webp', 'Battle-rope finishers.'],
   ['/images/fitx/facility/fitx-dumbbell-rdl.webp', 'Hinge patterns, coached on form.'],
-  ['/images/fitx/facility/fitx-facility-floor-03.webp', 'Machine line along the turf.'],
-  ['/images/fitx/facility/fitx-facility-floor-06.webp', 'Cable crossover station.'],
   ['/images/fitx/programs/fitx-group-session-class.webp', 'Group sessions on the mats.'],
   ['/images/fitx/community/fitx-trainer-neon-sign.webp', 'Under the FITX sign.'],
-  ['/images/fitx/facility/fitx-turf-dumbbell-row.webp', 'Dumbbell work on the turf.'],
-  ['/images/fitx/community/fitx-hoodies.webp', 'Team FITX.']
+  ['/images/fitx/gallery/fitx-gallery-01.jpg', 'Member training with a barbell at FITX.'],
+  ['/images/fitx/gallery/fitx-gallery-02.jpg', 'Member carrying dumbbells across the training floor.'],
+  ['/images/fitx/gallery/fitx-gallery-03.jpg', 'Member performing the leg press at FITX.'],
+  ['/images/fitx/gallery/fitx-gallery-04.jpg', 'Member building conditioning on an air bike.', '50% 30%'],
+  ['/images/fitx/gallery/fitx-gallery-05.jpg', 'Member performing a dumbbell lunge at FITX.', '50% 18%'],
+  ['/images/fitx/gallery/fitx-gallery-06.jpg', 'Member training with battle ropes at FITX.']
 ];
 
 export default function Facilities() {
@@ -45,10 +46,10 @@ export default function Facilities() {
 
       <section className="py-16 sm:py-24">
         <div className="shell grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {GALLERY.map(([src, cap], i) => (
+          {GALLERY.map(([src, cap, objectPosition], i) => (
             <Reveal key={src} delay={(i % 3) * 60} className="overflow-hidden">
               <button type="button" onClick={() => open(i)} className="block group relative w-full overflow-hidden cursor-pointer text-left">
-                <img src={src} alt={cap} width={1200} height={800} loading="lazy" decoding="async" className="w-full aspect-[4/3] sm:aspect-[3/2] object-cover object-center" />
+                <PhotoFrame src={src} alt={cap} objectPosition={objectPosition} className="w-full aspect-[4/3] sm:aspect-[3/2]" />
                 <span className="absolute inset-0 bg-brand/0 group-hover:bg-brand/60 transition-colors duration-300 flex items-center justify-center">
                   <span className="text-white text-4xl font-light opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true">+</span>
                 </span>

@@ -3,6 +3,7 @@ import Seo from '../../lib/Seo.jsx';
 import { useFetch } from '../../lib/hooks.js';
 import { featuredBoys } from '../../lib/testimonials.js';
 import Reveal from '../../components/ui/Reveal.jsx';
+import PhotoFrame from '../../components/site/PhotoFrame.jsx';
 import { HeroSlider, BandCard, BigTitle, TestimonialCarousel } from '../../components/site/blocks.jsx';
 
 export default function Home() {
@@ -27,16 +28,16 @@ export default function Home() {
         <div className="shell grid md:grid-cols-2 gap-10 lg:gap-14">
           <BandCard
             to="/about"
-            image="/images/fitx/hero-coaching.jpg"
-            alt="FITX coach guiding a client through a barbell session"
+            image="/images/fitx/home/fitx-boutique-training.jpg"
+            alt="FITX coach guiding a member through strength training"
             kicker="Who we are"
             title="Boutique Training"
             copy={<> <strong className="text-navy">FITX Personal Studio</strong> is one of Sahiwal’s most sophisticated and serious personal training studios, dedicated to revolutionizing the way society approaches health and wellness. Through personalized training, expert guidance, and purposeful programs, FITX empowers individuals to build strength, confidence, and a healthier lifestyle.</>}
           />
           <BandCard
             to="/boxing-session"
-            image="/images/fitx/boxing/fitx-boxing-pads.jpg"
-            alt="FITX coach holding focus mitts during a boxing session at FITX Sahiwal"
+            image="/images/fitx/home/fitx-boxing-session.jpg"
+            alt="FITX coach holding focus mitts during a boxing session"
             kicker="Combat training"
             title="Boxing Session"
             copy="FITX offers personalized boxing sessions designed to improve your fitness, strength, stamina, coordination, and confidence. Our expert trainers guide you through proper boxing techniques, combinations, pad work, and conditioning drills. Each session is tailored to your fitness level and individual goals, making your workout both challenging and rewarding. Sign up now!"
@@ -50,7 +51,13 @@ export default function Home() {
           {/* left column */}
           <div>
             <Reveal className="overflow-hidden">
-              <img src="/images/fitx/gen-whiteboard.jpg" alt="FITX coach walking a client through their written program" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+              <PhotoFrame
+                src="/images/fitx/home/fitx-home-page-3rd.jpg"
+                alt="FITX coach guiding a member through a strength exercise"
+                width={1280}
+                height={853}
+                className="w-full aspect-[4/3]"
+              />
             </Reveal>
             <Reveal delay={60}>
               <p className="font-display font-bold text-brand text-[13px] uppercase tracking-[0.08em] mt-10">What we do</p>
@@ -67,7 +74,13 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal delay={80} className="overflow-hidden mt-12">
-              <img src="/images/fitx/gen-squat.jpg" alt="Barbell training at FITX Sahiwal" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover" />
+              <PhotoFrame
+                src="/images/fitx/home/fitx-home-coaches.jpg"
+                alt="FITX coach supporting a member during a training session"
+                width={853}
+                height={1280}
+                className="w-full aspect-[4/3]"
+              />
             </Reveal>
           </div>
 
