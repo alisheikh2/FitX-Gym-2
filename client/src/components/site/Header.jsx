@@ -114,10 +114,10 @@ export default function Header() {
                 <span aria-hidden="true" className={`ml-2 text-[9px] align-middle ${wwdActive ? 'text-brand' : ''}`}>▼</span>
               </button>
               <div className={`absolute left-0 top-full pt-3 transition-all duration-300 ease-out ${dropdown === 'wwd' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
-                <ul className="bg-black border border-white/10 border-b-2 border-b-brand divide-y divide-white/10 py-2 min-w-[220px] shadow-lift">
+                <ul className="bg-black border border-white/10 border-b-2 border-b-brand divide-y divide-white/10 py-2 w-[240px] shadow-lift">
                   {WWD.map((w) => (
                     <li key={w.to}>
-                      <Link to={w.to} onClick={() => setDropdown(null)} className="block px-5 py-2.5 font-display text-[13px] font-light hover:font-normal uppercase tracking-[0.12em] text-white/80 hover:text-brand hover:underline decoration-brand underline-offset-4 transition-colors duration-200">
+                      <Link to={w.to} onClick={() => setDropdown(null)} className="block whitespace-nowrap px-5 py-2.5 font-display text-[13px] font-light hover:font-normal uppercase tracking-[0.12em] text-white/80 hover:text-brand hover:underline decoration-brand underline-offset-4 transition-colors duration-200">
                         {w.label}
                       </Link>
                     </li>
