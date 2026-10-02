@@ -9,10 +9,22 @@ import { renderRich } from '../../lib/rich.jsx';
 /* ============ HERO SLIDER, synced text out/in, single timer state machine (no glitches) ============ */
 export function HeroSlider() {
   const slides = [
-    { img: '/images/fitx/hero-coaching.jpg', mob: '/images/fitx/hero-coaching-mobile.jpg', alt: 'FITX coach spotting a client’s barbell squat' },
+    {
+      img: '/images/fitx/hero-pushup-coaching.jpg',
+      mob: '/images/fitx/hero-pushup-coaching-mobile.jpg',
+      tabletPortrait: '/images/fitx/hero-pushup-coaching-tablet-portrait.jpg',
+      tabletLandscape: '/images/fitx/hero-pushup-coaching-tablet-landscape.jpg',
+      alt: 'FITX coach guiding a member during push-ups'
+    },
     { img: '/images/fitx/hero-ropes.jpg', mob: '/images/fitx/hero-ropes-mobile.jpg', alt: 'Client training on the row machine beside sunlit windows at FITX' },
-    { img: '/images/fitx/gen-plate-woman.jpg', mob: '/images/fitx/hero-plate-mobile.jpg', alt: 'Member holding a weight plate at FITX Sahiwal' },
-    { img: '/images/fitx/hero-pullups.jpg', mob: '/images/fitx/hero-pullups-mobile.jpg', alt: 'Member doing pull-ups on the rig at FITX Sahiwal' }
+    {
+      img: '/images/fitx/hero-battle-ropes.jpg',
+      mob: '/images/fitx/hero-battle-ropes-mobile.jpg',
+      tabletPortrait: '/images/fitx/hero-battle-ropes-tablet-portrait.jpg',
+      tabletLandscape: '/images/fitx/hero-battle-ropes-tablet-landscape.jpg',
+      alt: 'FITX member training with battle ropes'
+    },
+    { img: '/images/fitx/gen-plate-woman.jpg', mob: '/images/fitx/hero-plate-mobile.jpg', alt: 'Member holding a weight plate at FITX Sahiwal' }
   ];
   const [i, setI] = useState(0);
   const [phase, setPhase] = useState('in'); // 'in' | 'out'
@@ -44,23 +56,35 @@ export function HeroSlider() {
           aria-hidden={idx !== i}
           className={`absolute inset-0 transition-opacity duration-700 ${idx === i ? 'opacity-100' : 'opacity-0'}`}
         >
-          {/* mobile: portrait art-direction, no cut subjects */}
-          <img
-            src={sld.mob}
-            alt={idx === i ? sld.alt : ''}
-            loading={idx === 0 ? 'eager' : 'lazy'}
-            decoding="async"
-            className="md:hidden h-full w-full object-cover object-[50%_30%]"
-          />
-          {/* desktop: landscape */}
-          <img
-            src={sld.img}
-            alt=""
-            aria-hidden="true"
-            loading={idx === 0 ? 'eager' : 'lazy'}
-            decoding="async"
-            className="hidden md:block h-full w-full object-cover object-[50%_38%]"
-          />
+          {/* Art-directed crops keep the new photos composed for each orientation. */}
+          <picture className="absolute inset-0 block">
+            {sld.tabletLandscape && (
+              <source
+                media="(max-width: 1023px) and (orientation: landscape)"
+                srcSet={sld.tabletLandscape}
+              />
+            )}
+            <source media="(max-width: 767px)" srcSet={sld.mob} />
+            {sld.tabletPortrait && (
+              <source
+                media="(min-width: 768px) and (orientation: portrait)"
+                srcSet={sld.tabletPortrait}
+              />
+            )}
+            {sld.tabletLandscape && (
+              <source
+                media="(min-width: 1024px) and (orientation: landscape) and (max-aspect-ratio: 3/2)"
+                srcSet={sld.tabletLandscape}
+              />
+            )}
+            <img
+              src={sld.img}
+              alt={idx === i ? sld.alt : ''}
+              loading={idx === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+              className="h-full w-full object-cover object-[50%_30%] md:object-[50%_38%]"
+            />
+          </picture>
         </div>
       ))}
       <div className="absolute inset-0 bg-black/25" aria-hidden="true" />
