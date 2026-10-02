@@ -87,7 +87,14 @@ export default function Home() {
           {/* right column */}
           <div>
             <Reveal className="overflow-hidden">
-              <img src="/images/fitx/gen-medball-coach.jpg" alt="Coach guiding a member through medicine ball training at FITX" width={1408} height={768} loading="lazy" decoding="async" className="w-full aspect-[4/3] lg:aspect-[3/4] object-cover object-center" />
+              <PhotoFrame
+                src="/images/fitx/home/fitx-home-coaches-feature.jpg"
+                alt="FITX coach assisting a member as he trains at the rack"
+                width={853}
+                height={1280}
+                objectPosition="50% 35%"
+                className="w-full aspect-[4/3] lg:aspect-[3/4]"
+              />
             </Reveal>
             <div className="border-t border-steel mt-10 pt-10">
               <Reveal>

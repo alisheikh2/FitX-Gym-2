@@ -7,18 +7,18 @@ import PhotoFrame from '../../components/site/PhotoFrame.jsx';
 import { PageHero, CTABand, SectionHead } from '../../components/site/blocks.jsx';
 
 const GALLERY = [
-  ['/images/fitx/facility/fitx-strength-squat-rack.webp', 'Racks and barbells for squat, press and hinge work.'],
-  ['/images/fitx/fitx-conditioning-medicine-ball.webp', 'Conditioning turf, medicine balls, sleds, intervals.'],
-  ['/images/fitx/facility/fitx-battle-ropes.webp', 'Battle-rope finishers.'],
-  ['/images/fitx/facility/fitx-dumbbell-rdl.webp', 'Hinge patterns, coached on form.'],
-  ['/images/fitx/programs/fitx-group-session-class.webp', 'Group sessions on the mats.'],
-  ['/images/fitx/community/fitx-trainer-neon-sign.webp', 'Under the FITX sign.'],
   ['/images/fitx/gallery/fitx-gallery-01.jpg', 'Member training with a barbell at FITX.'],
   ['/images/fitx/gallery/fitx-gallery-02.jpg', 'Member carrying dumbbells across the training floor.'],
   ['/images/fitx/gallery/fitx-gallery-03.jpg', 'Member performing the leg press at FITX.'],
   ['/images/fitx/gallery/fitx-gallery-04.jpg', 'Member building conditioning on an air bike.', '50% 30%'],
   ['/images/fitx/gallery/fitx-gallery-05.jpg', 'Member performing a dumbbell lunge at FITX.', '50% 18%'],
-  ['/images/fitx/gallery/fitx-gallery-06.jpg', 'Member training with battle ropes at FITX.']
+  ['/images/fitx/gallery/fitx-gallery-06.jpg', 'Member training with battle ropes at FITX.'],
+  ['/images/fitx/facility/fitx-strength-squat-rack.webp', 'Racks and barbells for squat, press and hinge work.'],
+  ['/images/fitx/fitx-conditioning-medicine-ball.webp', 'Conditioning turf, medicine balls, sleds, intervals.'],
+  ['/images/fitx/facility/fitx-battle-ropes.webp', 'Battle-rope finishers.'],
+  ['/images/fitx/facility/fitx-dumbbell-rdl.webp', 'Hinge patterns, coached on form.'],
+  ['/images/fitx/programs/fitx-group-session-class.webp', 'Group sessions on the mats.'],
+  ['/images/fitx/community/fitx-trainer-neon-sign.webp', 'Under the FITX sign.']
 ];
 
 export default function Facilities() {
